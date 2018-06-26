@@ -1,0 +1,1525 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="viewport" content="width=device-width">
+<script src="jquery-1.11.1.min.js"></script>
+<title>ECC 2018</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<style type=text/css>
+#container {
+	position: absolute;
+	width: 85%;
+	height: 90%;
+	margin-top: 2px;
+	overflow: hidden;
+}
+</style>
+
+<script language="JavaScript">
+function modify(number){
+   var condition = 'document.myprogram.modify' + number + '.checked';
+   if (eval(condition)){
+      action = 'Add=';}
+   else{
+      action = 'Delete=';
+   }
+   url = 'https://ras.papercept.net/conferences/scripts/myprogram.pl?ConfID=119&' + action + number;
+   window.open(url,'myprogrampage');
+}
+var iIntervalId;  // Global variable
+function addsession(id){
+   clearInterval(iIntervalId);
+   url = 'https://ras.papercept.net/conferences/scripts/myprogram.pl?ConfID=119&AddSession=' + id;
+   window.open(url,'myprogrampage');
+   startreset();
+}
+function getCookie(sName){
+   var sRE ="(?:; )?" + sName +"=([^;]*);?";   
+   var oRE = new RegExp(sRE);
+   if (oRE.test(document.cookie)){
+      return decodeURIComponent(RegExp["$1"]);}
+   else{
+      return null;
+   }
+}
+function loadprogram(){
+   var list = getCookie("IV2017");
+   if (list){
+      var List = list.split(",");
+      for (var i=0; List[i]; i++){
+         var id = 'modify' + List[i];
+         var statement = 'document.myprogram.' + id + '.checked=true';  
+         var ID = document.getElementById(id);
+         if (ID){eval(statement);}
+      }
+   }
+}
+function reset(){
+
+   // Uncheck all modify and addsession checkboxes
+
+   for (var i=0; document.myprogram.elements[i]    ; i++){
+      var name = document.myprogram.elements[i].name;
+      if (name.substring(0,10) == 'addsession' || name.substring(0,6) == 'modify{
+         document.myprogram.elements[i].checked = false;
+      }
+   }
+   
+   // Reload the program
+   
+   loadprogram();
+}
+function startreset(){
+   iIntervalId = setInterval(reset,2000);
+}
+function viewAbstract(number){
+   var box = document.getElementById('Ab' + number);
+   if (box.style.display == 'block'){
+      box.style.display = 'none';
+   }
+   else if (box && box.style.display == 'none'){
+      box.style.display = 'block';
+   }
+}
+function openAllAbstracts(){
+   var d = document.getElementsByTagName('div');
+   var count = d.length;
+   if (count == 0){return;}
+   for (var i=0; i<d.length; i++){
+      if (d[i].id && d[i].id.substring(0,2) == 'Ab' && d[i].style.display == 'none'){
+         d[i].style.display = 'block';
+      }
+   }
+}
+function closeAllAbstracts(){
+   var d = document.getElementsByTagName('div');
+   for (var i=0; i<d.length; i++){
+      if (d[i].id && d[i].id.substring(0,2) == 'Ab'){
+         d[i].style.display = 'none';
+      }
+   }
+}
+
+
+var uhash;
+var pColor;
+$(function() { 
+
+   // Check for URL hash
+
+   uhash = location.hash.substring(1);
+   if (uhash.slice(-1) == '_'){
+      uhash = null;
+   }
+   if (uhash){
+   
+      // Mark the session
+   
+      pColor = $('#' + uhash).parent().css('backgroundColor');
+      $('#' + uhash).parent().css('backgroundColor','#FFD3D3');
+
+      // Set the widths
+      
+      setwidth();
+      
+      // If claasical view is required then return
+
+      if (!ghit){return;} 
+      
+      // Reset left margin for FF
+
+      document.getElementById('container').scrollLeft = 0;;
+
+      // Discover the table and the block and determine the block Id
+   
+      var rt = $('#' + uhash);
+      var done = false;
+      while (!done){
+         rt = rt.parent();    
+         var etype = rt.get(0).tagName;  
+         if (rt.is("table")){      
+            done = true;
+         }
+      }
+      rt = rt.parent().parent().parent();
+      var iid = rt.attr('id')
+
+      // Show the block
+
+      initialize();
+      $('#' + iid).show();
+      $( '#A' + iid ).focus();
+      var ypos = $('#' + iid).offset().top;      
+      window.scrollTo(0,ypos);
+
+      // Cancel the scroll to uhash
+
+      var url = location.href;
+      url += '_';
+      location.href = url;
+      
+      // Scroll into view
+
+      var leftPosition = $('#' + uhash).parent().position().left;
+      var topOffset = $('#' + uhash).parent().offset().top;
+      var divOffset = $('#' + iid).find('div').offset().top;
+      var topPosition = topOffset-divOffset;
+      $('#' + iid).find('div').scrollLeft(leftPosition);
+      $('#' + iid).find('div').scrollTop(topPosition);
+   }
+   else{
+      setwidth();
+      initialize();
+   }
+});
+
+var ghit = false;
+function setwidth(){
+   var viewportwidth = $( window ).width();
+   var viewportheight = $( window ).height();
+   var sdiv = $(".sdiv" );
+   for (var i=0; i<sdiv.length; i++){
+      $(sdiv[i]).css({width: .98*viewportwidth + 'px'});
+      $(sdiv[i]).css("height", .9*viewportheight-50 + 'px');      
+   }
+
+   // Detect horizontal overflow on any of the divs
+   
+   var divs = document.getElementsByTagName('div');
+   for (var i=0; i<divs.length; i++){
+      if (divs[i].id && divs[i].id.substring(0,3) == 'div'){
+         if (divs[i].scrollWidth > divs[i].clientWidth || divs[i].scrollHeight > divs[i].clientHeight){
+            ghit = true;
+            break;
+         }
+      }
+   }
+   if (!ghit){
+      for (var i=0; i<divs.length; i++){
+         divs[i].style.height = 'auto';
+      }
+   }
+}
+
+function selfollowing(hsh){
+   $('#' + uhash).parent().css('backgroundColor',pColor);
+   setwidth();
+   initialize();
+   if (hsh == 'TheTop'){
+      var ypos = $('#container').offset().top;
+      window.scrollTo(0,ypos)
+   }
+   else{
+      $('#' + hsh).show();
+//      window.location.hash = hsh;
+      $( '#A' + hsh ).focus();
+      var ypos = $('#' + hsh).offset().top;
+      window.scrollTo(0,ypos)
+   }
+}
+
+function initialize(){
+
+   // Show all day blocks
+   
+   var blcks = $('.blck');
+   for (var i=0; i<blcks.length; i++){
+      blcks[i].style.display = 'block';
+   }
+
+   // Detect horizontal overflow on any of the divs
+   
+   var hit = false;
+   var divs = document.getElementsByTagName('div');
+   for (var i=0; i<divs.length; i++){
+      if (divs[i].id && divs[i].id.substring(0,3) == 'div'){
+         if (divs[i].scrollWidth > divs[i].clientWidth || divs[i].scrollHeight > divs[i].clientHeight){
+            hit = true;
+            break;
+         }
+      }
+   }
+   if (hit){
+   
+      // Set overflow hidden on body. This will prevent it scrolling
+      
+      $("body").css("overflow","auto");
+      document.getElementById('start').style.display = 'inline';
+      
+      // Hide all day blocks
+   
+      var blcks = $('.blck');
+      for (var i=0; i<blcks.length; i++){
+         blcks[i].style.display = 'none';
+      }
+   }
+   else{
+      $("body").css("overflow","auto");
+      document.getElementById('start').style.display = 'none';
+      var blcks = $('.sdiv');
+      for (var i=0; i<blcks.length; i++){
+        blcks[i].style.height = 'auto';
+      }
+   }
+   return;
+}
+
+
+</script>
+</head>
+
+<body  onresize="setwidth(); initialize()">
+
+
+<!-- <div id="container"> -->
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<div class="c" id="TheTop">
+</div>
+<br>
+<table border="0" cellspacing="0" cellpadding="1" width="85%" nowrap style="margin: auto">
+<tr><td colspan=2>
+<br>
+<h2>Program at a Glance</h2>
+<hr>
+<br>
+</td></tr>
+</table>
+
+<table align="left" border="0" cellspacing="0" cellpadding="0" width="85%" nowrap style="margin: auto">
+<tr><td>
+
+<div class="c">
+
+         <div id="Tuesday" class="blck">
+         <br><b>ECC'18 Technical Program Tuesday June 12, 2018</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Tuesday">Tuesday</a>&nbsp;&nbsp;<a href="#Wednesday">Wednesday</a>&nbsp;&nbsp;<a href="#Thursday">Thursday</a>&nbsp;&nbsp;<a href="#Friday">Friday</a>&nbsp;&nbsp;<a href="#Wednesday" title="Click to jump to the next day">Next</a>&nbsp;&nbsp;<a href="#TheTop">Top</a>&nbsp;&nbsp;<span class="scrlis" style="color: gray"><br>Click on the day's program and use the arrow keys for easy horizontal and vertical scrolling</span></p>
+      
+
+         <div id="div1" class="sdiv" style="overflow: auto">
+         <div id="ATuesday" tabindex="1">
+	  
+         <table class="dayB" style="width: 750px">
+
+<tr class="tHdr">
+<td width="16%" class="c">Track 1</td>
+<td width="16%" class="c">Track 2</td>
+<td width="16%" class="c">Track 3</td>
+<td width="16%" class="c">Track 4</td>
+<td width="16%" class="c">Track 5</td>
+<td width="16%" class="c">Track 6</td>
+</tr><tr>
+                  <td width="16%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tuw1">09:00-18:00</a><BR>
+                        Aphrodite<BR>
+                        Workshop and Tutorial TuW1<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_1.html#tuw1" title="Click to go to the session program"><i>Workshop 1: Simple Adaptive Control and New Results in Stability Analysis</i></a>
+                   </td>
+               
+                  <td width="16%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tuw2">09:00-18:00</a><BR>
+                        Athenaeum 1<BR>
+                        Workshop and Tutorial TuW2<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_1.html#tuw2" title="Click to go to the session program"><i>Workshop 2: Structural Methods in the Study of Complex Systems</i></a>
+                   </td>
+               
+                  <td width="16%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tuw3">09:00-18:00</a><BR>
+                        Athenaeum 4<BR>
+                        Workshop and Tutorial TuW3<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_1.html#tuw3" title="Click to go to the session program"><i>Workshop 3: “Control and Optimization of Industrial Processes” on the Occasion of Dominique Bonvin’s 65th Birthday</i></a>
+                   </td>
+               
+                  <td width="16%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tuw4">09:00-18:00</a><BR>
+                        Athenaeum 2<BR>
+                        Workshop and Tutorial TuW4<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_1.html#tuw4" title="Click to go to the session program"><i>Workshop 4: Motion Tracking Using Inertial Sensors – from Fundamentals to Latest Advances and Challenges</i></a>
+                   </td>
+               
+                  <td width="16%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tuw5">09:00-18:00</a><BR>
+                        Athenaeum 3<BR>
+                        Workshop and Tutorial TuW5<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_1.html#tuw5" title="Click to go to the session program"><i>Workshop 5: Recent Advances in Adaptive, Nonlinear and Networked Control. a Workshop on Occasion of Alexander Fradkov’s 70th Birthday</i></a>
+                   </td>
+               
+                  <td width="16%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tuw6">09:00-18:00</a><BR>
+                        Poseidon<BR>
+                        Workshop and Tutorial TuW6<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_1.html#tuw6" title="Click to go to the session program"><i>Workshop 6: Advances in Distributed and Large-Scale Optimization</i></a>
+                   </td>
+               
+</tr>
+
+         </table>
+         </div>
+         </div>
+         </div>
+         <br><br>
+      
+         <div id="Wednesday" class="blck">
+         <p><br><b>ECC'18 Technical Program Wednesday June 13, 2018</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Tuesday" title="Click to jump to the previous day">Previous</a>&nbsp;&nbsp;<a href="#Tuesday">Tuesday</a>&nbsp;&nbsp;<a href="#Wednesday">Wednesday</a>&nbsp;&nbsp;<a href="#Thursday">Thursday</a>&nbsp;&nbsp;<a href="#Friday">Friday</a>&nbsp;&nbsp;<a href="#Thursday" title="Click to jump to the next day">Next</a>&nbsp;&nbsp;<a href="#TheTop">Top</a>&nbsp;&nbsp;<span class="scrlis" style="color: gray"><br>Click on the day's program and use the arrow keys for easy horizontal and vertical scrolling</span></p>
+      
+
+         <div id="div2" class="sdiv" style="overflow: auto">
+         <div id="AWednesday" tabindex="2">
+	  
+         <table class="dayB" style="width: 750px">
+
+<tr class="tHdr">
+<td width="10%" class="c">Track T1</td>
+<td width="10%" class="c">Track T2</td>
+<td width="10%" class="c">Track T3</td>
+<td width="10%" class="c">Track T4</td>
+<td width="10%" class="c">Track T5</td>
+<td width="10%" class="c">Track T6</td>
+<td width="10%" class="c">Track T7</td>
+<td width="10%" class="c">Track T8</td>
+<td width="10%" class="c">Track T9</td>
+<td width="10%" class="c">Track T10</td>
+</tr><tr>
+                  <td width="100%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="10" class="c">
+                        <a id="weowt">08:00-08:30</a><BR>
+                        Ares + Demetra<BR>
+                         WeOWT<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#weowt" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #99FF99"
+                     colspan="10" class="c">
+                        <a id="wepa1">08:30-09:30</a><BR>
+                        Ares + Demetra<BR>
+                        Plenary Session WePA1<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wepa1" title="Click to go to the session program"><i>Wednesday Morning Plenary Lecture</i></a>
+                   </td>
+               
+</tr>
+<tr>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wea1">10:00-12:00</a><BR>
+                        Demetra<BR>
+                        Regular Session WeA1<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wea1" title="Click to go to the session program"><i>Autonomous Systems I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wea2">10:00-12:00</a><BR>
+                        Ares<BR>
+                        Regular Session WeA2<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wea2" title="Click to go to the session program"><i>Energy Systems I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wea3">10:00-12:00</a><BR>
+                        Aphrodite + Hermes<BR>
+                        Regular Session WeA3<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wea3" title="Click to go to the session program"><i>Hybrid Systems I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wea4">10:00-12:00</a><BR>
+                        Poseidon<BR>
+                        Regular Session WeA4<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wea4" title="Click to go to the session program"><i>Optimization I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wea5">10:00-12:00</a><BR>
+                        Athenaeum 1<BR>
+                        Regular Session WeA5<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wea5" title="Click to go to the session program"><i>Robust Control I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wea6">10:00-12:00</a><BR>
+                        Athenaeum 2<BR>
+                        Regular Session WeA6<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wea6" title="Click to go to the session program"><i>Nonlinear Systems Theory I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wea7">10:00-12:00</a><BR>
+                        Athenaeum 3<BR>
+                        Regular Session WeA7<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wea7" title="Click to go to the session program"><i>Automotive I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wea8">10:00-12:00</a><BR>
+                        Athenaeum 4<BR>
+                        Regular Session WeA8<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wea8" title="Click to go to the session program"><i>Robotics I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wea9">10:00-12:00</a><BR>
+                        Hera<BR>
+                        Regular Session WeA9<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wea9" title="Click to go to the session program"><i>Predictive Control I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFF99"
+                     colspan="1" class="c">
+                        <a id="wea10">10:00-12:00</a><BR>
+                        The Grill Room<BR>
+                        Invited Session WeA10<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wea10" title="Click to go to the session program"><i>Safety, Security, and Privacy for Cyber-Physical Systems</i></a>
+                   </td>
+               
+</tr>
+<tr>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #99FF99"
+                     colspan="10" class="c">
+                        <a id="wepn2">12:15-13:15</a><BR>
+                        Ares + Demetra<BR>
+                        Plenary Session WePN2<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wepn2" title="Click to go to the session program"><i>Wednesday Noon Plenary Lecture</i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="10" class="c">
+                        <a id="weltl">13:15-14:30</a><BR>
+                        <BR>
+                         WeLTL<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#weltl" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="web1">14:30-16:30</a><BR>
+                        Demetra<BR>
+                        Regular Session WeB1<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#web1" title="Click to go to the session program"><i>Autonomous Systems II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="web2">14:30-16:30</a><BR>
+                        Ares<BR>
+                        Regular Session WeB2<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#web2" title="Click to go to the session program"><i>Energy Systems II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="web3">14:30-16:30</a><BR>
+                        Aphrodite + Hermes<BR>
+                        Regular Session WeB3<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#web3" title="Click to go to the session program"><i>Hybrid Systems II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="web4">14:30-16:30</a><BR>
+                        Poseidon<BR>
+                        Regular Session WeB4<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#web4" title="Click to go to the session program"><i>Optimization II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="web5">14:30-16:30</a><BR>
+                        Athenaeum 1<BR>
+                        Regular Session WeB5<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#web5" title="Click to go to the session program"><i>Robust Control II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="web6">14:30-16:30</a><BR>
+                        Athenaeum 2<BR>
+                        Regular Session WeB6<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#web6" title="Click to go to the session program"><i>Nonlinear Systems Theory II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="web7">14:30-16:30</a><BR>
+                        Athenaeum 3<BR>
+                        Regular Session WeB7<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#web7" title="Click to go to the session program"><i>Automotive II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="web8">14:30-16:30</a><BR>
+                        Athenaeum 4<BR>
+                        Regular Session WeB8<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#web8" title="Click to go to the session program"><i>Robotics II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="web9">14:30-16:30</a><BR>
+                        Hera<BR>
+                        Regular Session WeB9<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#web9" title="Click to go to the session program"><i>Predictive Control II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="web10">14:30-16:30</a><BR>
+                        The Grill Room<BR>
+                        Regular Session WeB10<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#web10" title="Click to go to the session program"><i>Fault Detection and Identification</i></a>
+                   </td>
+               
+</tr>
+<tr>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wec1">16:50-18:50</a><BR>
+                        Demetra<BR>
+                        Regular Session WeC1<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wec1" title="Click to go to the session program"><i>Autonomous Systems III</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wec2">16:50-18:50</a><BR>
+                        Ares<BR>
+                        Regular Session WeC2<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wec2" title="Click to go to the session program"><i>Electrical Power Systems</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wec3">16:50-18:50</a><BR>
+                        Aphrodite<BR>
+                        Regular Session WeC3<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wec3" title="Click to go to the session program"><i>Switched Systems</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wec4">16:50-18:50</a><BR>
+                        Poseidon<BR>
+                        Regular Session WeC4<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wec4" title="Click to go to the session program"><i>Optimization III</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wec5">16:50-18:50</a><BR>
+                        Athenaeum 1<BR>
+                        Regular Session WeC5<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wec5" title="Click to go to the session program"><i>Robust Control III</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wec6">16:50-18:50</a><BR>
+                        Athenaeum 2<BR>
+                        Regular Session WeC6<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wec6" title="Click to go to the session program"><i>Stability of Nonlinear Systems I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wec7">16:50-18:50</a><BR>
+                        Athenaeum 3<BR>
+                        Regular Session WeC7<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wec7" title="Click to go to the session program"><i>Automotive III</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wec8">16:50-18:50</a><BR>
+                        Athenaeum 4<BR>
+                        Regular Session WeC8<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wec8" title="Click to go to the session program"><i>Mechatronics</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wec9">16:50-18:50</a><BR>
+                        Hera<BR>
+                        Regular Session WeC9<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wec9" title="Click to go to the session program"><i>Predictive Control III</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wec10">16:50-18:50</a><BR>
+                        Hermes<BR>
+                        Regular Session WeC10<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_2.html#wec10" title="Click to go to the session program"><i>Game Theory & Applications</i></a>
+                   </td>
+               
+</tr>
+
+         </table>
+         </div>
+         </div>
+         </div>
+         <br><br>
+      
+         <div id="Thursday" class="blck">
+         <p><br><b>ECC'18 Technical Program Thursday June 14, 2018</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Wednesday" title="Click to jump to the previous day">Previous</a>&nbsp;&nbsp;<a href="#Tuesday">Tuesday</a>&nbsp;&nbsp;<a href="#Wednesday">Wednesday</a>&nbsp;&nbsp;<a href="#Thursday">Thursday</a>&nbsp;&nbsp;<a href="#Friday">Friday</a>&nbsp;&nbsp;<a href="#Friday" title="Click to jump to the next day">Next</a>&nbsp;&nbsp;<a href="#TheTop">Top</a>&nbsp;&nbsp;<span class="scrlis" style="color: gray"><br>Click on the day's program and use the arrow keys for easy horizontal and vertical scrolling</span></p>
+      
+
+         <div id="div3" class="sdiv" style="overflow: auto">
+         <div id="AThursday" tabindex="3">
+	  
+         <table class="dayB" style="width: 750px">
+
+<tr class="tHdr">
+<td width="10%" class="c">Track T1</td>
+<td width="10%" class="c">Track T2</td>
+<td width="10%" class="c">Track T3</td>
+<td width="10%" class="c">Track T4</td>
+<td width="10%" class="c">Track T5</td>
+<td width="10%" class="c">Track T6</td>
+<td width="10%" class="c">Track T7</td>
+<td width="10%" class="c">Track T8</td>
+<td width="10%" class="c">Track T9</td>
+<td width="10%" class="c">Track T10</td>
+</tr><tr>
+                  <td width="100%" rowspan="1" style="background-color: #99FF99"
+                     colspan="10" class="c">
+                        <a id="thpa1">08:30-09:30</a><BR>
+                        Ares + Demetra<BR>
+                        Plenary Session ThPA1<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thpa1" title="Click to go to the session program"><i>Thursday Morning Plenary Lecture</i></a>
+                   </td>
+               
+</tr>
+<tr>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tha1">10:00-12:00</a><BR>
+                        Demetra<BR>
+                        Regular Session ThA1<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#tha1" title="Click to go to the session program"><i>Agents and Autonomous Robots</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tha2">10:00-12:00</a><BR>
+                        Ares<BR>
+                        Regular Session ThA2<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#tha2" title="Click to go to the session program"><i>Microgrids and Electrical Power Systems</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFF99"
+                     colspan="1" class="c">
+                        <a id="tha3">10:00-12:00</a><BR>
+                        Aphrodite + Hermes<BR>
+                        Invited Session ThA3<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#tha3" title="Click to go to the session program"><i>Embedded Optimization Algorithms for Predictive Control and Estimation I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tha4">10:00-12:00</a><BR>
+                        Poseidon<BR>
+                        Regular Session ThA4<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#tha4" title="Click to go to the session program"><i>Delay Systems I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tha5">10:00-12:00</a><BR>
+                        Athenaeum 1<BR>
+                        Regular Session ThA5<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#tha5" title="Click to go to the session program"><i>Observers I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tha6">10:00-12:00</a><BR>
+                        Athenaeum 2<BR>
+                        Regular Session ThA6<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#tha6" title="Click to go to the session program"><i>Stability of Nonlinear Systems II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tha7">10:00-12:00</a><BR>
+                        Athenaeum 3<BR>
+                        Regular Session ThA7<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#tha7" title="Click to go to the session program"><i>Automotive and Traffic Control</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFF99"
+                     colspan="1" class="c">
+                        <a id="tha8">10:00-12:00</a><BR>
+                        Athenaeum 4<BR>
+                        Invited Session ThA8<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#tha8" title="Click to go to the session program"><i>Learning and Adaptivity in Predictive and Optimal Control: Theory, Applications, and Future Perspectives I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tha9">10:00-12:00</a><BR>
+                        Hera<BR>
+                        Regular Session ThA9<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#tha9" title="Click to go to the session program"><i>Predictive Control IV</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tha10">10:00-12:00</a><BR>
+                        The Grill Room<BR>
+                        Regular Session ThA10<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#tha10" title="Click to go to the session program"><i>Cooperative Systems I</i></a>
+                   </td>
+               
+</tr>
+<tr>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #99FF99"
+                     colspan="10" class="c">
+                        <a id="thpn2">12:15-13:15</a><BR>
+                        Ares + Demetra<BR>
+                        Plenary Session ThPN2<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thpn2" title="Click to go to the session program"><i>Thursday Noon Plenary Lecture</i></a>
+                   </td>
+               
+</tr>
+<tr>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #99FF99"
+                     colspan="10" class="c">
+                        <a id="thltl">13:30-14:30</a><BR>
+                        The Grill Room<BR>
+                        Lunch Special Session ThLTL<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thltl" title="Click to go to the session program"><i>Mathworks Lunch Session</i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thb1">14:30-16:30</a><BR>
+                        Demetra<BR>
+                        Regular Session ThB1<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thb1" title="Click to go to the session program"><i>Agent Networks</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thb2">14:30-16:30</a><BR>
+                        Ares<BR>
+                        Regular Session ThB2<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thb2" title="Click to go to the session program"><i>Control Over Networks</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFF99"
+                     colspan="1" class="c">
+                        <a id="thb3">14:30-16:30</a><BR>
+                        Aphrodite + Hermes<BR>
+                        Invited Session ThB3<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thb3" title="Click to go to the session program"><i>Embedded Optimization Algorithms for Predictive Control and Estimation II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thb4">14:30-16:30</a><BR>
+                        Poseidon<BR>
+                        Regular Session ThB4<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thb4" title="Click to go to the session program"><i>Delay Systems II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thb5">14:30-16:30</a><BR>
+                        Athenaeum 1<BR>
+                        Regular Session ThB5<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thb5" title="Click to go to the session program"><i>Observers II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thb6">14:30-16:30</a><BR>
+                        Athenaeum 2<BR>
+                        Regular Session ThB6<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thb6" title="Click to go to the session program"><i>Stabilization</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thb7">14:30-16:30</a><BR>
+                        Athenaeum 3<BR>
+                        Regular Session ThB7<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thb7" title="Click to go to the session program"><i>Transportation Systems</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFF99"
+                     colspan="1" class="c">
+                        <a id="thb8">14:30-16:30</a><BR>
+                        Athenaeum 4<BR>
+                        Invited Session ThB8<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thb8" title="Click to go to the session program"><i>Learning and Adaptivity in Predictive and Optimal Control: Theory, Applications, and Future Perspectives II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thb9">14:30-16:30</a><BR>
+                        Hera<BR>
+                        Regular Session ThB9<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thb9" title="Click to go to the session program"><i>Optimal Control I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thb10">14:30-16:30</a><BR>
+                        The Grill Room<BR>
+                        Regular Session ThB10<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thb10" title="Click to go to the session program"><i>Cooperative Systems II</i></a>
+                   </td>
+               
+</tr>
+<tr>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thc1">16:50-18:50</a><BR>
+                        Demetra<BR>
+                        Regular Session ThC1<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thc1" title="Click to go to the session program"><i>Autonomous Robots</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thc2">16:50-18:50</a><BR>
+                        Ares<BR>
+                        Regular Session ThC2<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thc2" title="Click to go to the session program"><i>Network Analysis and Control</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thc3">16:50-18:50</a><BR>
+                        Aphrodite<BR>
+                        Regular Session ThC3<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thc3" title="Click to go to the session program"><i>Discrete Event Systems and Supervisory Control</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFF99"
+                     colspan="1" class="c">
+                        <a id="thc4">16:50-18:50</a><BR>
+                        Poseidon<BR>
+                        Invited Session ThC4<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thc4" title="Click to go to the session program"><i>Output Regulation</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thc5">16:50-18:50</a><BR>
+                        Athenaeum 1<BR>
+                        Regular Session ThC5<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thc5" title="Click to go to the session program"><i>Observers III</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thc6">16:50-18:50</a><BR>
+                        Athenaeum 2<BR>
+                        Regular Session ThC6<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thc6" title="Click to go to the session program"><i>Stabilization and Sampled-Data Control</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thc7">16:50-18:50</a><BR>
+                        Athenaeum 3<BR>
+                        Regular Session ThC7<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thc7" title="Click to go to the session program"><i>Biological Systems and Applications in Neuroscience</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thc8">16:50-18:50</a><BR>
+                        Athenaeum 4<BR>
+                        Regular Session ThC8<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thc8" title="Click to go to the session program"><i>Learning and Computational Intelligence Techniques</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thc9">16:50-18:50</a><BR>
+                        Hera<BR>
+                        Regular Session ThC9<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thc9" title="Click to go to the session program"><i>Optimal Control II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thc10">16:50-18:50</a><BR>
+                        Hermes<BR>
+                        Regular Session ThC10<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_3.html#thc10" title="Click to go to the session program"><i>Consensus and Cooperative Control</i></a>
+                   </td>
+               
+</tr>
+
+         </table>
+         </div>
+         </div>
+         </div>
+         <br><br>
+      
+         <div id="Friday" class="blck">
+         <p><br><b>ECC'18 Technical Program Friday June 15, 2018</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Thursday" title="Click to jump to the previous day">Previous</a>&nbsp;&nbsp;<a href="#Tuesday">Tuesday</a>&nbsp;&nbsp;<a href="#Wednesday">Wednesday</a>&nbsp;&nbsp;<a href="#Thursday">Thursday</a>&nbsp;&nbsp;<a href="#Friday">Friday</a>&nbsp;&nbsp;<a href="#TheTop">Top</a>&nbsp;&nbsp;<span class="scrlis" style="color: gray"><br>Click on the day's program and use the arrow keys for easy horizontal and vertical scrolling</span></p>
+      
+
+         <div id="div4" class="sdiv" style="overflow: auto">
+         <div id="AFriday" tabindex="4">
+	  
+         <table class="dayB" style="width: 750px">
+
+<tr class="tHdr">
+<td width="10%" class="c">Track T1</td>
+<td width="10%" class="c">Track T2</td>
+<td width="10%" class="c">Track T3</td>
+<td width="10%" class="c">Track T4</td>
+<td width="10%" class="c">Track T5</td>
+<td width="10%" class="c">Track T6</td>
+<td width="10%" class="c">Track T7</td>
+<td width="10%" class="c">Track T8</td>
+<td width="10%" class="c">Track T9</td>
+<td width="10%" class="c">Track T10</td>
+</tr><tr>
+                  <td width="100%" rowspan="1" style="background-color: #99FF99"
+                     colspan="10" class="c">
+                        <a id="frpa1">08:30-09:30</a><BR>
+                        Ares + Demetra<BR>
+                        Plenary Session FrPA1<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frpa1" title="Click to go to the session program"><i>Friday Morning Plenary Lecture</i></a>
+                   </td>
+               
+</tr>
+<tr>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+                  <td width="10%" rowspan="1" style="background-color: #FFFF99"
+                     colspan="1" class="c">
+                        <a id="fra1">10:00-12:00</a><BR>
+                        Demetra<BR>
+                        Invited Session FrA1<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#fra1" title="Click to go to the session program"><i>Multi-Agent Network Games</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="fra2">10:00-12:00</a><BR>
+                        Ares<BR>
+                        Regular Session FrA2<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#fra2" title="Click to go to the session program"><i>Distributed Estimation for Sensor Networks</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFF99"
+                     colspan="1" class="c">
+                        <a id="fra3">10:00-12:00</a><BR>
+                        Aphrodite + Hermes<BR>
+                        Invited Session FrA3<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#fra3" title="Click to go to the session program"><i>Model Reduction and Control in Large-Scale Networks</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFF99"
+                     colspan="1" class="c">
+                        <a id="fra4">10:00-12:00</a><BR>
+                        Poseidon<BR>
+                        Invited Session FrA4<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#fra4" title="Click to go to the session program"><i>New Results in Multidimensional Systems Theory</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="fra5">10:00-12:00</a><BR>
+                        Athenaeum 1<BR>
+                        Regular Session FrA5<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#fra5" title="Click to go to the session program"><i>Process Control</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="fra6">10:00-12:00</a><BR>
+                        Athenaeum 2<BR>
+                        Regular Session FrA6<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#fra6" title="Click to go to the session program"><i>Sliding Mode Control</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="fra7">10:00-12:00</a><BR>
+                        Athenaeum 3<BR>
+                        Regular Session FrA7<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#fra7" title="Click to go to the session program"><i>Biomedical Systems</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="fra8">10:00-12:00</a><BR>
+                        Athenaeum 4<BR>
+                        Regular Session FrA8<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#fra8" title="Click to go to the session program"><i>Adaptive Control I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="fra9">10:00-12:00</a><BR>
+                        Hera<BR>
+                        Regular Session FrA9<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#fra9" title="Click to go to the session program"><i>Nonlinear Identification and Diagnosis</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="fra10">10:00-12:00</a><BR>
+                        The Grill Room<BR>
+                        Regular Session FrA10<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#fra10" title="Click to go to the session program"><i>Linear Systems I</i></a>
+                   </td>
+               
+</tr>
+<tr>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #99FF99"
+                     colspan="10" class="c">
+                        <a id="frpn2">12:15-13:15</a><BR>
+                        Ares + Demetra<BR>
+                        Plenary Session FrPN2<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frpn2" title="Click to go to the session program"><i>EUCA Award Plenary Lecture</i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="10" class="c">
+                        <a id="frltl">13:15-14:30</a><BR>
+                        <BR>
+                         FrLTL<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frltl" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="10%" rowspan="1" style="background-color: #FFFF99"
+                     colspan="1" class="c">
+                        <a id="frb1">14:30-16:30</a><BR>
+                        Demetra<BR>
+                        Invited Session FrB1<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frb1" title="Click to go to the session program"><i>Multi-Agent Systems Control and Optimization</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frb2">14:30-16:30</a><BR>
+                        Ares<BR>
+                        Regular Session FrB2<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frb2" title="Click to go to the session program"><i>Distributed Control</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frb3">14:30-16:30</a><BR>
+                        Aphrodite + Hermes<BR>
+                        Regular Session FrB3<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frb3" title="Click to go to the session program"><i>Modeling and Order Reduction I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frb4">14:30-16:30</a><BR>
+                        Poseidon<BR>
+                        Regular Session FrB4<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frb4" title="Click to go to the session program"><i>Fluid Flow and Distributed Parameter Systems</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frb5">14:30-16:30</a><BR>
+                        Athenaeum 1<BR>
+                        Regular Session FrB5<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frb5" title="Click to go to the session program"><i>Systems and Control Applications I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frb6">14:30-16:30</a><BR>
+                        Athenaeum 2<BR>
+                        Regular Session FrB6<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frb6" title="Click to go to the session program"><i>Stochastic Systems I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frb7">14:30-16:30</a><BR>
+                        Athenaeum 3<BR>
+                        Regular Session FrB7<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frb7" title="Click to go to the session program"><i>Aerospace I</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frb8">14:30-16:30</a><BR>
+                        Athenaeum 4<BR>
+                        Regular Session FrB8<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frb8" title="Click to go to the session program"><i>Adaptive Control II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frb9">14:30-16:30</a><BR>
+                        Hera<BR>
+                        Regular Session FrB9<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frb9" title="Click to go to the session program"><i>Identification and Control</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frb10">14:30-16:30</a><BR>
+                        The Grill Room<BR>
+                        Regular Session FrB10<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frb10" title="Click to go to the session program"><i>Linear Systems II</i></a>
+                   </td>
+               
+</tr>
+<tr>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="10%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frc1">16:50-18:50</a><BR>
+                        Demetra<BR>
+                        Regular Session FrC1<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frc1" title="Click to go to the session program"><i>UAV's</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frc2">16:50-18:50</a><BR>
+                        Ares<BR>
+                        Regular Session FrC2<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frc2" title="Click to go to the session program"><i>Constrained Control</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frc3">16:50-18:50</a><BR>
+                        Aphrodite<BR>
+                        Regular Session FrC3<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frc3" title="Click to go to the session program"><i>Modeling and Order Reduction II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frc4">16:50-18:50</a><BR>
+                        Poseidon<BR>
+                        Regular Session FrC4<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frc4" title="Click to go to the session program"><i>Distributed Parameter Systems</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frc5">16:50-18:50</a><BR>
+                        Athenaeum 1<BR>
+                        Regular Session FrC5<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frc5" title="Click to go to the session program"><i>Systems and Control Applications II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frc6">16:50-18:50</a><BR>
+                        Athenaeum 2<BR>
+                        Regular Session FrC6<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frc6" title="Click to go to the session program"><i>Stochastic Systems II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frc7">16:50-18:50</a><BR>
+                        Athenaeum 3<BR>
+                        Regular Session FrC7<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frc7" title="Click to go to the session program"><i>Aerospace II</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frc8">16:50-18:50</a><BR>
+                        Athenaeum 4<BR>
+                        Regular Session FrC8<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frc8" title="Click to go to the session program"><i>Iterative Learning Control</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frc9">16:50-18:50</a><BR>
+                        Hera<BR>
+                        Regular Session FrC9<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frc9" title="Click to go to the session program"><i>Emerging Control Theory and Applications</i></a>
+                   </td>
+               
+                  <td width="10%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frc10">16:50-18:50</a><BR>
+                        Hermes<BR>
+                        Regular Session FrC10<BR>
+                        <BR>
+                        <a href="ECC18_ContentListMedia_4.html#frc10" title="Click to go to the session program"><i>Computational Methods</i></a>
+                   </td>
+               
+</tr>
+
+         </table>
+         </div>
+         </div>
+         </div>
+         <br><br>
+      
+</div>
+
+<p>&nbsp;<br>&nbsp;</p><p>&nbsp;<br>&nbsp;</p>
+
+
+</div>
+
+</body>
+
+</html>
