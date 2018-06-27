@@ -1,0 +1,1311 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title>MED 2018</title>
+  
+  <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script language="JavaScript">
+
+function viewAbstract(number){
+   var box = document.getElementById('Ab' + number);
+   if (box.style.display == 'block'){
+      box.style.display = 'none';
+   }
+   else if (box && box.style.display == 'none'){
+      box.style.display = 'block';
+   }
+}
+function openAllAbstracts(){
+   var d = document.getElementsByTagName('div');
+   var count = d.length;
+   if (count == 0){return;}
+   for (var i=0; i<d.length; i++){
+      if (d[i].id && d[i].id.substring(0,2) == 'Ab' && d[i].style.display == 'none'){
+         d[i].style.display = 'block';
+      }
+   }
+}
+function closeAllAbstracts(){
+   var d = document.getElementsByTagName('div');
+   for (var i=0; i<d.length; i++){
+      if (d[i].id && d[i].id.substring(0,2) == 'Ab'){
+         d[i].style.display = 'none';
+      }
+   }
+}
+</script>
+
+
+</head>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+			   
+<div class="c" id="TheTop"><br></div>
+<table border="0" cellspacing="0" cellpadding="1" width="85%" nowrap style="margin: auto">
+<tr><td>
+<h2>Technical Program for Wednesday June 20, 2018</h2>
+<hr>
+</td></tr>
+</table>
+
+<div class="c">
+
+                  <span style="color:gray ">To show or hide the keywords and abstract of a paper (if available), click on the paper title</span><br>
+                  <a href="javascript:openAllAbstracts()" title="Click to open all abstracts">Open all abstracts</a>&nbsp;&nbsp;
+                  <a href="javascript:closeAllAbstracts()" title="Click to close all abstracts">Close all abstracts</a>
+               
+</div>
+
+<div class="c">
+<table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="weda01"><b>WedA01</b></a></td>
+               <td class="r">Kolovare</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#weda01" title="Click to go to the Program at a Glance"><b>Robotics 1</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#14272" title="Click to go to the Author Index">Kovacic, Zdenko</a></td><td class="r">Univ. of Zagreb</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#82744" title="Click to go to the Author Index">Sjøberg, Alexander Meyer</a></td><td class="r">Norwegian Univ. of Science and Tech</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda01_01">09:00-09:20, Paper WedA01.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0004.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('4'); return false" title="Click to show or hide the keywords and abstract">Human-Robot Interaction Control through Demonstration</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#84409" title="Click to go to the Author Index">Lyu, Shangke</a></td><td class="r">Nanyang Tech. Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#12240" title="Click to go to the Author Index">Cheah, C.C.</a></td><td class="r">Nanyang Tech. Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab4" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a>, <a href="MED18_KeywordIndexMedia.html#Adaptive_control" title="Click to go to the Keyword Index">Adaptive control</a></span><br>
+                              <strong>Abstract:</strong> In human-robot interaction (HRI) tasks, robots are required to change the behaviours according to different applications. As different interaction behaviours require different task requirements, it is difficult to formulate a HRI control problem in a general or unified way that enables robots to learn a set of task requirements or behaviours through human's demonstrations and then execute the tasks by using one controller. This paper aims to solve this problem by using a dynamic potential energy function to describe a set of different task requirements so that the motion behaviours demonstrated by human can be acquired or learned by the robot systems in a unified way. A control strategy is proposed to enable the robots to perform various tasks demonstrated by human and also change the behaviours during HRI according to different applications in a stable manner. The stability of overall system is shown using Lyapunov-like analysis and experimental results are presented to illustrate the performance of the proposed control strategy.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda01_02">09:20-09:40, Paper WedA01.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0120.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('120'); return false" title="Click to show or hide the keywords and abstract">Kinematic Feedback Control Using Dual Quaternions</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82744" title="Click to go to the Author Index">Sjøberg, Alexander Meyer</a></td><td class="r">Norwegian Univ. of Science and Tech</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#12841" title="Click to go to the Author Index">Egeland, Olav</a></td><td class="r">Norwegian Univ. of Sci. & Tech</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab120" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a>, <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Aerospace_control" title="Click to go to the Keyword Index">Aerospace control</a></span><br>
+                              <strong>Abstract:</strong> This paper presents results on kinematic controllers for the stabilization of rigid body displacements using dual quaternions. The paper shows how certain results for quaternion stabilization of rotation can be extended to dual quaternions stabilization of displacements. The paper presents a relevant background material on screw motion and the screw description of lines and twists. Moreover, results are presented on the computation of the exponential functions for dual quaternions for use in numerical integration. The paper presents and analyzes different controllers based on feedback from dual quaternions, where some of the controllers are known from the literature, and some are new. In particular, it is shown which controllers give screw motion, and it is discussed how this will affect the performance of the controlled system compared to other controllers that are not based on screw motion. This analysis is supported by Lyapunov analysis. Also, certain passivity properties for dual quaternions are presented as an extension to previously published results on passivity for quaternions.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda01_03">09:40-10:00, Paper WedA01.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0128.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('128'); return false" title="Click to show or hide the keywords and abstract">On the Experiments about the Nonprehensile Reconfiguration of a Rolling Sphere on a Plate</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85975" title="Click to go to the Author Index">Serra, Diana</a></td><td class="r">Rete Ferroviaria Italiana SpA</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#72484" title="Click to go to the Author Index">Ferguson, Joel</a></td><td class="r">The Univ. of Newcastle</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#83230" title="Click to go to the Author Index">Ruggiero, Fabio</a></td><td class="r">Univ. Degli Studi Di Napoli "Federico II"</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85976" title="Click to go to the Author Index">Siniscalco, Andrea</a></td><td class="r">ALTEN Italia</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85977" title="Click to go to the Author Index">Petit, Antoine</a></td><td class="r">INRIA, Mimesis Group</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14628" title="Click to go to the Author Index">Lippiello, Vincenzo</a></td><td class="r">Univ. Di Napoli Federico II</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16477" title="Click to go to the Author Index">Siciliano, Bruno</a></td><td class="r">Univ. Degli Studi Di Napoli Federico II</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab128" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a>, <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a></span><br>
+                              <strong>Abstract:</strong> A method to reconfigure in a nonprehensile way the pose (position and orientation) of a sphere rolling on a plate is proposed in this letter. The nonholonomic nature of the task is first solved at a planning level, where a geometric technique is employed to derive a Cartesian path to steer the sphere towards the arbitrarily desired pose. Then, an integral passivity-based control is designed to track the planned trajectory. The port-Hamiltonian formalism is employed to model the whole dynamics. Two approaches to move the plate are addressed in this paper, showing that only one of them allows the full controllability of the system. A humanoid-like robot is employed to bolster the proposed method experimentally.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda01_04">10:00-10:20, Paper WedA01.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0140.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('140'); return false" title="Click to show or hide the keywords and abstract">Dynamic Parameters Identification of an Industrial Robot: A Constrained Nonlinear WLS Approach</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82832" title="Click to go to the Author Index">Bahloul, Abdelkrim</a></td><td class="r">Univ. Paris Sud</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16894" title="Click to go to the Author Index">Tliba, Sami</a></td><td class="r">Univ. Paris-Sud; CNRS; CentraleSupelec;</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#12338" title="Click to go to the Author Index">Chitour, Yacine</a></td><td class="r">Univ. Paris-Sud, CNRS, Supelec</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab140" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a>, <a href="MED18_KeywordIndexMedia.html#Identification" title="Click to go to the Keyword Index">Identification</a></span><br>
+                              <strong>Abstract:</strong> This paper brings an identified model for a 6 degrees of freedom (dof) industrial robot, the Denso~VP-6242G robot, with an end-effector composed of a spherical handle, fixed on a force sensor. This robot is intended to experiments in the field of Physical Human-Robot Interactions (PHRIs), for co-manipulation purposes. The control algorithms that are necessary to achieve a good PHRI, require a good knowledge of the robot dynamical model, especially the inertia matrix which should be positive definite whatever the configuration of the robot. However, most of industrial robots are supplied without any datasheet containing the inertial parameters nor Computer-Aided-Design (CAD) model. Hence, we propose to apply an identification procedure to experimental data, based on the Inverse Dynamic model Identification Method (IDIM). To ensure the positive definiteness of the inertia matrix, the used optimization step addresses the problem of nonlinear Weighted Least Squares (WLS), derived from the mathematical formulation of the identification problem, under a set of nonlinear constraints in the parameters. A validation step permits to check the efficiency of this approach for the Denso robot.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda01_05">10:20-10:40, Paper WedA01.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0189.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('189'); return false" title="Click to show or hide the keywords and abstract">Classification of Child Vocal Behavior for a Robot-Assisted Autism Diagnostic Protocol</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85968" title="Click to go to the Author Index">Kokot, Mirko</a></td><td class="r">Univ. of Zagreb, Faculty of Electrical Engineering and Comp</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#56656" title="Click to go to the Author Index">Petric, Frano</a></td><td class="r">Univ. of Zagreb</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85967" title="Click to go to the Author Index">Cepanec, Maja</a></td><td class="r">Univ. of Zagreb, Faculty of Education and Rehabilitation Sc</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#20849" title="Click to go to the Author Index">Miklic, Damjan</a></td><td class="r">Faculty of Electrical Engineering and Computing, Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85965" title="Click to go to the Author Index">Beji&#263;, Ivan</a></td><td class="r">Univ. of Zagreb, Faculty of Electrical Engineering and Comp</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14272" title="Click to go to the Author Index">Kovacic, Zdenko</a></td><td class="r">Univ. of Zagreb</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab189" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a>, <a href="MED18_KeywordIndexMedia.html#Signal_processing" title="Click to go to the Keyword Index">Signal processing</a>, <a href="MED18_KeywordIndexMedia.html#Assistive_technology" title="Click to go to the Keyword Index">Assistive technology</a></span><br>
+                              <strong>Abstract:</strong> Autism is a neurodevelopmental disorder affecting an increasing fraction of children, with severe social and economic consequences for affected persons and their families. Including robotic technologies in the diagnostic process could potentially increase its speed and reliability, opening the way towards earlier and more efficient therapy. The diagnostic process requires multimodal interaction, in which the vocal behavior of the child plays an important role. In this paper, we present a method for automatic classification of child vocal behavior, based on supervised learning, which is suitable for real-time execution on an autonomous robot with limited computational resources. The main contribution of the paper is an empirically determined minimal set of sound features, which allow efficient vocal behavior classification of preschool children, relevant in the context of autism diagnostics. The classifier is verified on a dataset combined from publicly accessible audio recordings and recordings collected during diagnostic and therapeutic sessions.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda01_06">10:40-11:00, Paper WedA01.6</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0078.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('78'); return false" title="Click to show or hide the keywords and abstract">A Phri Framework for Modifying a Robot's Kinematic Behaviour Via Varying Stiffness and Dynamical System Synchronization</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82644" title="Click to go to the Author Index">Kastritsi, Theodora</a></td><td class="r">Aristotle Univ. of Thessaloniki</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#77188" title="Click to go to the Author Index">Sidiropoulos, Antonis</a></td><td class="r">Aristotle Univ. of Thessaloniki</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#18929" title="Click to go to the Author Index">Doulgeri, Zoe</a></td><td class="r">Aristotle Univ. of Thessaloniki</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab78" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a>, <a href="MED18_KeywordIndexMedia.html#Nonlinear_control" title="Click to go to the Keyword Index">Nonlinear control</a></span><br>
+                              <strong>Abstract:</strong> In this work, we propose a robot control framework for modifying a desired robot kinematic behavior encoded in dynamical movement primitives (DMP) by physically interacting with the robot during its autonomous operation. The proposed method is based on variable stiffness and DMP time synchronization with the user during the interaction. The overall controlled system is proved to be stable. After the user stops interacting with the robot, the robot motion continues according to the learned kinematic behavior until it reaches the final task goal. At the next execution cycle a new DMP can been learned to generate the modified trajectory. In this way, explicit robot programming and separation of learning and execution stages is eliminated. The proposed approach is implemented and evaluated on a 7-degree-of-freedom KUKA LWR4.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="weda02"><b>WedA02</b></a></td>
+               <td class="r">Meeting Room 1</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#weda02" title="Click to go to the Program at a Glance"><b>Control Systems</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#16357" title="Click to go to the Author Index">Schuster, Eugenio</a></td><td class="r">Lehigh Univ</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#15083" title="Click to go to the Author Index">Miller, Boris</a></td><td class="r">Inst. for Information Transmission Problems RAS and Monash Univ</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda02_01">09:00-09:20, Paper WedA02.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0072.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('72'); return false" title="Click to show or hide the keywords and abstract">Optimization-Based PV/PI Design for a DC-Motor System with Delayed Feedback</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#81487" title="Click to go to the Author Index">Ozer, Suleyman Mert</a></td><td class="r">Anadolu Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85373" title="Click to go to the Author Index">Yildiz, Senem</a></td><td class="r">ANADOLU Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#13802" title="Click to go to the Author Index">Iftar, Altug</a></td><td class="r">Anadolu Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab72" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Feedback_stabilization" title="Click to go to the Keyword Index">Feedback stabilization</a>, <a href="MED18_KeywordIndexMedia.html#Optimisation" title="Click to go to the Keyword Index">Optimisation</a></span><br>
+                              <strong>Abstract:</strong> Proportional velocity (PV) and proportional integral (PI) controllers are designed to regulate the angular position and angular velocity, respectively, of a DC motor system with a pointwise time-delay in the feedback loop. Because of the time-delay, the system is described by delay differential equations which have infinitely many modes that can not be assigned by using classical pole placement methods. The proposed method is based on minimizing the real part of the rightmost closed-loop mode, i.e., spectral abscissa, as a function of the controller parameters. The effectiveness of the method is illustrated by simulations and real-time experiments.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda02_02">09:20-09:40, Paper WedA02.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0100.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('100'); return false" title="Click to show or hide the keywords and abstract">Repetitive Process Based Design of PD-Type Iterative Learning Control Laws</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#15646" title="Click to go to the Author Index">Paszke, Wojciech</a></td><td class="r">Univ. of Zielona Gora</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16089" title="Click to go to the Author Index">Rogers, Eric</a></td><td class="r">Univ. of Southampton</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85903" title="Click to go to the Author Index">Boski, Marcin</a></td><td class="r">Faculty of Computer, Electrical and Control Engineering Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab100" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a></span><br>
+                              <strong>Abstract:</strong> New results on the design of iterative learning control laws are developed. The analysis is in the repetitive process setting. The iterative learning law combines a PD-type learning function and state feedback, where only a relatively small number of parameters need to be tuned. The analysis is extended to allow different finite frequency range performance specifications, where this facility is relevant to many applications. The design computations required are linear matrix inequality based. The new design is illustrated by a simulation based study on robotic manipulator behavior, where the model used has been constructed from experimental data.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda02_04">10:00-10:20, Paper WedA02.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0185.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('185'); return false" title="Click to show or hide the keywords and abstract">Combined Current Profile and Plasma Energy Control Via Model Predictive Control in EAST</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#86023" title="Click to go to the Author Index">Wang, Hexiang</a></td><td class="r">Lehigh Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#79494" title="Click to go to the Author Index">Wehner, William</a></td><td class="r">Lehigh Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16357" title="Click to go to the Author Index">Schuster, Eugenio</a></td><td class="r">Lehigh Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab185" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Energy_efficient_systems" title="Click to go to the Keyword Index">Energy efficient systems</a>, <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Distributed_systems" title="Click to go to the Keyword Index">Distributed systems</a></span><br>
+                              <strong>Abstract:</strong> Extensive studies have shown that the toroidal current density profile, which is closely related to the poloidal magnetic flux profile, is a key factor to achieving advanced tokamak operating scenarios characterized by improved confinement and possible steady-state operation. In this work, a first-principles-driven, control-oriented model of the poloidal magnetic flux profile evolution is used to design a feedback controller via model predictive control (MPC). The aim of the feedback controller is to track a desired profile for the gradient of the poloidal magnetic flux by solving an optimal control problem in the presence of disturbances, non-modeled dynamics, and arbitrary initial conditions. The simulation results illustrate the capability of the proposed controller in dealing with perturbed initial conditions and disturbances.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda02_05">10:20-10:40, Paper WedA02.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0103.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('103'); return false" title="Click to show or hide the keywords and abstract">Rational Approximation of Distributed-Delay Control Laws Via Moment-Matching</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85910" title="Click to go to the Author Index">Malka, Omer</a></td><td class="r">Tech</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#15576" title="Click to go to the Author Index">Palmor, Zalman J.</a></td><td class="r">Tech</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab103" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Algebraic_and_geometric_methods" title="Click to go to the Keyword Index">Algebraic and geometric methods</a></span><br>
+                              <strong>Abstract:</strong> This paper presents a novel method for approximating distributed-delay (DD) control laws by rational transfer functions. It does so via Moment-Matching (MM). Unlike existing methods, the inherent degrees of freedom in this method offer the designer the ability to preserve closed-loop (CL) properties and assure stability of approximation regardless of its order. A formula for the approximation of the modified Smith predictor is suggested and simulations are presented and compared with some known methods from the literature.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda02_06">10:40-11:00, Paper WedA02.6</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0050.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('50'); return false" title="Click to show or hide the keywords and abstract">Joint Continuous and Impulsive Control of Markov Chains</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#48059" title="Click to go to the Author Index">Miller, Alexander</a></td><td class="r">Inst. for Information Transmission Problems, RAS</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#15083" title="Click to go to the Author Index">Miller, Boris</a></td><td class="r">Inst. for Information Transmission Problems RAS and Monash U</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#65845" title="Click to go to the Author Index">Stepanyan, Karen</a></td><td class="r">Inst. for Information Transmission Problems</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab50" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Optimisation" title="Click to go to the Keyword Index">Optimisation</a>, <a href="MED18_KeywordIndexMedia.html#Computational_methods" title="Click to go to the Keyword Index">Computational methods</a></span><br>
+                              <strong>Abstract:</strong> This work considers the continuous and impulse control of the finite state Markov chains in continuous time. In general continuous control governs the transition rates between the states of Markov chain (MC), so the instants and directions of the state changes are random. Meanwhile sometimes there is an urgent necessity to realise the transition which leads to immediate change of the state. Since such transitions need different efforts and produce different effects on the function of the MC itself, one can consider this situation as an impulse control, and if at the same time there is a possibility of graduate control we are coming to the problem of joint continuous and impulse control. In the article we develop the martingale representation of the MC governed by joint continuous and impulse control and give an approach to the solution of the optimal control problem on the basis of the dynamic programming equation. This equation has a form of quasivariational inequality which in the case of finite state MC can be reduced to the solution of the system of ordinary differential equation with one switching line, which may be easily determined with the aid of numerical procedure.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="weda03"><b>WedA03</b></a></td>
+               <td class="r">Meeting Room 2</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#weda03" title="Click to go to the Program at a Glance"><b>Modelling and Simulation</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#52054" title="Click to go to the Author Index">Hure, Nikola</a></td><td class="r">FER Zagreb</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#40398" title="Click to go to the Author Index">Uchiyama, Naoki</a></td><td class="r">Toyohashi Univ. of Tech</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda03_01">09:00-09:20, Paper WedA03.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0144.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('144'); return false" title="Click to show or hide the keywords and abstract">Modeling of the Citric Acid Cycle and Its Two Shuttle Systems</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85904" title="Click to go to the Author Index">Sváb, Gergely</a></td><td class="r">Semmelweis Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85906" title="Click to go to the Author Index">Horvath, Gergo</a></td><td class="r">Semmelweis Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#18329" title="Click to go to the Author Index">Szederkényi, Gábor</a></td><td class="r">Pazmany Peter Catholic Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab144" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Modelling_and_simulation" title="Click to go to the Keyword Index">Modelling and simulation</a>, <a href="MED18_KeywordIndexMedia.html#Biologically_inspired_systems" title="Click to go to the Keyword Index">Biologically inspired systems</a>, <a href="MED18_KeywordIndexMedia.html#Prognostics_and_diagnostics" title="Click to go to the Keyword Index">Prognostics and diagnostics</a></span><br>
+                              <strong>Abstract:</strong> A dynamical model is proposed in this paper for describing the key quantities of mitochondrial metabolism. Mitochondria are very important cell organelles, because they take part in the bioenergetic functions of the cells, control metabolic pathways, participate in heat production, in upholding the equilibrium of reactive oxygen species, in Ca<sup>2+</sup> metabolism, and in the control of apoptotic procedures of the cells. In this work the citric acid cycle and its two transport systems are modeled, namely the malate-aspartate and the citrate-pyruvate shuttle. The overall model containing three modules is given in the form of kinetic ordinary differential equations with 39 state variables. Simulation results are presented and discussed from a biological point of view.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda03_02">09:20-09:40, Paper WedA03.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0009.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('9'); return false" title="Click to show or hide the keywords and abstract">An Introductory Overview about Systems and Control - a Motivation Lecture in Control Education</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#21714" title="Click to go to the Author Index">Vamos, Tibor</a></td><td class="r">Computer and Automation Res. Inst</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14141" title="Click to go to the Author Index">Keviczky, Laszlo</a></td><td class="r">Hungarian Acad. of Sciences</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#11672" title="Click to go to the Author Index">Bars, Ruth</a></td><td class="r">Tech. Univ. of Budapest</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#84483" title="Click to go to the Author Index">Benedek, András</a></td><td class="r">Budapest Univ. of Tech. and Ec</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#84484" title="Click to go to the Author Index">Sik, David</a></td><td class="r">Budapest Univ. of Tech. and Ec</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab9" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Education_and_training" title="Click to go to the Keyword Index">Education and training</a>, <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Modelling_and_simulation" title="Click to go to the Keyword Index">Modelling and simulation</a></span><br>
+                              <strong>Abstract:</strong> Systems and control are all around us. System view, understanding systems and how they are controlled is important for everyone. By understanding systems and control in different areas of life better decisions could be done influencing our everyday life. Systems and control, control engineering is a basic subject in engineering education. In the paper the main aspects of system view, model building, control objectives, control structures and algorithms, among them YOULA parameterization as an important paradigm are considered. This overview about systems and control can be provided in the first lecture of control giving a motivation for the students for studying systems and control. A multi-layer e-book, Sysbook has been developed which could contribute to understanding the concepts as a supplement to the conventional teaching materials. Students also can contribute to its contents through the Student Area. Interactive learning tools as Java applets and software MATLAB/SIMULINK provide possibilities for active learning.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda03_03">09:40-10:00, Paper WedA03.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0079.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('79'); return false" title="Click to show or hide the keywords and abstract">Modeling Task Dependencies in Project Management Using Petri Nets with Arc Extensions</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#24919" title="Click to go to the Author Index">Tsinarakis, George</a></td><td class="r">Tech. Univ. of Crete</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab79" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Petri_Nets" title="Click to go to the Keyword Index">Petri Nets</a>, <a href="MED18_KeywordIndexMedia.html#Discrete_event_systems" title="Click to go to the Keyword Index">Discrete event systems</a>, <a href="MED18_KeywordIndexMedia.html#Modelling_and_simulation" title="Click to go to the Keyword Index">Modelling and simulation</a></span><br>
+                              <strong>Abstract:</strong> Alternative ways of modeling the four possible types of task dependencies in Project Management are introduced. The approach presented makes possible modeling and simulation of the execution procedure of complicated projects that can be analyzed in interconnected tasks, using Petri Nets and their extensions. The proposed method allows the calculation of the overall duration, as well as other useful measures according to the task durations and the interconnections between them. The advanced modeling power of Petri Nets makes possible the inclusion of random events (following a distribution or not) that in real world may disturb the project execution, as well as may change its duration and may lead to more accurate calculations compared to the traditionally used Project management tools and methods such as Network and Node diagrams. This can be used for more efficient project planning as well as for designing necessary actions to correct real time behavior of Project execution.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda03_04">10:00-10:20, Paper WedA03.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0190.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('190'); return false" title="Click to show or hide the keywords and abstract">Approximation of Advance Element in Consecutive Compensator Design for Plant with Control Delay</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#86030" title="Click to go to the Author Index">Bystrov, Sergey</a></td><td class="r">ITMO Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#83037" title="Click to go to the Author Index">Sinetova, Madina</a></td><td class="r">ITMO Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#83113" title="Click to go to the Author Index">Vunder, Nina</a></td><td class="r">ITMO Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab190" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Predictive_control" title="Click to go to the Keyword Index">Predictive control</a>, <a href="MED18_KeywordIndexMedia.html#Modelling_and_simulation" title="Click to go to the Keyword Index">Modelling and simulation</a></span><br>
+                              <strong>Abstract:</strong> The article describes the algorithm of analytical construction of a consecutive compensator for controlling a plant with delay. The algorithm is based on the approximation of the advance element. The problem of approximation of the advance element appears when the synthesis of the consecutive compensator is performed on the basis of the desired typical polynomial model of the «input-output» system. Ignoring the delay element in a plant while constructing a consecutive compensator results in the appearance of the advance in its composition. An advance element approximation is better than the approximation of a delay element, since the stability problem of the approximant disappears. Approximants in the form of differentiating links of first and second order are used to construct a consecutive compensator with an advanced element in its composition. The article gives the results obtained by the research.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda03_05">10:20-10:40, Paper WedA03.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0206.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('206'); return false" title="Click to show or hide the keywords and abstract">Cascade Control Approach for a Cart Inverted Pendulum System Using Controller Synthesis Method</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#79649" title="Click to go to the Author Index">Peker, Fuat</a></td><td class="r">Dicle Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#65425" title="Click to go to the Author Index">Kaya, Ibrahim</a></td><td class="r">Dicle Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85947" title="Click to go to the Author Index">Cokmez, Erdal</a></td><td class="r">Dicle Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#71825" title="Click to go to the Author Index">Atic, Serdal</a></td><td class="r">Batman Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab206" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Modelling_and_simulation" title="Click to go to the Keyword Index">Modelling and simulation</a>, <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a></span><br>
+                              <strong>Abstract:</strong> Inverted pendulum is a basic benchmark in the field of control engineering. It is a well-known example of single input multi output (SIMO) systems. A commonly used type of the inverted pendulum systems is cart inverted pendulum which has a cascade structure inherently. In this paper, a cascade control approach based on controller synthesis method is used for controlling a cart inverted pendulum system. Controller synthesis technique is used to tune both inner and outer loops of the cascade control system. Simulation results are given to demonstrate the use of the proposed approach.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda03_06">10:40-11:00, Paper WedA03.6</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0136.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('136'); return false" title="Click to show or hide the keywords and abstract">Time and Energy Optimal Trajectory Generation in Feed Drive Systems Using Kinematic Corner Smoothing with Interrupted Acceleration</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85938" title="Click to go to the Author Index">Nshama, Enock William</a></td><td class="r">Toyohashi Univ. of Tech</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#40398" title="Click to go to the Author Index">Uchiyama, Naoki</a></td><td class="r">Toyohashi Univ. of Tech</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab136" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Optimisation" title="Click to go to the Keyword Index">Optimisation</a>, <a href="MED18_KeywordIndexMedia.html#Modelling_and_simulation" title="Click to go to the Keyword Index">Modelling and simulation</a></span><br>
+                              <strong>Abstract:</strong> This paper proposes a method of systematically generating corner smoothed trajectories for feed drive systems that offer the best trade-off between two contradicting objectives, namely, cycle time and energy consumption. An energy model for feed drive systems is used to define the bi-objective optimization problem. A geometry is subdivided into linear and corner segments, where the linear segments are defined by jerk limited acceleration profiles and the corner segments are defined using a kinematic corner smoothing technique with interrupted acceleration. By a normalized normal constraint method and a divide and conquer algorithm, Pareto fronts are generated and the best trade-off trajectory is obtained as the Pareto optimal point that minimizes both objectives. Simulation results for an industrial bi-axial machine are shown.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="weda04"><b>WedA04</b></a></td>
+               <td class="r">Meeting Room 3</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#weda04" title="Click to go to the Program at a Glance"><b>Linear Systems</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#18219" title="Click to go to the Author Index">Vukic, Zoran</a></td><td class="r">Univ. of Zagreb, Faculty of Electrical EngineeringandComputing</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#81654" title="Click to go to the Author Index">Bajcinca, Naim</a></td><td class="r">Univ. of Kaiserslautern</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda04_01">09:00-09:20, Paper WedA04.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0015.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('15'); return false" title="Click to show or hide the keywords and abstract">Control of a Time-Variant 1-D Linear Hyperbolic PDE Using Infinite-Dimensional Backstepping</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#66349" title="Click to go to the Author Index">Anfinsen, Henrik</a></td><td class="r">NTNU</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#11251" title="Click to go to the Author Index">Aamo, Ole Morten</a></td><td class="r">NTNU</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab15" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Distributed_systems" title="Click to go to the Keyword Index">Distributed systems</a>, <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a>, <a href="MED18_KeywordIndexMedia.html#Adaptive_control" title="Click to go to the Keyword Index">Adaptive control</a></span><br>
+                              <strong>Abstract:</strong> We derive a state-feedback controller for a scalar 1-D linear hyperbolic partial differential equation (PDE) with a spatially- and time-varying interior-domain parameter. The resulting controller ensures convergence to zero in a finite time d_1, corresponding to the propagation time from one boundary to the other. The control law requires predictions of the in-domain parameter a time d_1 into the future. The state-feedback controller is also combined with a boundary observer into an output-feedback control law. Lastly, under the assumption that the interior-domain parameter can be decoupled into a time-varying and a spatially-varying part, a stabilizing adaptive output-feedback control law is derived for an uncertain spatially varying parameter, stabilizing the system in the L_2-sense from a single boundary measurement only. All derived controllers are implemented and demonstrated in simulations.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda04_02">09:20-09:40, Paper WedA04.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0001.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('1'); return false" title="Click to show or hide the keywords and abstract">Assignment of Invariant and Transmission Zeros in Linear Systems</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14313" title="Click to go to the Author Index">Kucera, Vladimir</a></td><td class="r">Czech Tech. Univ. in Prague</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab1" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a></span><br>
+                              <strong>Abstract:</strong> The paper generalizes the result of Rosenbrock on the assignment of invariant and transmission zeros from systems (A, B, C, 0) with equal number of inputs and outputs to general (A, B, C, D) quadruples. The generalization, while straightforward, improves the solvability conditions and leads to a new construction of C and D matrices having least number of rows.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda04_03">09:40-10:00, Paper WedA04.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0081.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('81'); return false" title="Click to show or hide the keywords and abstract">Parameter Space Approach for Performance Mapping Using Lyapunov Stability</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#66373" title="Click to go to the Author Index">Pyta, Lorenz</a></td><td class="r">RWTH Aachen Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#61220" title="Click to go to the Author Index">Vosswinkel, Rick</a></td><td class="r">Tech. Univ. Dresden</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#40279" title="Click to go to the Author Index">Schrödel, Frank</a></td><td class="r">IAV GmbH</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#81654" title="Click to go to the Author Index">Bajcinca, Naim</a></td><td class="r">Univ. of Kaiserslautern</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#22641" title="Click to go to the Author Index">Abel, Dirk</a></td><td class="r">RWTH Aachen Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab81" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a></span><br>
+                              <strong>Abstract:</strong> Calculating the complete controller parameter space, which guarantees specified closed loop performance requirements of a given linear system, is non-trivial. In this paper, a new approach to solve this problem is presented using Lyapunov stability formulations. This method has several advantages in comparison to the existing parameter space approach methods: Currently, the parameter space calculation methods are only applicable for a very restricted system class. They rely on frequency sweeping and the stabilizing parameter space may only be calculated through means of discretization. The proposed method avoids this while reducing the computational complexity and increasing the practicality of the method at the same time. An extensive analysis of the presented method is shown on a practical application example: the longitudinal vehicle guidance (ACC).
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda04_04">10:00-10:20, Paper WedA04.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0129.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('129'); return false" title="Click to show or hide the keywords and abstract">A Comparison of Two Methods for State Estimation: A Statistical Kalman Filter, and a Deterministic Interval-Based Approach</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#40790" title="Click to go to the Author Index">Meslem, Nacim</a></td><td class="r">INP Grenoble (GIPSA-Lab)</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#15941" title="Click to go to the Author Index">Ramdani, Nacim</a></td><td class="r">Univ. D'orléans</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab129" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a></span><br>
+                              <strong>Abstract:</strong> In an uncertain framework the performance of two methods of state estimation for discrete-time linear systems are compared on a pedagogical example. The first one is the well known Kalman filter, which is accurate when the measurement noises and the state disturbances are assumed Gaussian white noises and their statistical properties are available. The second one is a set-membership state estimator, which is also based on the prediction-correction principle. Based on the observability assumption of linear systems combined with interval analysis, both stages of this estimator are carried out in a guaranteed and efficient way. In this study, the performance of both state estimation algorithms are evaluated under two scenarios. In the first scenario, the state disturbances and measurement noise are considered Gaussian and in the second scenario these signals are considered unknown-but-bounded with known bounds.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda04_05">10:20-10:40, Paper WedA04.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0139.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('139'); return false" title="Click to show or hide the keywords and abstract">On the Eigenvalue Placement by Static Output Feedback Via Quantifier Elimination</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#40542" title="Click to go to the Author Index">Röbenack, Klaus</a></td><td class="r">TU Dresden</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#61220" title="Click to go to the Author Index">Vosswinkel, Rick</a></td><td class="r">Tech. Univ. Dresden</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#28260" title="Click to go to the Author Index">Franke, Matthias</a></td><td class="r">HTW Dresden</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab139" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a>, <a href="MED18_KeywordIndexMedia.html#Computational_methods" title="Click to go to the Keyword Index">Computational methods</a>, <a href="MED18_KeywordIndexMedia.html#Feedback_stabilization" title="Click to go to the Keyword Index">Feedback stabilization</a></span><br>
+                              <strong>Abstract:</strong> The static state feedback controller design, which achieves a desired behavior of the closed loop system, was solved in linear control theory decades ago. This is not true for static output feedback controller design, which is still an open problem. Here an approach is presented which handles the existence and design problem using quantifier elimination methods. Our approach allows the formal verification of arbitrary eigenvalue placement and enables the construction of controllers which lead to specified dynamic behavior. The design method is illustrated on examples known from literature.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda04_06">10:40-11:00, Paper WedA04.6</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0219.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('219'); return false" title="Click to show or hide the keywords and abstract">Parameter Space Mapping of Eigenvalue Performance Specifications by Means of Real Root Classification</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#81654" title="Click to go to the Author Index">Bajcinca, Naim</a></td><td class="r">Univ. of Kaiserslautern</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab219" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a>, <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a></span><br>
+                              <strong>Abstract:</strong> This paper provides a method based on real root classification (RRC) for computation of parameter space regions for LTI systems, guaranteeing certain system performance specifications described by the eigenvalue location. To this end, parameter-dependent state-space system descriptions are considered and Lyapunov equation is utilized as the basic vehicle to derive the mapping conditions.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="weda05"><b>WedA05</b></a></td>
+               <td class="r">Meeting Room 4</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#weda05" title="Click to go to the Program at a Glance"><b>Autonomous and Unmanned Systems 1</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#18155" title="Click to go to the Author Index">Fedele, Giuseppe</a></td><td class="r">Univ. of Calabria</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#22341" title="Click to go to the Author Index">Tamas, Levente</a></td><td class="r">Tech. Univ. of Cluj-Napoca</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda05_01">09:00-09:20, Paper WedA05.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0014.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('14'); return false" title="Click to show or hide the keywords and abstract">Reactive Control Technology for 3D Navigation of Nonholonomic Robots in Tunnel-Like Environments Based on Limited Sensory Data</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14966" title="Click to go to the Author Index">Matveev, Alexey S.</a></td><td class="r">St.Petersburg Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85106" title="Click to go to the Author Index">Magerkin, Valentin</a></td><td class="r">Saint Petersburg State Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16304" title="Click to go to the Author Index">Savkin, Andrey V.</a></td><td class="r">Univ. of New South Wales</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab14" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Autonomous_systems" title="Click to go to the Keyword Index">Autonomous systems</a>, <a href="MED18_KeywordIndexMedia.html#Nonlinear_control" title="Click to go to the Keyword Index">Nonlinear control</a>, <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a></span><br>
+                              <strong>Abstract:</strong> A constant-speed nonholonomic robot should pass through an unstructured and unknown 3D tunnel-like cave environment. The sensors provide information about the nearest point of tunnel's surface and the distance to the surface along any ray going from the robot at an upper-limited angle with respect to the direction toward the nearest point. A new navigation law is presented that solves the mission, respects a given safety margin to the surface, drives the robot to the pre-specified distance to it, and then maintains this distance. This law generates the control as a reflex-like reaction to the current observation. Mathematically rigorous justification of this law is provided; its applicability is confirmed by computer simulation tests.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda05_02">09:20-09:40, Paper WedA05.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0134.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('134'); return false" title="Click to show or hide the keywords and abstract">Collaborative Visual Area Coverage by Aerial Agents under Positioning Uncertainty</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85658" title="Click to go to the Author Index">Tzes, Mariliza</a></td><td class="r">Univ. of Patras</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#69321" title="Click to go to the Author Index">Papatheodorou, Sotiris</a></td><td class="r">New York Univ. Abu Dhabi</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16997" title="Click to go to the Author Index">Tzes, Anthony</a></td><td class="r">New York Univ. Abu Dhabi</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab134" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robot_swarms" title="Click to go to the Keyword Index">Robot swarms</a>, <a href="MED18_KeywordIndexMedia.html#Autonomous_systems" title="Click to go to the Keyword Index">Autonomous systems</a>, <a href="MED18_KeywordIndexMedia.html#Unmanned_systems" title="Click to go to the Keyword Index">Unmanned systems</a></span><br>
+                              <strong>Abstract:</strong> In this article a control scheme for the coverage of a convex region by a team of Mobile Aerial Agents (MAAs) is presented. Each MAA is outfitted with a downwards facing camera, the sensed area of which is dependent on the MAA’s altitude. Additionally, the MAAs’ footprints are assumed to be known with a certain degree of uncertainty. In order to take into account the MAAs’ positioning uncertainty as well as their varying sensed areas, an Additively Weighted Guaranteed Voronoi (AWGV) partitioning of the region is utilized. Based on this partitioning scheme, a gradient–based algorithm is derived in order to guarantee monotonic increase of an area coverage metric, while also constraining the MAAs’ altitudes and it is extended to offer collision avoidance. The proposed scheme is evaluated through simulation studies.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda05_03">09:40-10:00, Paper WedA05.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0138.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('138'); return false" title="Click to show or hide the keywords and abstract">Relative Pose Estimation of Unmanned Aerial Systems</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#21183" title="Click to go to the Author Index">Tsoukalas, Athanasios</a></td><td class="r">New York Univ. Abu Dhabi</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16997" title="Click to go to the Author Index">Tzes, Anthony</a></td><td class="r">New York Univ. Abu Dhabi</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14159" title="Click to go to the Author Index">Khorrami, Farshad</a></td><td class="r">NYU Tandoon School of Engineering (Pol. Inst</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab138" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Unmanned_systems" title="Click to go to the Keyword Index">Unmanned systems</a>, <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a></span><br>
+                              <strong>Abstract:</strong> The relative accurate pose estimation problem of collaborating Unmanned Aerial Systems (UASs) in GPS-denied environments is addressed in this article. The on-board system uses fiducial markers attached in the facets of a truncated rhombicuboctahedron placed on top of the UAS. A visual marker-tracking mechanism using a global shutter camera is used to estimate the relative pose between the UASs under the Line-of-Sight (LoS) constraint. The pose estimator operates in parallel with an Ultra-wideband (UWB) system that transmits extremely short RF-pulses, spreading the radio energy over a wide frequency band, and measures the relative distance using Time Of Arrival (TOA) measurements from a set of off-board anchors. Experimental studies show that the UWB-system can provide satisfactory measurements at large distances (2m to 50m) but the resolution is not sufficient for operating the UASs in very short relative distances (under 5m). Therefore, the visual system is used to improve the relative position measurements at short distances (0.2m to 5m) in addition to providing orientation measurements.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda05_04">10:00-10:20, Paper WedA05.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0141.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('141'); return false" title="Click to show or hide the keywords and abstract">Cooperative Object Transportation by Two Underwater Vehicle-Manipulator Systems</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#56505" title="Click to go to the Author Index">Cataldi, Elisabetta</a></td><td class="r">Univ. Di Cassino</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#12329" title="Click to go to the Author Index">Chiaverini, Stefano</a></td><td class="r">Univ. Di Cassino</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#11481" title="Click to go to the Author Index">Antonelli, Gianluca</a></td><td class="r">Univ. of Cassino and Southern Lazio</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab141" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Unmanned_systems" title="Click to go to the Keyword Index">Unmanned systems</a>, <a href="MED18_KeywordIndexMedia.html#Modelling_and_simulation" title="Click to go to the Keyword Index">Modelling and simulation</a>, <a href="MED18_KeywordIndexMedia.html#Adaptive_control" title="Click to go to the Keyword Index">Adaptive control</a></span><br>
+                              <strong>Abstract:</strong> Intervention Autonomous Underwater Vehicle, also denoted as interaction control of Underwater Vehicle-Manipulator Systems, is a topic receiving increasing attention in the last years due to the need to decrease costs and improve safety of underwater operations. From the control perspective the problem at hand is challenging due to the hostile environmental conditions. Cooperative control of underwater vehicle-manipulator systems is addressed in this paper. An architecture is proposed which takes into account most of the underwater constraints, namely, uncertainty in the model knowledge, low sensors’ bandwidth, position-only arm control, geometric-only object pose estimation. Numerical simulations provide promising results on its possible real application.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda05_05">10:20-10:40, Paper WedA05.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0132.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('132'); return false" title="Click to show or hide the keywords and abstract">Prescribed Interactions among Agents for Swarm Aggregation on a Circle</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#18155" title="Click to go to the Author Index">Fedele, Giuseppe</a></td><td class="r">Univ. of Calabria</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#32926" title="Click to go to the Author Index">D'Alfonso, Luigi</a></td><td class="r">Univ. Della Calabria</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab132" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Swarms" title="Click to go to the Keyword Index">Swarms</a>, <a href="MED18_KeywordIndexMedia.html#Robot_swarms" title="Click to go to the Keyword Index">Robot swarms</a>, <a href="MED18_KeywordIndexMedia.html#Agents_and_agent_based_systems" title="Click to go to the Keyword Index">Agents and agent-based systems</a></span><br>
+                              <strong>Abstract:</strong> In this work a kinematic model for the evolution of a swarm of agents is proposed. The model benefits of an intuitive structure formed by three main terms, accounting for attraction to a common swarm target, for interactions among all the agents and for peculiar relationship among each agent and a subset of elements. The overall agents evolution is studied and analyzed showing that the swarm tends to a common goal while simultaneously ensuring a set of aggregation properties. Moreover it will be proved that the proposed kinematic model exhibits an equilibrium point on a circular shape. Numerical simulations and experimental tests using a swarm of real mobile robots have been also carried out.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda05_06">10:40-11:00, Paper WedA05.6</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0063.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('63'); return false" title="Click to show or hide the keywords and abstract">Augmented Reality for Digital Manufacturing</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85577" title="Click to go to the Author Index">Blaga, Andreea</a></td><td class="r">Tech. Univ. of Cluj-Napoca</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#22341" title="Click to go to the Author Index">Tamas, Levente</a></td><td class="r">Tech. Univ. of Cluj-Napoca</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab63" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a>, <a href="MED18_KeywordIndexMedia.html#Unmanned_systems" title="Click to go to the Keyword Index">Unmanned systems</a>, <a href="MED18_KeywordIndexMedia.html#Image_processing" title="Click to go to the Keyword Index">Image processing</a></span><br>
+                              <strong>Abstract:</strong> The focus of this paper is on enhancing the possibilities of manufacturing operations by taking advantage of augmented reality (AR) technology and highlighting its benefits by implementing a product manufacturing case. The latter appearance of augmented headsets, such as the Microsoft HoloLens allows more opportunities for creating innovative solutions. After introducing concepts about smart manufacturing, improvements regarding human-robot collaboration in assembly tasks are presented. The developed scenario is based on the integration of AR, a cobot, see-through device, CAD and an algorithm for assembly visualization. This approach pledges a compelling interaction of the 3D real and virtual unit, so that the operator can work in a more natural and intuitive environment. This methodology has been implemented on a assembly case to investigate users' enhanced perception using the virtual world while cooperating with the robot.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="weda06"><b>WedA06</b></a></td>
+               <td class="r">Meeting Room 5</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#weda06" title="Click to go to the Program at a Glance"><b>Optimisation</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#16070" title="Click to go to the Author Index">Rodrigues, Luis</a></td><td class="r">Concordia Univ</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#20587" title="Click to go to the Author Index">Iacoviello, Daniela</a></td><td class="r">"Sapienza" Univ. of Rome</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda06_01">09:00-09:20, Paper WedA06.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0172.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('172'); return false" title="Click to show or hide the keywords and abstract">An Optimal Displacement-Based Leader-Follower Formation Control for Multi-Agent Systems with Energy Consumption Constraints</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82032" title="Click to go to the Author Index">Babazadeh, Reza</a></td><td class="r">Concordia Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16386" title="Click to go to the Author Index">Selmic, Rastko</a></td><td class="r">Concordia Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab172" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Formation_control" title="Click to go to the Keyword Index">Formation control</a>, <a href="MED18_KeywordIndexMedia.html#Agents_and_agent_based_systems" title="Click to go to the Keyword Index">Agents and agent-based systems</a>, <a href="MED18_KeywordIndexMedia.html#Optimisation" title="Click to go to the Keyword Index">Optimisation</a></span><br>
+                              <strong>Abstract:</strong> In this paper, we propose an optimal control method for a displacement-based leader-follower formation control of multi-agent systems with energy consumption constraints. We developed a model for electric energy consumption of an agent and then formulate the formation control problem for a set of multi-agents in optimal control context. The proposed method minimizes a weighted cost function that includes formation and energy consumption for a given mission. To solve the formulated problem, we use State-Dependent Riccati Equation (SDRE) method. We choose the weighting matrices of the cost function to be dependent on the energy level of the agents, thus allowing for autonomous adjustment of the agents’ trajectories that preserve the integrity of the overall formation in spite of energy levels. Simulation results illustrate the effectiveness of the proposed method in both two- and three-dimensional spaces.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda06_02">09:20-09:40, Paper WedA06.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0049.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('49'); return false" title="Click to show or hide the keywords and abstract">Constrained Transient Optimization Using B-Splines Functions As Control Inputs</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#15511" title="Click to go to the Author Index">Orsini, Valentina</a></td><td class="r">Univ. Pol. Delle Marche</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#13930" title="Click to go to the Author Index">Jetto, L.</a></td><td class="r">Univ. Di Ancona</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#38408" title="Click to go to the Author Index">Romagnoli, Raffaele</a></td><td class="r">Univ. Pol. Delle Marche</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab49" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Optimisation" title="Click to go to the Keyword Index">Optimisation</a>, <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a></span><br>
+                              <strong>Abstract:</strong> The purpose of this paper is to propose a new method for the optimal output transition problem under saturation constraints on the control effort. The recently proposed preview based pseudo inversion approach is here adopted to determine a feedforward action optimizing the set-point following response of a given stable closed-loop system Sigma_{f,c}. The optimal external input reference r(t) forcing Sigma_{f,c} is assumed to be given by a B-spline function, a second B-spline hat u(t) is used to optimally approximate the actual control effort u(t) produced by r(t). The control points which define the convex hull containing hat u(t) are chosen in such a way to respect the saturation constraints on u(t). In the first part of the transient interval the actual control input u(t) is replaced by hat u(t), after this initial period has elapsed the control law is definitely switched to u(t). Application to a benchmark problem shows the effectiveness of the method.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda06_03">09:40-10:00, Paper WedA06.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0065.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('65'); return false" title="Click to show or hide the keywords and abstract">An Output Feedback Control with State Estimation for the Containment of the HIV/AIDS Diffusion</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#12690" title="Click to go to the Author Index">Di Giamberardino, Paolo</a></td><td class="r">Sapienza, Univ. of Rome</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#20587" title="Click to go to the Author Index">Iacoviello, Daniela</a></td><td class="r">"Sapienza" Univ. of Rome</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab65" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Optimisation" title="Click to go to the Keyword Index">Optimisation</a>, <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Biomedical_engineering" title="Click to go to the Keyword Index">Biomedical engineering</a></span><br>
+                              <strong>Abstract:</strong> An optimal control problem formulated to reduce the infection diffusion of an epidemic disease is solved in a locally linearised context. The approach has been driven by the necessity of using a state observer, since the state variable to be controlled is not directly measurable. The solution is computed making reference to a recently introduced model for HIV/AIDS diffusion and control, in which five classes of individuals are considered: two classes of susceptible subjects, the wise and the incautious individuals, and three classes of infectious subjects, the ones not aware of their condition and the subjects in the pre-aids or in the aids status. The control inputs are represented by information campaigns and medication actions. The initial formulation as an optimal control problem, aiming also at minimising the non measurable number of infected subjects, is enriched with an asymptotic state observer for which a local linear approximation has been chosen for simplicity purpose. The structure of the cost index for the reformulated control problem after the observer introduction, suggests to compute the solution in an approximated way referring to a classical LQR control design. The effectiveness of the control, as well as the effects of the linear approximations, are evidenced by some numerical simulation results.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda06_04">10:00-10:20, Paper WedA06.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0204.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('204'); return false" title="Click to show or hide the keywords and abstract">Model Predictive Control for Aerial Collision Avoidance in Dynamic Environments</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85041" title="Click to go to the Author Index">Castillo-Lopez, Manuel</a></td><td class="r">Univ. of Luxembourg</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#69338" title="Click to go to the Author Index">Sajadi-Alamdari, Seyed Amin</a></td><td class="r">Univ. of Luxembourg</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#44215" title="Click to go to the Author Index">Sanchez-Lopez, Jose Luis</a></td><td class="r">SnT, Univ. of Luxembourg</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#44675" title="Click to go to the Author Index">Olivares-Mendez, Miguel A.</a></td><td class="r">SnT - Univ. of Luxembourg</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#40278" title="Click to go to the Author Index">Voos, Holger</a></td><td class="r">Univ. of Luxembourg</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab204" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Predictive_control" title="Click to go to the Keyword Index">Predictive control</a>, <a href="MED18_KeywordIndexMedia.html#Optimisation" title="Click to go to the Keyword Index">Optimisation</a>, <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a></span><br>
+                              <strong>Abstract:</strong> Autonomous navigation in unknown environments populated by humans and other robots is one of the main challenges when working with mobile robots. In this paper, we present a new approach to dynamic collision avoidance for multi-rotor unmanned aerial vehicles (UAVs). A new nonlinear model predictive control (NMPC) approach is proposed to safely navigate in a workspace populated by static and/or moving obstacles. The uniqueness of our approach lies in its ability to anticipate the dynamics of multiple obstacles, avoiding them in real-time. Exploiting active set algorithms, only the obstacles that affect to the UAV during the prediction horizon are considered at each sample time. We also improve the fluency of avoidance maneuvers by reformulating the obstacles as orientable ellipsoids, being less prone to local minima and allowing the definition of a preferred avoidance direction. Finally, we present two real-time implementations based on simulation. The former demonstrates that our approach outperforms its analog static formulation in terms of safety and efficiency. The latter shows its capability to avoid multiple dynamic obstacles.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda06_05">10:20-10:40, Paper WedA06.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0181.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('181'); return false" title="Click to show or hide the keywords and abstract">A Toolbox for Optimal Control Based on Symmetry Analysis with Applications to Aircraft Maximum Endurance and Maximum Range</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#86015" title="Click to go to the Author Index">Botros, Alexander</a></td><td class="r">Univ. of Waterloo</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#86016" title="Click to go to the Author Index">Walker, Kevin</a></td><td class="r">Maplesoft</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16070" title="Click to go to the Author Index">Rodrigues, Luis</a></td><td class="r">Concordia Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab181" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Optimisation" title="Click to go to the Keyword Index">Optimisation</a>, <a href="MED18_KeywordIndexMedia.html#Computational_methods" title="Click to go to the Keyword Index">Computational methods</a>, <a href="MED18_KeywordIndexMedia.html#Aerospace_control" title="Click to go to the Keyword Index">Aerospace control</a></span><br>
+                              <strong>Abstract:</strong> Solutions of optimal control problems are the solutions of the Hamilton-Jacobi-Bellman equation. The main contribution of this paper is to propose a symmetry analysis approach to find solutions of the Hamilton-Jacobi-Bellman equation and to introduce a Toolbox to automate the procedure. Several examples will be presented illustrating the effectiveness of the procedure including the maximum endurance and maximum range of an aircraft.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="weda06_06">10:40-11:00, Paper WedA06.6</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0188.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('188'); return false" title="Click to show or hide the keywords and abstract">Risk Adverse Virtual Power Plant Control in Unsecure Power Systems</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#77330" title="Click to go to the Author Index">Giuseppi, Alessandro</a></td><td class="r">La Sapienza</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#69411" title="Click to go to the Author Index">Germanà, Roberto</a></td><td class="r">Univ. of Rome "La Sapienza"</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#23371" title="Click to go to the Author Index">Di Giorgio, Alessandro</a></td><td class="r">Univ. of Rome "La Sapienza"</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab188" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Power_systems_and_Smart_Grid" title="Click to go to the Keyword Index">Power systems and Smart Grid</a>, <a href="MED18_KeywordIndexMedia.html#Predictive_control" title="Click to go to the Keyword Index">Predictive control</a>, <a href="MED18_KeywordIndexMedia.html#Cyber_physical_systems" title="Click to go to the Keyword Index">Cyber-physical systems</a></span><br>
+                              <strong>Abstract:</strong> This paper presents a control strategy for enabling a large scale Virtual Power Plant (VPP) constituted by a traditional power plant, distributed Energy Storage Systems (ESSs) and wind turbine driven Doubly Fed Induction Generators (DFIGs) to virtual slack bus functions in electricty transmission networks. The VPP in question is in charge of covering the	network losses and a portion of the day ahead generation schedule of unsecure power plants, in presence of short term notifications about possible malicious/natural adverse events affecting them. The objective is pursued by integrating a dynamic optimal power flow problem in a real time Model Predictive Control framework, and applying a second level of control aimed at keeping the dynamics of the real nonlinear plant subject to wind turbulence in line with the dynamics of the MPC model. Simulation results provide a proof of the proposed concept, showing as the joint coordination of storage devices and wind turbines can be part of the task of providing support actions to the network traditionally delivered by expensive and pollutant legacy power plants.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="wedplenary01"><b>WedPlenary01</b></a></td>
+               <td class="r">Kolovare</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#wedplenary01" title="Click to go to the Program at a Glance"><b>"Back to the Roots: Multivariate Polynomial Optimization by Numerical
+<br>Linear Algebra" - Prof Bart De Moor</b></a></td>
+               <td class="r">Plenary Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#20960" title="Click to go to the Author Index">Miskovic, Nikola</a></td><td class="r">Faculty of Electrical Engineering and Computing, Univ. of Zagreb</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#11876" title="Click to go to the Author Index">Bogdan, Stjepan</a></td><td class="r">Univ. of Zagreb</td></tr>
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="wedb01"><b>WedB01</b></a></td>
+               <td class="r">Kolovare</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#wedb01" title="Click to go to the Program at a Glance"><b>Aerospace Control 1</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#41585" title="Click to go to the Author Index">Lesic, Vinko</a></td><td class="r">Univ. of Zagreb</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#56656" title="Click to go to the Author Index">Petric, Frano</a></td><td class="r">Univ. of Zagreb</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb01_01">14:00-14:20, Paper WedB01.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0142.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('142'); return false" title="Click to show or hide the keywords and abstract">Constrained Control of UAVs in Geofencing Applications</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85100" title="Click to go to the Author Index">Hermand, Elie</a></td><td class="r">Univ. Libre De Bruxelles (ULB)</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85981" title="Click to go to the Author Index">Nguyen, Tam Willy</a></td><td class="r">Univ. Libre De Bruxelles</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85980" title="Click to go to the Author Index">Hosseinzadeh, Mehdi</a></td><td class="r">Free Univ. of Brussels</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#18436" title="Click to go to the Author Index">Garone, Emanuele</a></td><td class="r">Univ. Libre De Bruxelles</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab142" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Unmanned_systems" title="Click to go to the Keyword Index">Unmanned systems</a>, <a href="MED18_KeywordIndexMedia.html#Autonomous_systems" title="Click to go to the Keyword Index">Autonomous systems</a>, <a href="MED18_KeywordIndexMedia.html#Aerospace_control" title="Click to go to the Keyword Index">Aerospace control</a></span><br>
+                              <strong>Abstract:</strong> This paper focuses on the constrained control of UAVs in geofencing applications. Although geofence systems are becoming more attractive as a research topic, most recent works are focusing on defining the boundaries of the admissible geographical region without addressing the control issues and boundary-handling problems. In this paper, we propose a constrained control scheme to steer an UAV to the desired position while ensuring constraints satisfaction at all times. To do so, we make use of the so-called Explicit Reference Governor framework. Finally, the proposed scheme is validated through extensive experimental studies carried out in a laboratory environment.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb01_02">14:20-14:40, Paper WedB01.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0053.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('53'); return false" title="Click to show or hide the keywords and abstract">Vector Field Based Guidance Law for Intercepting Maneuvering Target</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85500" title="Click to go to the Author Index">Lee, Suwon</a></td><td class="r">Seoul National Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82454" title="Click to go to the Author Index">Lee, Seokwon</a></td><td class="r">Seoul National Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#66779" title="Click to go to the Author Index">Ann, Sungjun</a></td><td class="r">Seoul National Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#66577" title="Click to go to the Author Index">Lee, Jaeho</a></td><td class="r">Seoul National Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14182" title="Click to go to the Author Index">Kim, Youdan</a></td><td class="r">Seoul National Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab53" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Aerospace_control" title="Click to go to the Keyword Index">Aerospace control</a>, <a href="MED18_KeywordIndexMedia.html#Unmanned_systems" title="Click to go to the Keyword Index">Unmanned systems</a>, <a href="MED18_KeywordIndexMedia.html#Nonlinear_systems" title="Click to go to the Keyword Index">Nonlinear systems</a></span><br>
+                              <strong>Abstract:</strong> A vector field based guidance law for intercepting maneuvering target is proposed. The vector field based guidance laws are easy to implement and show high accuracy in path following problems. To adopt the vector field based guidance law for missile system, target interception problem is considered as path following problems. After modeling the predicted target trajectory as an implicit function, a vector field is calculated to make missile converge to the predicted target trajectory. The performance of the proposed guidance law is demonstrated by numerical simulations comparing the interception performance with that of proportional navigation guidance laws. The vector field based guidance law shows high interception accuracy (small miss distance) and accomplishes ideal head-on interception.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb01_03">14:40-15:00, Paper WedB01.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0062.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('62'); return false" title="Click to show or hide the keywords and abstract">Missile Guidance Based on Tracking of Predicted Target Trajectory</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82454" title="Click to go to the Author Index">Lee, Seokwon</a></td><td class="r">Seoul National Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#66388" title="Click to go to the Author Index">Cho, Namhoon</a></td><td class="r">Seoul National Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14182" title="Click to go to the Author Index">Kim, Youdan</a></td><td class="r">Seoul National Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab62" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Aerospace_control" title="Click to go to the Keyword Index">Aerospace control</a>, <a href="MED18_KeywordIndexMedia.html#Nonlinear_systems" title="Click to go to the Keyword Index">Nonlinear systems</a>, <a href="MED18_KeywordIndexMedia.html#Autonomous_systems" title="Click to go to the Keyword Index">Autonomous systems</a></span><br>
+                              <strong>Abstract:</strong> This study presents missile guidance methods based on path-following approach for the interception of a high-speed maneuvering target. In the problem of high-speed incoming target interception, it is usually preferred to form a stable head-on engagement geometry a few seconds before the end of engagement to allow enough time for improved hit-to-kill performance. One plausible approach in this regard is to let the missile first track the predicted target trajectory and then encounter the target while moving along the predicted path. To this end, two approaches based on path-following guidance are proposed; one is to modify the parameters of guidance law, and the other is to design the path to be followed by the missile. The effectiveness of the proposed methods is verified by comparing their performances with pure proportional navigation guidance.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb01_04">15:00-15:20, Paper WedB01.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0070.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('70'); return false" title="Click to show or hide the keywords and abstract">Intercept Point Prediction for Midcourse Guidance of Anti-Ballistic Missile</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#66779" title="Click to go to the Author Index">Ann, Sungjun</a></td><td class="r">Seoul National Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82454" title="Click to go to the Author Index">Lee, Seokwon</a></td><td class="r">Seoul National Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14182" title="Click to go to the Author Index">Kim, Youdan</a></td><td class="r">Seoul National Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab70" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Aerospace_control" title="Click to go to the Keyword Index">Aerospace control</a>, <a href="MED18_KeywordIndexMedia.html#Autonomous_systems" title="Click to go to the Keyword Index">Autonomous systems</a>, <a href="MED18_KeywordIndexMedia.html#Nonlinear_systems" title="Click to go to the Keyword Index">Nonlinear systems</a></span><br>
+                              <strong>Abstract:</strong> Interception of the ballistic missile is one of the most challenging issue in the missile defense system. Except the powered phase intercept, the speed of the ballistic missile is usually much faster than that of the intercept missile. Therefore, hit-to-kill and head-on interception is necessary to increase kill probability. These conditions require a precise guidance scheme. This study focuses on the exo-atmospheric midcourse guidance for the solid propellant missile against the ballistic target in the free flight phase. Due to the characteristics of the solid propellant, the acheivable intercept area is limited, and the performance of the guidance is highly affected by the predicted intercept point(PIP). In this study, the range of the achievable PIP is obtained by the trajectory optimization technique, and the proper PIP selection scheme is proposed to intercept the target. Numerical simulations are conducted to demonstrate the pereformance of the PIP selection for the midcourse guidance.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb01_05">15:20-15:40, Paper WedB01.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0077.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('77'); return false" title="Click to show or hide the keywords and abstract">Robust Attitude Stabilization of a Quadrotor by Using LFT Linear-Parameter-Varying H&#8734;</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#84454" title="Click to go to the Author Index">Hasseni, Seif-El-Islam</a></td><td class="r">Univ. De Biskra</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#62189" title="Click to go to the Author Index">Abdou, Latifa</a></td><td class="r">Mohamed Khider Univ. of Biskra</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab77" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robust_control" title="Click to go to the Keyword Index">Robust control</a>, <a href="MED18_KeywordIndexMedia.html#Aerospace_control" title="Click to go to the Keyword Index">Aerospace control</a></span><br>
+                              <strong>Abstract:</strong> In this paper, robust stabilization of a quadrotor aircraft attitude is investigated. The exact nonlinear attitude of a quadrotor model is presented by Linear-Parameter-Varying system with Linear-Fractional-Transformation represenation (LFT-based LPV), when we took the nonlinearities as a varying parameters. The closed loop interconnection is established by taking into account the external disturbances, measurement noises and actuator dynamics. The synthesis of H&#8734; gain-scheduling controller is achieved by scaling small gain theorem when the controller is an LFT-based LPV too. The simulations show the efficiency and the robustness of the proposed controller against the disturbances, noises and parametric uncertainties.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="wedb02"><b>WedB02</b></a></td>
+               <td class="r">Meeting Room 1</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#wedb02" title="Click to go to the Program at a Glance"><b>Intelligent Transportation Systems</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#32838" title="Click to go to the Author Index">Nemeth, Balazs</a></td><td class="r">Hungarian Acad. of Sciences</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#85960" title="Click to go to the Author Index">Framing, Christian-Eike</a></td><td class="r">RWTH Aachen Univ</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb02_01">14:00-14:20, Paper WedB02.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0095.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('95'); return false" title="Click to show or hide the keywords and abstract">MPC-Based Coordinated Control Design for Look-Ahead Vehicles and Traffic Flow</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#32838" title="Click to go to the Author Index">Nemeth, Balazs</a></td><td class="r">Hungarian Acad. of Sciences</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85901" title="Click to go to the Author Index">Bede, Zsuzsanna</a></td><td class="r">Budapest Univ. of Tech. and Ec</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#13228" title="Click to go to the Author Index">Gaspar, Peter</a></td><td class="r">Mta Sztaki</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab95" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Intelligent_transportation_systems" title="Click to go to the Keyword Index">Intelligent transportation systems</a></span><br>
+                              <strong>Abstract:</strong> The paper proposes a control design method for the coordination of a macroscopic traffic system and individual vehicles. Some of the vehicles are equipped with a look- ahead control system, with which energy-efficient traveling can be achieved. In a mixed traffic system vehicles equipped with look-ahead control and conventional uncontrolled vehicles are traveling together. The traffic system is assumed to have ramp metering control, which has a significant effect on the inflow on the highway. The purposes of the coordinated control are to improve the energy efficiency of the entire traffic flow and simultaneously stabilize the controlled highway, reduce the queue length at the controlled gates and avoid congestion. The design is based on the MPC method, with which the prediction of the traffic flow is also taken into consideration. The efficiency of the method is illustrated through VISSIM simulation examples.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb02_02">14:20-14:40, Paper WedB02.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0115.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('115'); return false" title="Click to show or hide the keywords and abstract">Infrastructure-Based Vehicle Maneuver Estimation with Intersection-Specific Models</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85960" title="Click to go to the Author Index">Framing, Christian-Eike</a></td><td class="r">RWTH Aachen Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#41517" title="Click to go to the Author Index">Hesseler, Frank-Joseph</a></td><td class="r">Inst. of Automatic Control, RWTH Aachen Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#22641" title="Click to go to the Author Index">Abel, Dirk</a></td><td class="r">RWTH Aachen Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab115" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Intelligent_transportation_systems" title="Click to go to the Keyword Index">Intelligent transportation systems</a>, <a href="MED18_KeywordIndexMedia.html#Identification" title="Click to go to the Keyword Index">Identification</a>, <a href="MED18_KeywordIndexMedia.html#Wireless_sensor_networks" title="Click to go to the Keyword Index">Wireless sensor networks</a></span><br>
+                              <strong>Abstract:</strong> Advanced Driver Assistance Systems have the potential of making traffic safer, more efficient and convenient. At urban intersections the conflicting intentions of different traffic participants frequently lead to accidents. In order to avoid dangerous situations in such a scenario an ADAS requires an accurate estimation of future driving maneuvers executed by other vehicles. In this work we present a framework that estimates the driving maneuver of vehicles approaching at intersections where the vehicle state can only be observed externally. The high variance in driver behavior that arises from different intersection layouts is met with intersection-specific models that are computed locally. The performance of the estimator and the potential of intersection-specific models are validated with data recorded from real intersections.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb02_03">14:40-15:00, Paper WedB02.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0044.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('44'); return false" title="Click to show or hide the keywords and abstract">Infrastructure-Based Tracking of Road Users in Urban Intersections for Partially Available, Variable-Delay Sensor Data</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#77338" title="Click to go to the Author Index">Quack, Tobias Michael</a></td><td class="r">RWTH Aachen Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#41517" title="Click to go to the Author Index">Hesseler, Frank-Joseph</a></td><td class="r">Inst. of Automatic Control, RWTH Aachen Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#22641" title="Click to go to the Author Index">Abel, Dirk</a></td><td class="r">RWTH Aachen Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab44" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Intelligent_transportation_systems" title="Click to go to the Keyword Index">Intelligent transportation systems</a>, <a href="MED18_KeywordIndexMedia.html#Automotive_control" title="Click to go to the Keyword Index">Automotive control</a>, <a href="MED18_KeywordIndexMedia.html#Autonomous_systems" title="Click to go to the Keyword Index">Autonomous systems</a></span><br>
+                              <strong>Abstract:</strong> Reliable and accurate tracking of road users is crucial for many applications in intelligent transport systems. Especially in urban intersections, where traffic safety, optimal traffic efficiency and the operation of autonomous vehicles are still technically challenging, the requirements on environment perception systems are very high. In this paper we address the problem of an infrastructure-based multiple object tracking system which makes use of the sensor information provided by a combination of both infrastructure and mobile sensors. Due to the characteristics of wireless V2X communication used to transfer the sensor data, the signals are unsynchronized, have variable delay times and are only partially available. Our sensor fusion approach, which is specifically designed to handle these characteristics, is validated using simulated sensor data and experimentally tested in an urban test environment.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb02_04">15:00-15:20, Paper WedB02.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0166.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('166'); return false" title="Click to show or hide the keywords and abstract">A Comparison of Different State Representations for Reinforcement Learning Based Variable Speed Limit Control</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#86004" title="Click to go to the Author Index">Kuši&#263;, Krešimir</a></td><td class="r">Faculty of Transport and Traffic Science, Univ. of Zagreb</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85983" title="Click to go to the Author Index">Ivanjko, Edouard</a></td><td class="r">Univ. of Zagreb, Faculty of Transport and Traffic Sciences</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85984" title="Click to go to the Author Index">Greguri&#263;, Martin</a></td><td class="r">Univ. of Zagreb, Faculty of Transport and Traffic Sciences</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab166" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Intelligent_transportation_systems" title="Click to go to the Keyword Index">Intelligent transportation systems</a>, <a href="MED18_KeywordIndexMedia.html#Intelligent_control_systems" title="Click to go to the Keyword Index">Intelligent control systems</a></span><br>
+                              <strong>Abstract:</strong> Variable Speed Limit Control (VSLC) is one control method for alleviating congestions on urban motorways. Machine learning techniques, like Reinforcement Learning (RL), are a promising alternative for setting up VSLC because an optimal control policy can be achieved with a smaller computational burden in comparison with optimal control approaches. A drawback is a large number of learning iterations and the problem of the exponential expansion of the state space dimension. This can be solved with function approximation techniques. Three different approaches for feature-based state representation in RL based VSLC are compared in this paper regarding the convergence of Total Time Spent. The microscopic traffic simulator VISSIM with a representative traffic model is used to evaluate the compared approaches. Results show that function approximation methods outperform RL based VSLC formulated with a lookup table by an average improvement of 10 %, where feature extraction methods (Coarse and Tile) coding showed slightly faster learning rate.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb02_05">15:20-15:40, Paper WedB02.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0074.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('74'); return false" title="Click to show or hide the keywords and abstract">Distributed Leader-Tracking for Autonomous Connected Vehicles in Presence of Input Time-Varying Delay</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#19672" title="Click to go to the Author Index">Fiengo, Giovanni</a></td><td class="r">Univ. Del Sannio</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82330" title="Click to go to the Author Index">Lui, Dario Giuseppe</a></td><td class="r">Univ. Del Sannio</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#73520" title="Click to go to the Author Index">Petrillo, Alberto</a></td><td class="r">Univ. of Naples Federico II</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16268" title="Click to go to the Author Index">Santini, Stefania</a></td><td class="r">Univ. Di Napoli Federico II</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#44341" title="Click to go to the Author Index">Tufo, Manuela</a></td><td class="r">Univ. Del Sannio</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab74" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Intelligent_transportation_systems" title="Click to go to the Keyword Index">Intelligent transportation systems</a>, <a href="MED18_KeywordIndexMedia.html#Automotive_control" title="Click to go to the Keyword Index">Automotive control</a></span><br>
+                              <strong>Abstract:</strong> In this paper, the leader tracking problem for a platoon of connected vehicles in presence of homogeneous time-varying Vehicle-to-Vehicle communication delays is addressed. To this aim, the platoon is recast as a network of multiagent systems and consensus is achieved by leveraging a delayed distributed strategy that complements the standard linear diffusive control protocol with additional distributed integral and derivative actions. The asymptotic stability of the closed-loop delayed system is hence analytically proven by exploiting the Lyapunov-Krasovskii theory. Stability conditions are expressed as a set of Linear Matrix Inequalities, whose solution allows the proper tuning of proportional, derivative and integral gains such as to counteract the presence of the time-varying input delay. An exemplar tracking maneuver is considered for evaluating the performance of a connected vehicles fleet and the numerical results confirm the effectiveness of the theoretical derivation.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="wedb03"><b>WedB03</b></a></td>
+               <td class="r">Meeting Room 2</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#wedb03" title="Click to go to the Program at a Glance"><b>Real-Time Control</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#84005" title="Click to go to the Author Index">Hammer, Hugo Lewi</a></td><td class="r">Oslo and Akershus Univ. Coll. of Applied Sciences</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#16214" title="Click to go to the Author Index">Salamci, Metin U.</a></td><td class="r">Gazi Univ</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb03_01">14:00-14:20, Paper WedB03.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0196.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('196'); return false" title="Click to show or hide the keywords and abstract">MRAC of a 3-DoF Helicopter with Nonlinear Reference Model</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85997" title="Click to go to the Author Index">Kocagil, Bedrettin Mahmut</a></td><td class="r">Gazi Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85999" title="Click to go to the Author Index">Ozcan, Sinan</a></td><td class="r">Turkish Aerospace Industries</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#86000" title="Click to go to the Author Index">Arican, Ahmet Cagri</a></td><td class="r">Gazi Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#86001" title="Click to go to the Author Index">Guzey, Umit Mufit</a></td><td class="r">ASELSAN</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85989" title="Click to go to the Author Index">Copur, Engin Hasan</a></td><td class="r">Necmettin Erbakan Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16214" title="Click to go to the Author Index">Salamci, Metin U.</a></td><td class="r">Gazi Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab196" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Adaptive_control" title="Click to go to the Keyword Index">Adaptive control</a>, <a href="MED18_KeywordIndexMedia.html#Nonlinear_control" title="Click to go to the Keyword Index">Nonlinear control</a>, <a href="MED18_KeywordIndexMedia.html#Real_time_control" title="Click to go to the Keyword Index">Real-time control</a></span><br>
+                              <strong>Abstract:</strong> Model Reference Adaptive Control (MRAC) technique, which is considered to be an effective tool for the control of unknown dynamical systems behavior, is widely used in practical applications. In principal, a known stable linear model dynamics is taken as a reference model such that its response is tracked by the unknown dynamical system by means of an adaptive control scheme. In this paper, rather than using a linear reference model, we propose a nonlinear reference model to be used in the MRAC of nonlinear plant dynamics. First, a stable nonlinear reference model is formed by using State Dependent Riccati Equation (SDRE) approach. Then an adaptation rule is derived to ensure the convergence of the response of nonlinear plant dynamics to that of the nonlinear reference model. The proposed method is tested experimentally using a 3-DoF helicopter test bed with different parameters and working conditions.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb03_02">14:20-14:40, Paper WedB03.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0055.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('55'); return false" title="Click to show or hide the keywords and abstract">Efficient Tracking of Statistical Properties of Data Streams with Rapid Changes</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#84005" title="Click to go to the Author Index">Hammer, Hugo Lewi</a></td><td class="r">Oslo and Akershus Univ. Coll. of Applied Sciences</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#84006" title="Click to go to the Author Index">Yazidi, Anis</a></td><td class="r">Oslo and Akershus Univ. Coll. of Applied Sc</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab55" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Automotive_control" title="Click to go to the Keyword Index">Automotive control</a>, <a href="MED18_KeywordIndexMedia.html#Intelligent_control_systems" title="Click to go to the Keyword Index">Intelligent control systems</a>, <a href="MED18_KeywordIndexMedia.html#Real_time_control" title="Click to go to the Keyword Index">Real-time control</a></span><br>
+                              <strong>Abstract:</strong> Many real-life dynamical systems change rapidly followed by almost stationary periods. In this paper, we consider streams of data with such rapidly changing behavior and investigate the problem of tracking their statistical properties in an online manner.<p>The streaming estimator is accompanied with a second estimator, suitable to adjust to rapid changes in the data stream. When a statistically significant difference is observed between the two estimators, the current estimate jumps to a more suitable value. Such a tracking procedure have previously been suggested in the literature. However, our contribution lies in building the estimation procedure based on the difference between the stationary estimator and a Stochastic Learning Weak Estimator (SLWE). The SLWE estimator is known to be the state-of-the art approach to tracking properties of non-stationary environments and thus should be a better choice to detect changes in rapidly changing environments than the far more common sliding window based approaches. <p>Extensive simulation results demonstrate that our estimation procedure is easy to tune and performs very well. Further, the suggested estimator outperforms the popular and state-of-the-art estimator ADWIM2 with a clear margin.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb03_03">14:40-15:00, Paper WedB03.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0056.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('56'); return false" title="Click to show or hide the keywords and abstract">A Novel Incremental Quantile Estimator Using the Magnitude of the Observations</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#84005" title="Click to go to the Author Index">Hammer, Hugo Lewi</a></td><td class="r">Oslo and Akershus Univ. Coll. of Applied Sciences</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#84006" title="Click to go to the Author Index">Yazidi, Anis</a></td><td class="r">Oslo and Akershus Univ. Coll. of Applied Sc</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab56" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Automotive_control" title="Click to go to the Keyword Index">Automotive control</a>, <a href="MED18_KeywordIndexMedia.html#Intelligent_control_systems" title="Click to go to the Keyword Index">Intelligent control systems</a>, <a href="MED18_KeywordIndexMedia.html#Real_time_control" title="Click to go to the Keyword Index">Real-time control</a></span><br>
+                              <strong>Abstract:</strong>  Incremental quantile estimators like the the deterministic multiplicative incremental quantile estimator by Yazidi and Hammer (2017) are simple and efficient algorithms to estimate and track quantiles when data are received sequentially. The estimators merely relying on the sign of the difference between the quantile estimate and the current observation which seems like a waste of information from the data stream. In this paper we suggest a novel incremental estimator that rather use the magnitude og the observations. The intuition behind our approach is that the magnitude is more informative than the sign of the difference. Extensive experiments show that our estimators clearly outperform legacy state-of-the-art quantile estimators.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb03_04">15:00-15:20, Paper WedB03.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0033.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('33'); return false" title="Click to show or hide the keywords and abstract">Time-Varying Fault Tolerant Control of Nonlinear MIMO Systems</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#67267" title="Click to go to the Author Index">Cetin, Meric</a></td><td class="r">Pamukkale Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85345" title="Click to go to the Author Index">Beyhan, Selami</a></td><td class="r">Pamukkale Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85145" title="Click to go to the Author Index">Iplikci, Serdar</a></td><td class="r">Pamukkale Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab33" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Adaptive_control" title="Click to go to the Keyword Index">Adaptive control</a>, <a href="MED18_KeywordIndexMedia.html#Real_time_control" title="Click to go to the Keyword Index">Real-time control</a></span><br>
+                              <strong>Abstract:</strong> In this study, a recently proposed discretization based observer is designed for the estimation of unknown time-varying fault variable. Using the estimated fault, a model predictive control based fault tolerant controller is proposed and applied for the real-time control of nonlinear multi-input multi-output (MIMO) systems. The main contributions are given as follows. i) An unknown parameter of the nonlinear grey model is estimated to compensate the uncertainty of the nonlinear system. ii) Second, an unknown process fault function of the nonlinear system is estimated and then the model inaccuracy is compensated using the estimated fault function. Fault and unknown parameter estimations are used to improve control performance of model predictive fault tolerant controller. In experiments, time-varying parameter and fault variables are accurately estimated and hence precise tracking performances are provided in real-time.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb03_05">15:20-15:40, Paper WedB03.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0071.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('71'); return false" title="Click to show or hide the keywords and abstract">Single Phase Active Rectifier with Low Harmonic Content in Input Current</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85599" title="Click to go to the Author Index">Sušin, Denis</a></td><td class="r">Univ. of Ljubljana, Faculty of Electrical Engineering</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85592" title="Click to go to the Author Index">Nemec, Mitja</a></td><td class="r">Univ. of Ljubljana, Faculty of Electrical Engineering</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85589" title="Click to go to the Author Index">Ambroži&#269;, Vanja</a></td><td class="r">Univ. of Ljubljana, Faculty of Electrical Engineering</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85590" title="Click to go to the Author Index">Nedeljkovic, David</a></td><td class="r">Univ. of Ljubljana, Faculty of Electrical Engineering</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab71" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Real_time_control" title="Click to go to the Keyword Index">Real-time control</a>, <a href="MED18_KeywordIndexMedia.html#Signal_processing" title="Click to go to the Keyword Index">Signal processing</a></span><br>
+                              <strong>Abstract:</strong> In this paper, an advanced control algorithm in single-phase active rectifier for reduction of grid current harmonics is presented. In addition to PI current controller, three advanced types of controllers are investigated: resonant, discrete cosine transforms (DCT) and repetitive controller. These controllers are able to effectively reduce harmonics, caused by periodic disturbances. A simulation model has been built to test the proposed algorithms. Simulation results confirm significant improvement in grid current harmonic content, achieved by these advanced current controllers. Analysis of memory usage and computing power requirements is also provided.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="wedb04"><b>WedB04</b></a></td>
+               <td class="r">Meeting Room 3</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#wedb04" title="Click to go to the Program at a Glance"><b>Intelligent Control Systems</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#20340" title="Click to go to the Author Index">Boutalis, Yiannis</a></td><td class="r">Democritus Univ. of Thrace</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#22827" title="Click to go to the Author Index">Radac, Mircea-Bogdan</a></td><td class="r">Pol. Univ. of Timisoara</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb04_01">14:00-14:20, Paper WedB04.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0031.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('31'); return false" title="Click to show or hide the keywords and abstract">A New Approach of Neurofuzzy-Based Control Design and Analysis Applied on an EV Electromechanical System</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#67121" title="Click to go to the Author Index">Makrygiorgou, Jemma</a></td><td class="r">Univ. of Patras</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#11387" title="Click to go to the Author Index">Alexandridis, Antonios</a></td><td class="r">Univ. of Patras</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab31" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Nonlinear_systems" title="Click to go to the Keyword Index">Nonlinear systems</a>, <a href="MED18_KeywordIndexMedia.html#Intelligent_control_systems" title="Click to go to the Keyword Index">Intelligent control systems</a>, <a href="MED18_KeywordIndexMedia.html#Modelling_and_simulation" title="Click to go to the Keyword Index">Modelling and simulation</a></span><br>
+                              <strong>Abstract:</strong> Electric vehicles (EVs) constitute an attractive solution for transportation caused by both environmental and economic reasons. In view of their complexity as electromechanical structures, EVs are multi-input nonlinear systems which cannot be easily controlled and analysed. Hence, in order to operate an EV in a reliable and desired manner, neurofuzzy controllers (NFCs) are proposed, implemented and examined. The latter can deal with uncertain environments, due to their capabilities in learning, adaptation and fault tolerance by incorporating a properly adapted expert knowledge. However, in the paper, the cumbersome task of proving stability of the NFC driven electromechanical system is provided by slightly modifying the adaptation dynamics needed for the learning procedure. This is the main theoretical contribution presented by this work, since it makes possible to ensure input-to-state stability for the entire system and convergence of the system states to the desired equilibrium. The conducted simulations verify the satisfactory system performance and confirm the attained theoretical results.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb04_02">14:20-14:40, Paper WedB04.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0114.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('114'); return false" title="Click to show or hide the keywords and abstract">Robust Observer–based Control for TS Fuzzy Models Application to Vehicle Lateral Dynamics</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85940" title="Click to go to the Author Index">Bui Tuan, Viet Long</a></td><td class="r">Univ. Picardie Jules Verne</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#12861" title="Click to go to the Author Index">El Hajjaji, Ahmed</a></td><td class="r">Univ. De Picardie-Jules Verne</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab114" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robust_control" title="Click to go to the Keyword Index">Robust control</a>, <a href="MED18_KeywordIndexMedia.html#Fuzzy_logic_and_fuzzy_control" title="Click to go to the Keyword Index">Fuzzy logic and fuzzy control</a>, <a href="MED18_KeywordIndexMedia.html#Optimisation" title="Click to go to the Keyword Index">Optimisation</a></span><br>
+                              <strong>Abstract:</strong> This paper deals with the observer based robust control design problem for TS fuzzy systems with time-varying uncertain parameters. Sufficient design conditions of the fuzzy observer and the fuzzy controller are first proposed. Due to the use of Young relation, and the cone-complementary, the non-convex and Bilinear problems are then converted into convex optimization one with LMI constraints. Control and observer gains are obtained under &#8466;2-bounded disturbance and &#8466;2-norm input constraint by set feasible solutions of LMI conditions. The effectiveness of the proposed fuzzy controller and fuzzy observer design methodology is finally demonstrated through numerical simulations on vehicle lateral dynamic model.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb04_03">14:40-15:00, Paper WedB04.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0177.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('177'); return false" title="Click to show or hide the keywords and abstract">Using Particle Swarm Optimization for Fuzzy Antecedent Parameter Identification in Active Suspension Control</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#86013" title="Click to go to the Author Index">Herrera, Isabel Elena</a></td><td class="r">Univ. De Málaga</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#63583" title="Click to go to the Author Index">Mandow, Anthony</a></td><td class="r">Univ. De Málaga</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#13214" title="Click to go to the Author Index">Garcia-Cerezo, A.</a></td><td class="r">Univ. De Malaga</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab177" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Fuzzy_logic_and_fuzzy_control" title="Click to go to the Keyword Index">Fuzzy logic and fuzzy control</a>, <a href="MED18_KeywordIndexMedia.html#Automotive_control" title="Click to go to the Keyword Index">Automotive control</a>, <a href="MED18_KeywordIndexMedia.html#Intelligent_control_systems" title="Click to go to the Keyword Index">Intelligent control systems</a></span><br>
+                              <strong>Abstract:</strong> This paper addresses fuzzy parameter identification by using Particle Swarm Optimization (PSO) techniques with an application to active suspension control. In particular, the target fuzzy controller is a zero-order Takagi-Sugeno system with a standard fuzzy partition of its antecedent variables. The major contribution of this paper with respect to previous works is that learning of the fuzzy suspension control is not limited to the scale factors of the input-output variables. Thus, the proposed method allows optimization of triangular membership functions for the antecedents. This method has been successfully applied to control a quarter-car test rig.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb04_04">15:00-15:20, Paper WedB04.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0106.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('106'); return false" title="Click to show or hide the keywords and abstract">Adaptive One-Step Model Predictive Control Using Lyapunov Theory-Based Deep Neural Networks</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#76687" title="Click to go to the Author Index">Plakias, Spyridon</a></td><td class="r">Democritus Univ. of Thrace</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#20340" title="Click to go to the Author Index">Boutalis, Yiannis</a></td><td class="r">Democritus Univ. of Thrace</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab106" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Intelligent_control_systems" title="Click to go to the Keyword Index">Intelligent control systems</a>, <a href="MED18_KeywordIndexMedia.html#Neural_networks" title="Click to go to the Keyword Index">Neural networks</a>, <a href="MED18_KeywordIndexMedia.html#Predictive_control" title="Click to go to the Keyword Index">Predictive control</a></span><br>
+                              <strong>Abstract:</strong> Neural network model predictive control has been widely used in the field of automatic control. However, the off-line training of the neural predictor and the appearance of disturbances and parameter variations, during the control phase, affect the system output by inducing steady state error. This paper tries to overcome this problem by proposing an adaptive deep neural network model predictive controller. To ensure the convergence of the adaptive process, we use Lyapunov stability theory, which guides the updating of the weights of the deep neural network. Likewise, a Lyapunov based algorithm guides the updating of the control signal of the one-step model predictive controller. Simulation results for two cases demonstrate the effectiveness of the proposed control scheme.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb04_05">15:20-15:40, Paper WedB04.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0101.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('101'); return false" title="Click to show or hide the keywords and abstract">Data-Driven Model-Free Model-Reference Nonlinear Virtual State-Feedback Control from Input-Output Data</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#22827" title="Click to go to the Author Index">Radac, Mircea-Bogdan</a></td><td class="r">Pol. Univ. of Timisoara</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#22813" title="Click to go to the Author Index">Precup, Radu-Emil</a></td><td class="r">Pol. Univ. of Timisoara</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82799" title="Click to go to the Author Index">Hedrea, Elena-Lorena</a></td><td class="r">Pol. Univ. of Timisoara</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85868" title="Click to go to the Author Index">Mituletu, Ion-Cornel</a></td><td class="r">Pol. Univ. of Timisoara</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab101" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Intelligent_control_systems" title="Click to go to the Keyword Index">Intelligent control systems</a>, <a href="MED18_KeywordIndexMedia.html#Computational_intelligence" title="Click to go to the Keyword Index">Computational intelligence</a>, <a href="MED18_KeywordIndexMedia.html#Neural_networks" title="Click to go to the Keyword Index">Neural networks</a></span><br>
+                              <strong>Abstract:</strong> In this paper we show that it is possible to learn high performance model reference controllers using a model-free Q-learning approach, based on input-output (IO) samples collected from the controlled process. Under observability assumptions for the process, virtual extended state-space process models of different orders are built from the IO collected samples. We prove that state-space control of these virtual processes is equivalent to IO control of the initial process. For the virtual state-space process, high performance nonlinear Neural Network (NN) state-feedback controllers are learned based on the IO data collected from the initial process, to achieve output model-reference tracking control. Control learning is a two-step model-free process: an IO model-free controller first drives the process exploration of a wide operating range for IO samples collection that are then used to model-free learn the NN controllers. The approach is successfully validated on a highly nonlinear coupled aerodynamic system.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="wedb05"><b>WedB05</b></a></td>
+               <td class="r">Meeting Room 4</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#wedb05" title="Click to go to the Program at a Glance"><b>Autonomous and Unmanned Systems 2</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#24654" title="Click to go to the Author Index">Orsag, Matko</a></td><td class="r">Univ. of Zagreb</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#11876" title="Click to go to the Author Index">Bogdan, Stjepan</a></td><td class="r">Univ. of Zagreb</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb05_01">14:00-14:20, Paper WedB05.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0158.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('158'); return false" title="Click to show or hide the keywords and abstract">Mid-Ranging Control Concept for a Multirotor UAV with Moving Masses</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#44920" title="Click to go to the Author Index">Haus, Tomislav</a></td><td class="r">Univ. of Zagreb</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#61109" title="Click to go to the Author Index">Ivanovic, Antun</a></td><td class="r">Univ. of Zagreb</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#61072" title="Click to go to the Author Index">Car, Marko</a></td><td class="r">Univ. of Zagreb</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#24654" title="Click to go to the Author Index">Orsag, Matko</a></td><td class="r">Univ. of Zagreb</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#11876" title="Click to go to the Author Index">Bogdan, Stjepan</a></td><td class="r">Univ. of Zagreb</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab158" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Unmanned_systems" title="Click to go to the Keyword Index">Unmanned systems</a>, <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a></span><br>
+                              <strong>Abstract:</strong> This paper addresses the problem of actuators saturation that occur when one applies a moving mass concept to control the attitude of a multirotor UAV. In particular, we propose to combine the moving mass control (MMC) with rotors' variations in a paradigm known as a mid-ranging control. We show that this control structure ensures reference tracking and disturbance rejection with the moving masses operating in the middle of their range, which eventually reduces the possibility to violate their saturation limits. We also address the stability and design of the proposed controller by employing Routh-Hourwitz criterion and root-locus analysis. The controller is verified within a simulation environment, where we test its performance and compare it with a basic MMC concept under various disturbances. Finally, we present experimental results that we obtained with a modified ArduCopter vehicle, which serves as an experimental platform for the MMC verification.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb05_02">14:20-14:40, Paper WedB05.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0199.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('199'); return false" title="Click to show or hide the keywords and abstract">Design of a Weighted Multi-Controller for Lateral Guidance of Autonomous Vehicles Using Steering Control</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82372" title="Click to go to the Author Index">Monot, Nolwenn</a></td><td class="r">Univ. of Bordeaux / Groupe PSA</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#37615" title="Click to go to the Author Index">Moreau, Xavier</a></td><td class="r">Univ. Bordeaux 1</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#37773" title="Click to go to the Author Index">Benine-Neto, André</a></td><td class="r">Univ. Bordeaux 1 - Lab. De L'intégration Du Matériau</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#37973" title="Click to go to the Author Index">Rizzo, Audrey</a></td><td class="r">DRIA PSA Peugeot Citroën</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#66772" title="Click to go to the Author Index">Aioun, François</a></td><td class="r">PSA Peugeot Citroën</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab199" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Autonomous_systems" title="Click to go to the Keyword Index">Autonomous systems</a>, <a href="MED18_KeywordIndexMedia.html#Modelling_and_simulation" title="Click to go to the Keyword Index">Modelling and simulation</a></span><br>
+                              <strong>Abstract:</strong> This study proposes a new approach to control the vehicle lateral position at all speeds. The influence of the longitudinal speed on the vehicle lateral dynamics is taken into account to the design of the controller. The strategy developed uses several PID, weighted in function of the longitudinal speed enabling the vehicle to drive either at high or low speed. A methodology based on stability margin is proposed in order to design the intervals of longitudinal speed used for the multi-controller. The multi-controller is compared to a single PID and a simulation shows that for an overtaking with speed variation, when the weighted multi-controller manage to track the desired trajectory, the PID alone cannot follow it.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb05_03">14:40-15:00, Paper WedB05.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0165.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('165'); return false" title="Click to show or hide the keywords and abstract">CrazyS: A Software-In-The-Loop Platform for the Crazyflie 2.0 Nano-Quadcopter</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#84639" title="Click to go to the Author Index">Silano, Giuseppe</a></td><td class="r">Univ. of Sannio in Benevento</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#84543" title="Click to go to the Author Index">Aucone, Emanuele</a></td><td class="r">Univ. Di Pisa</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#13791" title="Click to go to the Author Index">Iannelli, Luigi</a></td><td class="r">Univ. of Sannio in Benevento</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab165" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Virtual_and_augmented_reality" title="Click to go to the Keyword Index">Virtual and augmented reality</a>, <a href="MED18_KeywordIndexMedia.html#Unmanned_systems" title="Click to go to the Keyword Index">Unmanned systems</a>, <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a></span><br>
+                              <strong>Abstract:</strong> In this paper we propose CrazyS, an extension of the ROS (Robot Operating System) package RotorS, aimed to modeling, developing and integrating the Crazyflie 2.0 nano-quadcopter in the physics based simulation environment Gazebo.<p>Such simulation platform allows to understand quickly the behavior of the flight control system by comparing and evaluating different indoor and outdoor scenarios, with a details level quite close to reality. The proposed extension expands RotorS capabilities by considering the Crazyflie 2.0 physical model and its flight control system, as well.<p>A simple case study has been considered in order to show how the package works. The use of open-source software makes the platform available for scientific and educational activities.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb05_04">15:00-15:20, Paper WedB05.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0173.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('173'); return false" title="Click to show or hide the keywords and abstract">Consensus Protocol for Underwater Multi-Robot System Using Two Communication Channels</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#68461" title="Click to go to the Author Index">Arbanas, Barbara</a></td><td class="r">Univ. of Zagreb, Faculty of Electrical Engineering and Comp</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#26792" title="Click to go to the Author Index">Petrovic, Tamara</a></td><td class="r">FER</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#11876" title="Click to go to the Author Index">Bogdan, Stjepan</a></td><td class="r">Univ. of Zagreb</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab173" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Autonomous_systems" title="Click to go to the Keyword Index">Autonomous systems</a>, <a href="MED18_KeywordIndexMedia.html#Decentralised_control" title="Click to go to the Keyword Index">Decentralised control</a>, <a href="MED18_KeywordIndexMedia.html#Robot_swarms" title="Click to go to the Keyword Index">Robot swarms</a></span><br>
+                              <strong>Abstract:</strong> In this paper, we apply a simple consensus protocol to a simulated underwater multi-robot system using two communication channels. The approach is motivated by a system in which robots, called aMussels, are dispersed in the environment and measure its properties over longer periods of time. Each unit is equipped with two underwater communication devices: green light, short-range communication device based on modulated light, and nanomodem, long-range acoustic communication device. Except for range, the two communication channels differ in the transmission speed. Both are combined in order to attain fast and accurate average consensus. We bring the results of the protocol applied to the simulated system and analyze its convergence.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="wedb05_05">15:20-15:40, Paper WedB05.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0073.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('73'); return false" title="Click to show or hide the keywords and abstract">Assistive Control Framework for Remotely Operated Vehicles</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85657" title="Click to go to the Author Index">Di Vito, Daniele</a></td><td class="r">Univ. of Cassino and Southern Lazio</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85607" title="Click to go to the Author Index">Di Lillo, Paolo</a></td><td class="r">Univ. of Cassino and Southern Lazio</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#42209" title="Click to go to the Author Index">Arrichiello, Filippo</a></td><td class="r">Univ. Di Cassino E Del Lazio Meridionale</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#11481" title="Click to go to the Author Index">Antonelli, Gianluca</a></td><td class="r">Univ. of Cassino and Southern Lazio</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab73" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Unmanned_systems" title="Click to go to the Keyword Index">Unmanned systems</a>, <a href="MED18_KeywordIndexMedia.html#Assistive_technology" title="Click to go to the Keyword Index">Assistive technology</a>, <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a></span><br>
+                              <strong>Abstract:</strong> The paper presents a control framework aimed at supporting a human operator in the guidance and in the coor- dination of an underwater Remotely Operated Vehicle (ROV). Due to environmental conditions and operational scenarios, underwater tele-operations can be very demanding. Thus, a very high experience can be required to the operator that, by providing commands to each actuator, has to successfully perform the assigned task without damaging the vehicle. In this sense, a control algorithm that can help the operator in performing the assigned task may represent a system support element able to ensure the vehicle safety. Based on a survey realized with professional ROV pilots, in this paper we propose a framework that allows the human operator to send position commands to the ROV by a joystick and to set different tasks through a dedicated user-friendly interface. The tasks are managed via a control algorithm represented by a closed loop inverse kinematic algorithm able to manage multiple both equality-based and set-based tasks. The overall framework has been developed in the Robot Operating System (ROS) environment and numerically tested using Gazebo environment.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="wedroundtable01"><b>WedRoundTable01</b></a></td>
+               <td class="r">Kolovare</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#wedroundtable01" title="Click to go to the Program at a Glance"><b>Control Systems and AI in the Quest for Autonomy</b></a></td>
+               <td class="r"></td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#11486" title="Click to go to the Author Index">Antsaklis, Panos J.</a></td><td class="r">Univ. of Notre Dame</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#24768" title="Click to go to the Author Index">Valavanis, Kimon</a></td><td class="r">Univ. of Denver</td></tr>
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="wedieee_ypbreak"><b>WedIEEE_YPBreak</b></a></td>
+               <td class="r"></td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#wedieee_ypbreak" title="Click to go to the Program at a Glance"><b>IEEE Young Professionals Networking Event @ the Garden Lounge (bar in
+<br>Center of Zadar)
+</b></a></td>
+               <td class="r"></td>
+             </tr>
+            
+
+
+</table>
+</div>
+
+<p>&nbsp;<br>&nbsp;</p><p>&nbsp;<br>&nbsp;</p>
+
+
+</div>
+
+</body>
+
+</html>

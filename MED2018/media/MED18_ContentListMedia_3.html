@@ -1,0 +1,1205 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title>MED 2018</title>
+  
+  <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script language="JavaScript">
+
+function viewAbstract(number){
+   var box = document.getElementById('Ab' + number);
+   if (box.style.display == 'block'){
+      box.style.display = 'none';
+   }
+   else if (box && box.style.display == 'none'){
+      box.style.display = 'block';
+   }
+}
+function openAllAbstracts(){
+   var d = document.getElementsByTagName('div');
+   var count = d.length;
+   if (count == 0){return;}
+   for (var i=0; i<d.length; i++){
+      if (d[i].id && d[i].id.substring(0,2) == 'Ab' && d[i].style.display == 'none'){
+         d[i].style.display = 'block';
+      }
+   }
+}
+function closeAllAbstracts(){
+   var d = document.getElementsByTagName('div');
+   for (var i=0; i<d.length; i++){
+      if (d[i].id && d[i].id.substring(0,2) == 'Ab'){
+         d[i].style.display = 'none';
+      }
+   }
+}
+</script>
+
+
+</head>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+			   
+<div class="c" id="TheTop"><br></div>
+<table border="0" cellspacing="0" cellpadding="1" width="85%" nowrap style="margin: auto">
+<tr><td>
+<h2>Technical Program for Thursday June 21, 2018</h2>
+<hr>
+</td></tr>
+</table>
+
+<div class="c">
+
+                  <span style="color:gray ">To show or hide the keywords and abstract of a paper (if available), click on the paper title</span><br>
+                  <a href="javascript:openAllAbstracts()" title="Click to open all abstracts">Open all abstracts</a>&nbsp;&nbsp;
+                  <a href="javascript:closeAllAbstracts()" title="Click to close all abstracts">Close all abstracts</a>
+               
+</div>
+
+<div class="c">
+<table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="thua01"><b>ThuA01</b></a></td>
+               <td class="r">Kolovare</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#thua01" title="Click to go to the Program at a Glance"><b>Robotics 2</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#16997" title="Click to go to the Author Index">Tzes, Anthony</a></td><td class="r">New York Univ. Abu Dhabi</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#24654" title="Click to go to the Author Index">Orsag, Matko</a></td><td class="r">Univ. of Zagreb</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua01_01">09:00-09:20, Paper ThuA01.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0048.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('48'); return false" title="Click to show or hide the keywords and abstract">Constrained Optimal End-Effector Positioning Using Pseudo-Inversion and B-Splines</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#15511" title="Click to go to the Author Index">Orsini, Valentina</a></td><td class="r">Univ. Pol. Delle Marche</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#13930" title="Click to go to the Author Index">Jetto, L.</a></td><td class="r">Univ. Di Ancona</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#38408" title="Click to go to the Author Index">Romagnoli, Raffaele</a></td><td class="r">Univ. Pol. Delle Marche</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab48" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a>, <a href="MED18_KeywordIndexMedia.html#Optimisation" title="Click to go to the Keyword Index">Optimisation</a>, <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a></span><br>
+                              <strong>Abstract:</strong> This paper investigates the potential possibility offered by the recently proposed pseudo inversion approach as a novel solution to the optimal output transition problem in the end-effector positioning task under saturation constraints on the control effort. Exact positioning and high precision tracking of the end-effector along a given path are key requirements. Due to flexibility and non minimum phase nature of the system, achieving high level performances is a challenging problem. To this purpose a two degrees of freedom control scheme is proposed: a feedforward action, denoted by r(t), is applied to the stable closed loop system Sigma_{f,c}, given by the feedback connection of the flexible arm with a stabilizing controller. The recently proposed pseudo inversion approach is adopted to compute r(t) yielding an actual end-effector transient trajectory which is the best approximation of the desired transient one. The optimal r(t) is assumed to be given by a B-spline function, and, to take into account saturating actuators, the actual control input u(t) forcing the flexible arm is optimally approximated by a B-spline hat u(t), whose control points hat u(t) are chosen in such a way to satisfy the saturation constraints on u(t). If hat u(t) is a sufficiently accurate approximation of u(t), the exact fulfillment of saturation constraints by hat u(t) are transferred to u(t). The main advantage of the approach is its generality: the method can be directly applied to the linear dynamic model of any multilink flexible arm.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua01_02">09:20-09:40, Paper ThuA01.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0047.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('47'); return false" title="Click to show or hide the keywords and abstract">Distributed Kinematic Control and Trajectory Scaling for Multi-Manipulator Systems in Presence of Human Operators</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85471" title="Click to go to the Author Index">Lippi, Martina</a></td><td class="r">Univ. of Salerno</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#24604" title="Click to go to the Author Index">Marino, Alessandro</a></td><td class="r">Univ. Degli Studi Di Salerno</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab47" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a>, <a href="MED18_KeywordIndexMedia.html#Decentralised_control" title="Click to go to the Keyword Index">Decentralised control</a>, <a href="MED18_KeywordIndexMedia.html#Industrial_automation__manufacturing" title="Click to go to the Keyword Index">Industrial automation, manufacturing</a></span><br>
+                              <strong>Abstract:</strong> The objective of the paper is to devise a general framework for handling the human safety in a multi-robot work-cell controlled within a decentralized framework. The paper is motivated by the increasing demand coming from new production paradigms for strict cooperation between humans and robots and for flexibility and robusteness provided by decentralized control frameworks. The cell foresees several robots with different assigned roles. In particular, it is supposed that there are worker agents, that are in charge of performing the cooperative manipulation task, and watcher robots, that are in charge of supervising the cell with particular attention to the human safety. The latter is guaranteed by properly modifying the workers’ task trajectory according to a state transition strategy that tries to preserve the task path as much as possible. The overall solution is tested via simulations in order to show the effectiveness of results.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua01_03">09:40-10:00, Paper ThuA01.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0152.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('152'); return false" title="Click to show or hide the keywords and abstract">Development of a Tendon-Driven Robotic Tool Targeting Visual-Servoing Minimally-Invasive Surgical Operations</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#35604" title="Click to go to the Author Index">Evangeliou, Nikolaos</a></td><td class="r">New York Univ. Abu Dhabi</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#77471" title="Click to go to the Author Index">Tsampiras, Petros</a></td><td class="r">Univ. of Patras</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16997" title="Click to go to the Author Index">Tzes, Anthony</a></td><td class="r">New York Univ. Abu Dhabi</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab152" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a>, <a href="MED18_KeywordIndexMedia.html#Mechatronic_systems" title="Click to go to the Keyword Index">Mechatronic systems</a>, <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a></span><br>
+                              <strong>Abstract:</strong> The development and experimental evaluation of a prototype laparoscopic robotic surgical tool is presented in this article. Servo motors are used as actuators in a tendon-driven actuation mechanism. The two Degree-of-Freedom (DoF) manipulator is a cascade configuration of two rotational joint modules. Each DoF is actuated independently by the corresponding tendon pair in a pulley-driven configuration. The design, fabrication and kinematics of the tool are analyzed. Moreover, the efficiency of the overall system is investigated in experimental studies, utilizing two performance evaluation methods. The first is an IMU-based, whilst the second utilizes a monocular visual servoing setup.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua01_04">10:00-10:20, Paper ThuA01.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0176.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('176'); return false" title="Click to show or hide the keywords and abstract">Mobile Robot Trajectory Generation from Ordered Point-Set Using Time-Optimal Bezier Segments</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#69326" title="Click to go to the Author Index">Giannousakis, Konstantinos</a></td><td class="r">Univ. of Patras</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16997" title="Click to go to the Author Index">Tzes, Anthony</a></td><td class="r">New York Univ. Abu Dhabi</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab176" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a></span><br>
+                              <strong>Abstract:</strong> This paper addresses the problem of constructing a trajectory from a given set of points, considering a mobile robot. Following the initial pose of the robot, the points are connected in sequence by cubic Bezier segments. After selecting the tangential velocity at the connection points, these segments are time-optimized under the velocity and acceleration constraints of the robot, both tangential and angular, using non-linear constrained optimization. The optimization problem is simplified by exploitation of polynomials. Experimental studies demonstrate the effectiveness of the algorithm.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua01_05">10:20-10:40, Paper ThuA01.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0205.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('205'); return false" title="Click to show or hide the keywords and abstract">On-Line Estimation of F/T Sensor Offset for Arbitrary Orientation of Robot Tool by Evaluating Two Machine Learning Algorithms</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#86178" title="Click to go to the Author Index">Kulas, Matko</a></td><td class="r">Faculty of Electrical Engineering and Computing</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14272" title="Click to go to the Author Index">Kovacic, Zdenko</a></td><td class="r">Univ. of Zagreb</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#24654" title="Click to go to the Author Index">Orsag, Matko</a></td><td class="r">Univ. of Zagreb</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab205" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a>, <a href="MED18_KeywordIndexMedia.html#Industrial_automation__manufacturing" title="Click to go to the Keyword Index">Industrial automation, manufacturing</a></span><br>
+                              <strong>Abstract:</strong> The offset in the output of a force/torque (F/T) sensor embedded in the robot’s wrist is usually handled by deducting the measured force value when the robot tool encounters the surface and achieves the desired orientation. The problem becomes more complicated when the tool's orientation changes continuously or the tool is changed during the robot's work. This paper explored the possibility of using two well-affirmed machine learning algorithms (k-nearest neighbors and polynomial regression) for on-line estimation of F/T sensor offset. Both machine learning algorithms were implemented and evaluated on the state-of-the-art 6-DOF robot arm Schunk LWA4P equipped with the OptoForce HEX-70-CE-2000N F/T sensor. Evaluation of the two on-line offset estimation methods was made during a force-controlled writing on the office board with different robot tool orientations. It was found that the frequency of generating the offset estimate is much higher with the polynomial regression algorithm.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua01_06">10:40-11:00, Paper ThuA01.6</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0025.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('25'); return false" title="Click to show or hide the keywords and abstract">Ground Extraction from 3D Lidar Point Clouds with the Classification Learner App</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85232" title="Click to go to the Author Index">Pomares, Antonio</a></td><td class="r">Univ. De Málaga</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#60487" title="Click to go to the Author Index">Martinez, Jorge L.</a></td><td class="r">Univ. of Malaga</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#63583" title="Click to go to the Author Index">Mandow, Anthony</a></td><td class="r">Univ. De Málaga</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85233" title="Click to go to the Author Index">Martínez, María A.</a></td><td class="r">Univ. De Málaga</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#87601" title="Click to go to the Author Index">Morán, Mariano</a></td><td class="r">Univ. De Málaga</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#78584" title="Click to go to the Author Index">Morales, Jesús</a></td><td class="r">Univ. De Málaga</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab25" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a>, <a href="MED18_KeywordIndexMedia.html#Computational_intelligence" title="Click to go to the Keyword Index">Computational intelligence</a></span><br>
+                              <strong>Abstract:</strong> Ground extraction from three-dimensional (3D) range data is a relevant problem for outdoor navigation of unmanned ground vehicles. Even if this problem has received attention with specific heuristics and segmentation approaches, identification of ground and non-ground points can benefit from state-of-the-art classification methods, such as those included in the Matlab Classification Learner App. This paper proposes a comparative study of the machine learning methods included in this tool in terms of training times as well as in their predictive performance. With this purpose, we have combined three suitable features for ground detection, which has been applied to an urban dataset with several labeled 3D point clouds. Most of the analyzed techniques achieve good classification results, but only a few offer low training and prediction times.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="thua02"><b>ThuA02</b></a></td>
+               <td class="r">Meeting Room 1</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#thua02" title="Click to go to the Program at a Glance"><b>Industrial Automation and Process Control</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#13769" title="Click to go to the Author Index">Huba, Mikulas</a></td><td class="r">Slovak Univ. of Tech. in Bratislava</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#13215" title="Click to go to the Author Index">Garcia-Gabin, Winston</a></td><td class="r">ABB Corp. Res</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua02_01">09:00-09:20, Paper ThuA02.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0094.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('94'); return false" title="Click to show or hide the keywords and abstract">Cooling Control of Data Centers Using Linear Quadratic Regulators</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#13215" title="Click to go to the Author Index">Garcia-Gabin, Winston</a></td><td class="r">ABB Corp. Res</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#66898" title="Click to go to the Author Index">Mishchenko, Kateryna</a></td><td class="r">Corp. Res. ABB AB</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab94" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Process_control" title="Click to go to the Keyword Index">Process control</a></span><br>
+                              <strong>Abstract:</strong> One of the largest contributions to a data center's power usage is its cooling system. One way to decrease the energy usage of a cooling systems by introducing an automatic control adapting the capacity of cooling units is addressed by this paper. Firstly, different configurations of linear quadratic regulators are designed and then evaluated using the nonlinear data center simulator. Design of the controllers is based on the novel idea of regulating the outlet temperature and volumetric airflow of the Computer Room Air Handler units which regulate the cooling power supplied to the servers. As controlled variables for the feedback, maximum and mean temperature of servers were used. Evaluation of controllers performance is based on their estimated energy usage as well as on analysis of the servers temperature profiles with respect to the given data centers’ temperature threshold value. Numerical experiments include five LQR controllers with different combination of manipulated variables and analyze their performances. Results of the experiments show that the regulator with maximum servers’ temperature as a feedback and Computer Room Air Handler Output temperature as manipulated variable has the best performance. Controlling the maximum server temperature minimizes hot spots occurrences and allows to operate the cooling system with minimal energy consumption.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua02_02">09:20-09:40, Paper ThuA02.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0069.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('69'); return false" title="Click to show or hide the keywords and abstract">Embedded Iterative Learning Contouring Controller Based on Precise Estimation of Contour Error for CNC Machine Tools</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82605" title="Click to go to the Author Index">Hendrawan, Yogi Muldani</a></td><td class="r">Toyohashi Univ. of Tech</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#40398" title="Click to go to the Author Index">Uchiyama, Naoki</a></td><td class="r">Toyohashi Univ. of Tech</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab69" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Embedded_control_systems" title="Click to go to the Keyword Index">Embedded control systems</a>, <a href="MED18_KeywordIndexMedia.html#Industrial_automation__manufacturing" title="Click to go to the Keyword Index">Industrial automation, manufacturing</a>, <a href="MED18_KeywordIndexMedia.html#Process_control" title="Click to go to the Keyword Index">Process control</a></span><br>
+                              <strong>Abstract:</strong> In machine tool application, a machined shape of workpiece should be considered in machine tool controller systems. The contour error relates to it directly. Although most existing contouring controllers are based on feedback control, this paper proposes an embedded iterative learning contouring controller (EILCC) by considering actual contour error (ACE) which the minimum distance between actual position and desired trajectory. The proposed method modifies original trajectory by ACE compensation with PID manner, iteratively. The proposed controller can be directly applied to existing commercial machines without any modification of their original controllers. The proposed method has been verified by simulation and experiment in commercial CNC machine tool on a 90o sharp-corner trajectory which normally produces a large contour error around the corner due to unsmoothness. Comparison with a previous EILCC without ACE was done to evaluate its performance. Experiment results have shown that the maximum contour error can be reduced by 78.8% and 9.7% as compared to the feedback controller (FBC) and EILCC without ACE (with estimated contour error), respectively.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua02_03">09:40-10:00, Paper ThuA02.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0175.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('175'); return false" title="Click to show or hide the keywords and abstract">WebNavIGSS Web-Based Software Solution for IGSS SCADA Applications</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#86012" title="Click to go to the Author Index">Tidrea, Alexandra</a></td><td class="r">Univ. Pol. Timisoara, Faculty of Automation and Comp</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#35448" title="Click to go to the Author Index">Korodi, Adrian</a></td><td class="r">Univ. Pol. Timisoara</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab175" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Industrial_automation__manufacturing" title="Click to go to the Keyword Index">Industrial automation, manufacturing</a></span><br>
+                              <strong>Abstract:</strong> The current automation/SCADA trends are referring mainly interfacing and horizontal/vertical interoperability issues on all levels. The web-based solutions with the inherent advantages and disadvantages are many times viewed as legacy structures but also as current requirements mainly because of their accessibility by wide-range type of operators. Very few web-solutions associated to SCADA software in the industry can be considered full-featured web-based solutions from a software perspective. Generally, the so-called web modules/extensions associated to SCADA software are practically remote-desktop solutions, coming with expensive licenses and high resource consumers. The IGSS (Interactive Graphical SCADA System) software is implemented in many industries in the first level control rooms and in regional/central SCADA centres. IGSS interfaces with external devices using OPC UA/DA server/client and many other drivers, its server-client concept allows connection through networks, respectively its mobile module allows monitoring and control from mobile devices, but it does not include a web-based monitoring/control module. The current paper presents the WebNavIGSS web-based software solution for IGSS applications. The WebNavIGSS will connect to existing structures provided by the SCADA software being in close correlation with the Supervise module. The authors tested the solution in the water industry and the results were satisfactory in monitoring several types of water objectives.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua02_04">10:00-10:20, Paper ThuA02.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0216.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('216'); return false" title="Click to show or hide the keywords and abstract">PID^m_n Control for IPDT Plants. Part 1: Disturbance Response</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#13769" title="Click to go to the Author Index">Huba, Mikulas</a></td><td class="r">Slovak Univ. of Tech. in Bratislava</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#61615" title="Click to go to the Author Index">Vrancic, Damir</a></td><td class="r">Jožef Stefan Inst</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#24845" title="Click to go to the Author Index">Bistak, Pavol</a></td><td class="r">Slovak Univ. of Tech. in Bratislava</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab216" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Process_control" title="Click to go to the Keyword Index">Process control</a>, <a href="MED18_KeywordIndexMedia.html#Robust_control" title="Click to go to the Keyword Index">Robust control</a></span><br>
+                              <strong>Abstract:</strong> The paper introduces generalized PID control with the derivative action degrees m and with nth order series binomial filters. Together with the traditional PI (m=0) and PID control (m=1), this setup covers also solutions with higher order derivatives denoted previously as the PIDD2, or PIDD2D3 controllers and remains open to more complex combinations. The novel contribution includes explicit tuning formulas for the integral-plus-dead-time (IPDT) plant models with m=3 and m=4 as well as the systemic approach to design of such a long sequence of controllers. Derived by the multiple real dominant pole method they enable to significantly reduce the measurement noise impact by simultaneously speeding up transients and increasing the closed loop robustness against plant uncertainties. With respect to the necessary extent of the problem description, solution and of the corresponding performance evaluation, the contribution has been split into two parts. The first part focuses on the disturbance response evaluation by simulation. This is limited to some degree by the numerical problems of the available Simulink solvers. To overcome the simulation problems, the second part dealing with design and evaluation of the setpoint responses will consider also real time experiments.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua02_05">10:20-10:40, Paper ThuA02.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0217.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('217'); return false" title="Click to show or hide the keywords and abstract">PID^m_n Control for IPDT Plants. Part 2: Setpoint Response</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#13769" title="Click to go to the Author Index">Huba, Mikulas</a></td><td class="r">Slovak Univ. of Tech. in Bratislava</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#61615" title="Click to go to the Author Index">Vrancic, Damir</a></td><td class="r">Jožef Stefan Inst</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#24845" title="Click to go to the Author Index">Bistak, Pavol</a></td><td class="r">Slovak Univ. of Tech. in Bratislava</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab217" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Process_control" title="Click to go to the Keyword Index">Process control</a>, <a href="MED18_KeywordIndexMedia.html#Robust_control" title="Click to go to the Keyword Index">Robust control</a></span><br>
+                              <strong>Abstract:</strong> The paper continues in developing generalized two-degree-of-freedom (2DOF) proportional-integral-derivative (PID) control with the mth order derivative action, and with n>= mth order series binomial filters. By focusing on the setpoint responses, the explicit tuning formulas of a 1DOF PIDmn control for the integral-plus-dead-time (IPDT) plant models derived by the multiple real dominant pole method are augmented by the optimal prefilter enabling to cancel up to m+1 of the m+2 tuple dominant closed loop poles and thus to accelerate the setpoint step responses. Since in Matlab/Simulink, the simulative setpoint response evaluation of the PIDmn with m>0 and IPDT plant is strongly limited by the numerical solver imperfections, the second part of the contribution brings also an experimental evaluation by real time control of a thermal plant. This fully confirms excellent properties of the novel type of control which, due to its high robustness, enables to simplify the plant identification and to work with the simple IPDT model also in the case of selfregulating processes with significantly more complex dynamics.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua02_06">10:40-11:00, Paper ThuA02.6</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0127.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('127'); return false" title="Click to show or hide the keywords and abstract">PID Controller Design Based on Generalized Stability Boundary Locus to Control Unstable Processes with Dead Time</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#71825" title="Click to go to the Author Index">Atic, Serdal</a></td><td class="r">Batman Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#65425" title="Click to go to the Author Index">Kaya, Ibrahim</a></td><td class="r">Dicle Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab127" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a>, <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Process_control" title="Click to go to the Keyword Index">Process control</a></span><br>
+                              <strong>Abstract:</strong> This paper proposes a method so that all PID controller tuning parameters, which are satisfying stability of any unstable time delay processes, can be calculated by forming the stability boundary loci. Processes having a higher order transfer function must first be modeled by an unstable first order plus dead time (UFOPDT) transfer function in order to apply the method. Later, UFOPDT process transfer function and the controller transfer function are converted into normalized forms to obtain the stability boundary locus in (KKc, KKc(T/Ti)), (KKc, KKc(Td/T)) and (KKc(T/Ti), KKc(Td/T)) planes for PID controller design. PID controller parameter values achieving stability of the control system can be determined by the obtained stability boundary loci. The advantage of the method given in this study compared with previous studies in this subject is to remove the need of re-plotting the stability boundary locus as the process transfer function changes. That is, the approach results in somehow generalized stability boundary loci for unstable plus time delay processes under a PID controller. Application of the method has been clarified with examples.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="thua03"><b>ThuA03</b></a></td>
+               <td class="r">Meeting Room 2</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#thua03" title="Click to go to the Program at a Glance"><b>Cyber-Physical and Networked Systems</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#81654" title="Click to go to the Author Index">Bajcinca, Naim</a></td><td class="r">Univ. of Kaiserslautern</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#38625" title="Click to go to the Author Index">Goodwine, Bill</a></td><td class="r">Univ. of Notre Dame</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua03_01">09:00-09:20, Paper ThuA03.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0111.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('111'); return false" title="Click to show or hide the keywords and abstract">Consensus Based Power Update Algorithm for OFDMA-Based Femtocell Networks</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85243" title="Click to go to the Author Index">Sevim, Oguzhan</a></td><td class="r">Bogazici Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#11337" title="Click to go to the Author Index">Akar, Mehmet</a></td><td class="r">Bogazici Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab111" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Computing_and_communications" title="Click to go to the Keyword Index">Computing and communications</a>, <a href="MED18_KeywordIndexMedia.html#Networked_systems" title="Click to go to the Keyword Index">Networked systems</a></span><br>
+                              <strong>Abstract:</strong> In this paper, we study the power assignment problem of the downlink of an OFDMA-based two-tier femtocell network. We aim to provide a global fairness among the user equipments in terms of their SINR values. Because of the potential complexity of the femtocell networks, we propose a distributed consensus–based power update algorithm to keep the required information exchange of the base stations minimal. Even though there exist some power control algorithms serving for the same fairness purpose, they are applicable only for the systems where each base station can have at most one user. Since femtocells are designed to serve more than one user equipment at the same time, the proposed power update algorithm can be considered as more real life applicable, and stands out amongst others by its ability to ensure consensus in multi–user/subchannel systems.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua03_02">09:20-09:40, Paper ThuA03.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0045.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('45'); return false" title="Click to show or hide the keywords and abstract">Wireless Data Rate Controller Design for Networked Control Applications</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14922" title="Click to go to the Author Index">Marton, Lorinc</a></td><td class="r">Cnp: 1760611264372</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#22341" title="Click to go to the Author Index">Tamas, Levente</a></td><td class="r">Tech. Univ. of Cluj-Napoca</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab45" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Networked_systems" title="Click to go to the Keyword Index">Networked systems</a>, <a href="MED18_KeywordIndexMedia.html#Computing_and_communications" title="Click to go to the Keyword Index">Computing and communications</a>, <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a></span><br>
+                              <strong>Abstract:</strong> This paper presents a design approach for data transfer rate control algorithms meant to assure a prescribed delay in communication channels of wireless networked control systems (NCS). Three types of control algorithms are treated: P, PI and PI + Additive Increase control. Each algorithm is based on delay measurement and computes the transfer rates in the communication channels of NCSs. They are able to compensate the effect of independent communication channels with unknown rates on the expected delay value in the wireless communication medium. By assuming that the communication medium is described by the queue model, the parameters of these control algorithms are explicitly computed such to assure the stability of the closed-loop system and the steady-state control performances. Simulation measurements were performed to compare the behavior of the proposed control algorithms. The applicability of the control approach was tested in a networked bilateral teleoperation system.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua03_03">09:40-10:00, Paper ThuA03.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0126.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('126'); return false" title="Click to show or hide the keywords and abstract">Approximations for Implicitly-Defined Dynamics of Networks of Simple Mechanical Components</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#38625" title="Click to go to the Author Index">Goodwine, Bill</a></td><td class="r">Univ. of Notre Dame</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab126" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Complex_Systems" title="Click to go to the Keyword Index">Complex Systems</a>, <a href="MED18_KeywordIndexMedia.html#Agents_and_agent_based_systems" title="Click to go to the Keyword Index">Agents and agent-based systems</a>, <a href="MED18_KeywordIndexMedia.html#Formation_control" title="Click to go to the Keyword Index">Formation control</a></span><br>
+                              <strong>Abstract:</strong> In many important engineering systems, including cyber-physical systems, there are often are many interacting simple components. It is well known that, in some cases, such systems may be modeled with fractional-order differential equations, and some of our prior work has shown that in certain cases fractional systems may be considered a subset of a class of systems where the dynamics may only be implicitly defined. In the implicit case, there is no straight-forward corresponding time domain representation. This paper considers series expansion approximations to the implicit operator describing the dynamics of the system to determine time-domain approximations for the implicit non-rational transfer function and validates the results via simulation. The contribution of this paper is to show that such expansions provide good approximations for the types of systems in the range of parameter values we considered, and for the special case of a network of springs and dampers, accurate equivalent spring and damper constants are computed which can provide intuitive insight into the nature of the response of the very high-order system.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua03_04">10:00-10:20, Paper ThuA03.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0183.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('183'); return false" title="Click to show or hide the keywords and abstract">A Game-Theoretical Approach to Cyber-Security of Critical Infrastructures Based on Multi-Agent Reinforcement Learning</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#38358" title="Click to go to the Author Index">Panfili, Martina</a></td><td class="r">"Sapienza" Univ. Di Roma,</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#77330" title="Click to go to the Author Index">Giuseppi, Alessandro</a></td><td class="r">La Sapienza</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#23195" title="Click to go to the Author Index">Fiaschetti, Andrea</a></td><td class="r">"Sapienza" - Univ. of Rome</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#86019" title="Click to go to the Author Index">Al-Jibreen, Homoud</a></td><td class="r">La Sapienza</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#15751" title="Click to go to the Author Index">Pietrabissa, Antonio</a></td><td class="r">Consorzio Per La Ricerca Nell'automatica E Nelle Telecomunicazio</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#12648" title="Click to go to the Author Index">Delli Priscoli, Francesco</a></td><td class="r">Univ. Di Roma</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab183" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Game_Theory" title="Click to go to the Keyword Index">Game Theory</a>, <a href="MED18_KeywordIndexMedia.html#Cyber_physical_systems" title="Click to go to the Keyword Index">Cyber-physical systems</a></span><br>
+                              <strong>Abstract:</strong> This paper presents a control strategy for Cyber-Physical System defense developed in the framework of the European Project ATENA, that concerns Critical Infrastructure (CI) protection. The aim of the controller is to find the optimal security configuration, in terms of countermeasures to implement, in order to address the system vulnerabilities. The attack/defense problem is modeled as a multi-agent general sum game, where the aim of the defender is to prevent the most damage possible by finding an optimal trade-off between prevention actions and their costs. The problem is solved utilizing Reinforcement Learning and simulation results provide a proof of the proposed concept, showing how the defender of the protected CI is able to minimize the damage caused by his/her opponents by finding the Nash equilibrium of the game in the zero-sum variant, and, in a more general scenario, by driving the attacker in the position where the damage she/he can cause to the infrastructure is lower than the cost it has to sustain to enforce her/his attack strategy.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua03_05">10:20-10:40, Paper ThuA03.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0041.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('41'); return false" title="Click to show or hide the keywords and abstract">Distributed Wardrop Load Balancing in Multi-MTU SCADA Systems</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#44931" title="Click to go to the Author Index">Suraci, Vincenzo</a></td><td class="r">Univ. Degli Studi E-Campus</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#63123" title="Click to go to the Author Index">Ricciardi Celsi, Lorenzo</a></td><td class="r">Univ. Di Roma "La Sapienza"</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#77330" title="Click to go to the Author Index">Giuseppi, Alessandro</a></td><td class="r">La Sapienza</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#87566" title="Click to go to the Author Index">Manfredi, Gioacchino</a></td><td class="r">La Sapienza</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#23371" title="Click to go to the Author Index">Di Giorgio, Alessandro</a></td><td class="r">Univ. of Rome "La Sapienza"</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab41" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Cyber_physical_systems" title="Click to go to the Keyword Index">Cyber-physical systems</a>, <a href="MED18_KeywordIndexMedia.html#Networked_systems" title="Click to go to the Keyword Index">Networked systems</a>, <a href="MED18_KeywordIndexMedia.html#Game_Theory" title="Click to go to the Keyword Index">Game Theory</a></span><br>
+                              <strong>Abstract:</strong> This paper presents a distributed strategy for load balancing in a multi-MTU SCADA system, whose automatic control layer is such that its MTU Plane is modeled as a networked dynamical system. The proposed control law, under which the considered system is proven to converge to a Wardrop equilibrium, is also used for the purpose of equilibrium recovery in load distribution among MTUs after the occurrence of a possible MTU failure event induced by a cyber-physical attack (e.g., a Denial of Service attack). Numerical simulations with respect to realistic scenarios are reported to show the effectiveness of the proposed approach.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua03_06">10:40-11:00, Paper ThuA03.6</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0168.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('168'); return false" title="Click to show or hide the keywords and abstract">Sensitivity Based Event-Triggered TDMA Protocol for Distributed Optimization</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82742" title="Click to go to the Author Index">Guma, Shaban</a></td><td class="r">TU Berlin</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#81654" title="Click to go to the Author Index">Bajcinca, Naim</a></td><td class="r">Univ. of Kaiserslautern</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab168" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Networked_systems" title="Click to go to the Keyword Index">Networked systems</a>, <a href="MED18_KeywordIndexMedia.html#Automotive_control" title="Click to go to the Keyword Index">Automotive control</a>, <a href="MED18_KeywordIndexMedia.html#Distributed_systems" title="Click to go to the Keyword Index">Distributed systems</a></span><br>
+                              <strong>Abstract:</strong> We present the design of a sensitivity based event- triggered TDMA protocol in conjunction with a distributed optimization algorithm utilizing dual subgradient method. The event-triggered protocol is based on a sensitivity analysis and it regards the impact of the information exchange into the evo- lution of the optimization algorithm. The proposed algorithm is evaluated in the context of distributed feedforward control of vehicle dynamics.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="thua04"><b>ThuA04</b></a></td>
+               <td class="r">Meeting Room 3</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#thua04" title="Click to go to the Program at a Glance"><b>Robust Control 1</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#13261" title="Click to go to the Author Index">Gershon, Eli</a></td><td class="r">Holon Inst. of Tech</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#50954" title="Click to go to the Author Index">Tremba, Andrey</a></td><td class="r">Inst. of Control Sciences RAS</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua04_01">09:00-09:20, Paper ThuA04.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0061.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('61'); return false" title="Click to show or hide the keywords and abstract">Pareto Suboptimal Robust Controllers in Multi-Objective Generalized H_2 Problem</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#66749" title="Click to go to the Author Index">Balandin, Dmitry</a></td><td class="r">Nizhny Novgorod State Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82461" title="Click to go to the Author Index">Biryukov, Ruslan</a></td><td class="r">Nizhny Novgorod State Univ. of Architecture and Civil Engin</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14223" title="Click to go to the Author Index">Kogan, Mark M.</a></td><td class="r">Architecture and Civil Engineering Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab61" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robust_control" title="Click to go to the Keyword Index">Robust control</a>, <a href="MED18_KeywordIndexMedia.html#Optimisation" title="Click to go to the Keyword Index">Optimisation</a>, <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a></span><br>
+                              <strong>Abstract:</strong> A novel multi-objective robust control problem is studied for systems with structured norm-bounded uncertainty and robust generalized H_2 norms as criteria. Necessary conditions for Pareto optimality are formulated. Pareto optimal solutions turn out to be among optimal solutions for multi-objective costs in the form of Germeyer convolution. Pareto suboptimal controllers are defined as the optimal solutions for the upper bounds of the multi-objective costs and characterized in terms of LMIs. The upper and lower bounds of the multi-objective cost are used to compute a suboptimality measure which allows to estimate a ``difference&quot; between Pareto suboptimal and unavailable Pareto optimal controllers. Two-criteria robust control problem for a mathematical model of the rotor rotating in active magnetic bearings is considered as an application of this theory.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua04_02">09:20-09:40, Paper ThuA04.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0212.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('212'); return false" title="Click to show or hide the keywords and abstract">Robust Norm-Bounded H_infty Static Output-Feedback Control of Retarded Stochastic Systems</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#13261" title="Click to go to the Author Index">Gershon, Eli</a></td><td class="r">Holon Inst. of Tech</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16420" title="Click to go to the Author Index">Shaked, Uri</a></td><td class="r">Tel-Aviv Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab212" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robust_control" title="Click to go to the Keyword Index">Robust control</a>, <a href="MED18_KeywordIndexMedia.html#Discrete_event_systems" title="Click to go to the Keyword Index">Discrete event systems</a>, <a href="MED18_KeywordIndexMedia.html#Feedback_stabilization" title="Click to go to the Keyword Index">Feedback stabilization</a></span><br>
+                              <strong>Abstract:</strong> An input-output approach for designing a constant output feedback controller for a linear time-invariant retarded system with stochastic state-multiplicative white noise sequences, that achieves a minimum bound on the hinf performance level is introduced. The stochastic uncertainties appear in the dynamic matrices, which correspond to the delayed and non-delayed states of the system.<p>The solution of the robust norm-bounded H_infty static output-feedback control problem is solved, for the stationary case, via the input-output approach where the system is replaced by a non-retarded system that contain, instead, deterministic norm-bounded uncertainties. In this problem, a cost function is defined which is the expected value of the standard H_infty performance cost with respect to the stochastic parameters. We extend the results achieved for the nominal case, to the case where the system matrices contain norm bounded uncertainties.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua04_03">09:40-10:00, Paper ThuA04.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0193.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('193'); return false" title="Click to show or hide the keywords and abstract">Conversion from Full-Order Controllers to Observer-Structured Controllers</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16296" title="Click to go to the Author Index">Sato, Masayuki</a></td><td class="r">Japan Aerospace Exploration Agency</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab193" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a>, <a href="MED18_KeywordIndexMedia.html#Robust_control" title="Click to go to the Keyword Index">Robust control</a>, <a href="MED18_KeywordIndexMedia.html#Computational_methods" title="Click to go to the Keyword Index">Computational methods</a></span><br>
+                              <strong>Abstract:</strong> In this note, we compare the structures of Linear Time-Invariant (LTI) full-order controllers and LTI observer-structured controllers (whose structure is similar to that of observer-based controllers; however, they do not necessarily play as observers), and give an insight for the structural differences between those controllers. This insight consequently gives a parametrization of the state-space matrices of observer-structured controllers by using those of full-order controllers. This parametrization contains two free matrices, which can be used to loosely impose some structural constraints for observer-structured controllers in the conversion from full-order controllers to observer-structured ones. Several numerical examples are included to illustrate the usefulness of the two free matrices in our parametrization.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua04_04">10:00-10:20, Paper ThuA04.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0108.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('108'); return false" title="Click to show or hide the keywords and abstract">Stochastic Discrete-Time Systems with Delay - Robust Vertex-Dependent H_infty State-Feedback Control</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#13261" title="Click to go to the Author Index">Gershon, Eli</a></td><td class="r">Holon Inst. of Tech</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16420" title="Click to go to the Author Index">Shaked, Uri</a></td><td class="r">Tel-Aviv Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab108" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robust_control" title="Click to go to the Keyword Index">Robust control</a>, <a href="MED18_KeywordIndexMedia.html#Discrete_event_systems" title="Click to go to the Keyword Index">Discrete event systems</a></span><br>
+                              <strong>Abstract:</strong> The theory of stochastic state-multiplicative state-feedback control of retarded discrete-time systems is extended to the robust polytopic case, where a vertex-dependent approach is applied. The latter problem is solved by first deriving a stability condition for uncertain systems based on the application of the Finsler lemma to the studied systems, where a special Lyapunov function is applied to each vertex of the uncertainty polytope. Compared to the stability condition which is obtained by the quadratic approach where a single Lyapunov function is applied to the whole uncertainty polytope, the vertex-dependent approach achieves a significatively less-conservative result than the former approach. Based on the vertex-dependent stability condition, a robust bounded real lemma is derived and solved, leading to the solution of the state-feedback control for uncertain systems.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua04_05">10:20-10:40, Paper ThuA04.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0098.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('98'); return false" title="Click to show or hide the keywords and abstract">A Set of Chance-Constrained Robust Stabilizing PID Controllers</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#50954" title="Click to go to the Author Index">Tremba, Andrey</a></td><td class="r">Inst. of Control Sciences RAS</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab98" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robust_control" title="Click to go to the Keyword Index">Robust control</a>, <a href="MED18_KeywordIndexMedia.html#Feedback_stabilization" title="Click to go to the Keyword Index">Feedback stabilization</a>, <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a></span><br>
+                              <strong>Abstract:</strong> Stabilization of linear SISO systems with random uncertain parameters is considered. A closed-loop system inherits random parameters, and it is stable with some probability. The probabilistic design problem is to tune a controller (e.g., a PID-controller) to stabilize the closed-loop system with high probability. Finding suitable parameters is a probabilistic robust stabilization problem (specifically, a chance-constrained problem). The ultimate goal is to describe the whole set of such controllers instead of individual representative.<p>An algorithm is proposed for finding an inner approximation of the set of chance-constrained stabilizing PID-controllers. The method is based on the robust D-decomposition technique and deterministic error set representation of random uncertainty. A few examples with demonstration of the approach are provided and discussed.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua04_06">10:40-11:00, Paper ThuA04.6</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0150.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('150'); return false" title="Click to show or hide the keywords and abstract">Anti-Lock Braking Control Design for Electric Vehicles Using LPV Methods</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#32838" title="Click to go to the Author Index">Nemeth, Balazs</a></td><td class="r">Hungarian Acad. of Sciences</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85982" title="Click to go to the Author Index">Fazekas, Máté</a></td><td class="r">Inst. for Computer Science and Control</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#13228" title="Click to go to the Author Index">Gaspar, Peter</a></td><td class="r">Mta Sztaki</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab150" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Mechatronic_systems" title="Click to go to the Keyword Index">Mechatronic systems</a>, <a href="MED18_KeywordIndexMedia.html#Robust_control" title="Click to go to the Keyword Index">Robust control</a></span><br>
+                              <strong>Abstract:</strong> The paper proposes a novel Linear Parameter-Varying (LPV) based control approach for the anti-lock braking (ABS) functionality of electric vehicles. Through the advanced control design the hydraulic actuation and the regenerative braking of the electric motor can be coordinated efficiently. In the proposed control architecture the advantages of the different interventions can be combined, such as the the high torque generation capability of the hydraulic system and the fast actuation of the electric motor. The results of the LPV-based control design is presented through simulations using the high-fidelity CarMaker software.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="thua05"><b>ThuA05</b></a></td>
+               <td class="r">Meeting Room 4</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#thua05" title="Click to go to the Program at a Glance"><b>Adaptive Control</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#14398" title="Click to go to the Author Index">Landau, Ioan Dore</a></td><td class="r">CNRS</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#85735" title="Click to go to the Author Index">Kapetanovi&#263;, Nadir</a></td><td class="r">Univ. of Zagreb, Faculty of Electrical Engineering and Computing</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua05_01">09:00-09:20, Paper ThuA05.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0016.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('16'); return false" title="Click to show or hide the keywords and abstract">Adaptive Output-Feedback Stabilization of 2 X 2 Linear Hyperbolic PDEs with Actuator and Sensor Delay</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#66349" title="Click to go to the Author Index">Anfinsen, Henrik</a></td><td class="r">NTNU</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#11251" title="Click to go to the Author Index">Aamo, Ole Morten</a></td><td class="r">NTNU</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab16" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Distributed_systems" title="Click to go to the Keyword Index">Distributed systems</a>, <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a>, <a href="MED18_KeywordIndexMedia.html#Adaptive_control" title="Click to go to the Keyword Index">Adaptive control</a></span><br>
+                              <strong>Abstract:</strong> We derive an adaptive output-feedback stabilizing controller for a system of 2 x 2 linear hyperbolic partial differential equations (PDEs) with delayed, anti-collocated sensing and control. This is done by using a series of transformations to show that the system is equivalent to delay-free systems for which such controllers have been derived. The only required knowledge of the system is the system's transport delays, the sensor and actuation delays and the sign of the product of the actuation and sensing scaling constants. The theory is verified in a simulation.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua05_02">09:20-09:40, Paper ThuA05.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0130.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('130'); return false" title="Click to show or hide the keywords and abstract">Stock Trading Via Feedback Control: An Extremum Seeking Approach</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#38781" title="Click to go to the Author Index">Formentin, Simone</a></td><td class="r">Pol. Di Milano</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#15849" title="Click to go to the Author Index">Previdi, Fabio</a></td><td class="r">Univ. Degli Studi Di Bergamo</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82424" title="Click to go to the Author Index">Maroni, Gabriele</a></td><td class="r">Univ. of Bergamo</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82425" title="Click to go to the Author Index">Cantaro, Claudio</a></td><td class="r">Univ. Degli Studi Di Roma Tre</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab130" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Adaptive_control" title="Click to go to the Keyword Index">Adaptive control</a></span><br>
+                              <strong>Abstract:</strong> In finance, the goal of technical analysis is to model stock dynamics to make reliable predictions of future prices. In recent years, Prof. B. Barmish and coauthors have proposed a paradigm shift in which stock trading is reformulated as a control design problem. From such a perspective, unpredictable price variations can be seen as external disturbances and do not need to be accurately modeled for the investment policy to be properly selected. Although very powerful, the tuning of the reactive scheme to stock trading is all but straightforward. In this paper, an Extremum Seeking approach is proposed to directly design the control action from data and make the overall strategy adaptive with respect to trend variations of the stock price. The method is extensively backtested on real stock data.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua05_03">09:40-10:00, Paper ThuA05.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0067.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('67'); return false" title="Click to show or hide the keywords and abstract">Hybrid Adaptive Chassis Control for Vehicle Lateral Stability in the Presence of Uncertainty</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82163" title="Click to go to the Author Index">Jagga, Dhruv</a></td><td class="r">TU Delft, Delft Center for Systems and Control</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85611" title="Click to go to the Author Index">Lv, Maolong</a></td><td class="r">Delft Univ. of Tech</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#41431" title="Click to go to the Author Index">Baldi, Simone</a></td><td class="r">Delft Univ. of Tech</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab67" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Adaptive_control" title="Click to go to the Keyword Index">Adaptive control</a>, <a href="MED18_KeywordIndexMedia.html#Switching_systems" title="Click to go to the Keyword Index">Switching systems</a>, <a href="MED18_KeywordIndexMedia.html#Autonomous_systems" title="Click to go to the Keyword Index">Autonomous systems</a></span><br>
+                              <strong>Abstract:</strong> To guarantee the safety of passengers in a wide range of driving situations, vehicle lateral stability should be achieved in the presence of nonlinear dynamics (consequence of critical maneuvers) and uncertainty (consequence of uncertain parameters). This paper designs a hybrid adaptive strategy to attain vehicle stability in these situations. The design is based on a piecewise affine (PWA) description of the vehicle model where partitions describe both the linear and the nonlinear regimes, and where parametric uncertainties are handled by estimators for the control gains that can adapt to different conditions acting on the system. Comparisons with strategies that merely exploits the linear region of the vehicle dynamics are provided for different driving conditions, and performance improvements of the proposed methodology are assessed.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua05_04">10:00-10:20, Paper ThuA05.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0036.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('36'); return false" title="Click to show or hide the keywords and abstract">MIMO Direct Adaptive Control with Relaxing Constrains on High-Frequency Matrix Gain Assumption</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#66523" title="Click to go to the Author Index">Gerasimov, Dmitry</a></td><td class="r">ITMO Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#15371" title="Click to go to the Author Index">Nikiforov, Vladimir O.</a></td><td class="r">ITMO Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82326" title="Click to go to the Author Index">Miliushin, Aleksandr</a></td><td class="r">ITMO Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab36" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Adaptive_control" title="Click to go to the Keyword Index">Adaptive control</a>, <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a></span><br>
+                              <strong>Abstract:</strong> The problem of direct model reference adaptive control for multi input multi output (MIMO) uncertain plants with unknown high frequency gain matrix (HFGM) is addressed in the paper. Two schemes of adaptive control algorithms using augmented error estimators and relaxed assumption concerning HFGM are proposed. It is assumed that the minimum of modulus of HFGM determinant is known. The first scheme involves the resettable approximation of the inversion of HFGM estimate in control law. The second scheme is based on modification of conventional augmented error estimator by introduction of a switched projection mechanism. The proposed theoretical ideas are wrapped up by simulation examples.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua05_05">10:20-10:40, Paper ThuA05.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0012.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('12'); return false" title="Click to show or hide the keywords and abstract">Can Adaptive Feedforward Control Improve Operation of Cloud Services?</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14398" title="Click to go to the Author Index">Landau, Ioan Dore</a></td><td class="r">CNRS</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#84816" title="Click to go to the Author Index">Saavedra Mendieta, Jaime</a></td><td class="r">Gipsa-Lab, Cnrs</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#83342" title="Click to go to the Author Index">Cerf, Sophie</a></td><td class="r">Univ. Grenoble Alpes</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#51662" title="Click to go to the Author Index">Robu, Bogdan</a></td><td class="r">Univ. of Grenoble</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14865" title="Click to go to the Author Index">Marchand, Nicolas</a></td><td class="r">GIPSA-Lab CNRS</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#23147" title="Click to go to the Author Index">Bouchenak, Sara</a></td><td class="r">INRIA, Univ. of Grenoble I</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab12" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Adaptive_control" title="Click to go to the Keyword Index">Adaptive control</a>, <a href="MED18_KeywordIndexMedia.html#Computer_controlled_systems" title="Click to go to the Keyword Index">Computer controlled systems</a>, <a href="MED18_KeywordIndexMedia.html#Disturbance_rejection" title="Click to go to the Keyword Index">Disturbance rejection</a></span><br>
+                              <strong>Abstract:</strong> To process Big Data, the cloud computing architecture is used since several years. Service Level Objectives (SLO) become key indicators for the performances of the cloud computing providers. Controlling the cluster size is one of the main issues. Static decision procedures are available but they fail to provide an optimal decision in the presence of highly time varying service demands. The cluster has to be viewed as a dynamic system where the service demand is a disturbance to be compensated dynamically by a control action which is in this case the cluster size. PI feedback control has been already considered as a mean for dynamically controlling the size of the cluster[Berekmeri and al, 2014]. However since the disturbance is measurable an adaptive feedforward compensation can be added for improving the performance of a feedback controller. A general algorithm for adaptive feedforward control in the context of cloud computing is proposed and analyzed. Simplified versions are also presented and analyzed. Experimental results obtained on the Grid’5000 (French nation-wide cluster infrastructure) will be presented.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thua05_06">10:40-11:00, Paper ThuA05.6</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0075.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('75'); return false" title="Click to show or hide the keywords and abstract">Output Adaptive Controller Design for Robotic Vessel with Parametric and Functional</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#41108" title="Click to go to the Author Index">Vlasov, Sergey</a></td><td class="r">ITMO Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82829" title="Click to go to the Author Index">Kirsanova, Aleksandra</a></td><td class="r">Saint Petersburg National Res. Univ. of Information Tec</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82781" title="Click to go to the Author Index">Dobriborsci, Dmitrii</a></td><td class="r">ITMO Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#56668" title="Click to go to the Author Index">Borisov, Oleg</a></td><td class="r">ITMO Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#56669" title="Click to go to the Author Index">Gromov, Vladislav</a></td><td class="r">ITMO Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#35350" title="Click to go to the Author Index">Pyrkin, Anton</a></td><td class="r">ITMO Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#87528" title="Click to go to the Author Index">Maltsev, Maksim</a></td><td class="r">ITMO Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#87527" title="Click to go to the Author Index">Semenov, Artem</a></td><td class="r">ITMO Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab75" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Adaptive_control" title="Click to go to the Keyword Index">Adaptive control</a>, <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a>, <a href="MED18_KeywordIndexMedia.html#Autonomous_systems" title="Click to go to the Keyword Index">Autonomous systems</a></span><br>
+                              <strong>Abstract:</strong> The problem of controlling for robotic boat with unknown parameters and unmeasurable velocity and accel- eration is addressed in this paper. The controller design is based on the output robust control law. It was modified with adaptation algorithms, which allowed to eliminate a static error despite parametric and functional uncertainties. As result, the regulator minimized static error compared to robust controller. The efficiency of the proposed algorithm was illustrated by the experimental approval using the robotic boat model in the task of ellipse path movement. There is comparison between of robust controller and adaptive version in the paper.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="thuplenary01"><b>ThuPlenary01</b></a></td>
+               <td class="r">Kolovare</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#thuplenary01" title="Click to go to the Program at a Glance"><b>"Robotics and Wireless Communications: Opportunities and Challenges" - Prof
+<br>Yasamin Mostofi</b></a></td>
+               <td class="r">Plenary Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#20960" title="Click to go to the Author Index">Miskovic, Nikola</a></td><td class="r">Faculty of Electrical Engineering and Computing, Univ. of Zagreb</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#11876" title="Click to go to the Author Index">Bogdan, Stjepan</a></td><td class="r">Univ. of Zagreb</td></tr>
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="thub01"><b>ThuB01</b></a></td>
+               <td class="r">Kolovare</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#thub01" title="Click to go to the Program at a Glance"><b>Aerospace Control 2</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#52465" title="Click to go to the Author Index">Hengster-Movric, Kristian</a></td><td class="r">Katedra &#345; ídicí Tech. FEL &#268; VUT</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#11601" title="Click to go to the Author Index">Bajodah, Abdulrahman H.</a></td><td class="r">King Abdulaziz Univ</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub01_01">14:00-14:20, Paper ThuB01.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0018.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('18'); return false" title="Click to show or hide the keywords and abstract">Sliding Mode Control of Launch Vehicles’ Flight Path Slope Angle</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#57982" title="Click to go to the Author Index">Lungu, Romulus</a></td><td class="r">Univ. of Craiova</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#72777" title="Click to go to the Author Index">Butu, Florentin-Alin</a></td><td class="r">Univ. Pol. of Bucharest</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#57985" title="Click to go to the Author Index">Lungu, Mihai-Aureliu</a></td><td class="r">Univ. of Craiova</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab18" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Aerospace_control" title="Click to go to the Keyword Index">Aerospace control</a>, <a href="MED18_KeywordIndexMedia.html#Automotive_control" title="Click to go to the Keyword Index">Automotive control</a>, <a href="MED18_KeywordIndexMedia.html#Modelling_and_simulation" title="Click to go to the Keyword Index">Modelling and simulation</a></span><br>
+                              <strong>Abstract:</strong> The paper presents the design of an adaptive system for the control of flight path slope angle associated to launch vehicles’ motion in vertical plane during their second flight stage, after the launch phase, by using the sliding mode control and the dynamic inversion principle. The control law is obtained by means of a Lyapunov positive defined function and it is based on the estimation of an unknown aerodynamic parameters. The theoretical results are validated in Matlab for a concrete example associated to a launch vehicle’s motion in vertical plane.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub01_02">14:20-14:40, Paper ThuB01.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0019.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('19'); return false" title="Click to show or hide the keywords and abstract">Reduced-Order Multiple Observer Design for Takagi-Sugeno Models with Unknown Inputs</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#57985" title="Click to go to the Author Index">Lungu, Mihai-Aureliu</a></td><td class="r">Univ. of Craiova</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#52129" title="Click to go to the Author Index">Boubaker, Olfa</a></td><td class="r">INSAT</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#57982" title="Click to go to the Author Index">Lungu, Romulus</a></td><td class="r">Univ. of Craiova</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab19" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Aerospace_control" title="Click to go to the Keyword Index">Aerospace control</a>, <a href="MED18_KeywordIndexMedia.html#Signal_processing" title="Click to go to the Keyword Index">Signal processing</a>, <a href="MED18_KeywordIndexMedia.html#Nonlinear_systems" title="Click to go to the Keyword Index">Nonlinear systems</a></span><br>
+                              <strong>Abstract:</strong> The paper presents the design of a new reduced-order multiple observer (ROMO) for state estimation of unknown input Takagi-Sugeno (T-S) models; this is only the second reduced-order multiple observer ever designed for such systems. The proposed observer is obtained by applying the classical methods of reduced-order observers’ design for linear multivariable systems with unknown inputs to the case of T-S models. The originality of the designed observer compared to the only existing one is related to: 1) no existence conditions are required, 2) no use of the pole placement method leading to sensitivity problems is necessary and, 3) the solution is designed using available commercial LMI tools. The related algorithm of the proposed ROMO is structured into five steps; its efficiency is proved by using a concrete example of a light aircraft lateral-directional motion
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub01_03">14:40-15:00, Paper ThuB01.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0020.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('20'); return false" title="Click to show or hide the keywords and abstract">Spacecraft Collision Avoidance with Constrained Control Via Discrete-Time Generating Functions</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85186" title="Click to go to the Author Index">Lee, Kwangwon</a></td><td class="r">Yonsei Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#15617" title="Click to go to the Author Index">Park, Chandeok</a></td><td class="r">Yonsei Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab20" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Aerospace_control" title="Click to go to the Keyword Index">Aerospace control</a>, <a href="MED18_KeywordIndexMedia.html#Optimisation" title="Click to go to the Keyword Index">Optimisation</a>, <a href="MED18_KeywordIndexMedia.html#Decentralised_control" title="Click to go to the Keyword Index">Decentralised control</a></span><br>
+                              <strong>Abstract:</strong> This study presents sub-optimal collision-free transfers of spacecraft subject to constraints on control magnitude. In order to mitigate the difficulty in solving an optimal control problem considering directly inequality constraints, the penalty and barrier functions are incorporated into the cost function of optimal tracking problem. Then, the sub-optimal control law is derived by employing the discrete-time generating functions representing the canonical transformation in the discrete-time Hamilton-Jacobi theory. The proposed approach allows us to derive the control law as an algebraic form of the states of spacecraft, reference solution, and obstacles without any iterative process and initial guess. The numerical simulations validate the proposed approach by showing that spacecraft can reach the target point while avoiding obstacles with constrained control.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub01_04">15:00-15:20, Paper ThuB01.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0066.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('66'); return false" title="Click to show or hide the keywords and abstract">Aircraft Motion Decoupling of Roll and Yaw Dynamics Using Generalized Dynamic Inversion Control</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#11601" title="Click to go to the Author Index">Bajodah, Abdulrahman H.</a></td><td class="r">King Abdulaziz Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85598" title="Click to go to the Author Index">Mibar, Hassen</a></td><td class="r">Coll. Jeddah of Tech</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#35229" title="Click to go to the Author Index">Ansari, Uzair</a></td><td class="r">King Abdulaziz Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab66" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Feedback_stabilization" title="Click to go to the Keyword Index">Feedback stabilization</a>, <a href="MED18_KeywordIndexMedia.html#Aerospace_control" title="Click to go to the Keyword Index">Aerospace control</a>, <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a></span><br>
+                              <strong>Abstract:</strong> In this paper, Generalized Dynamic Inversion (GDI) control methodology for linear state equality constraints is proposed for independent motion control of an aircraft along the roll and the yaw axes. In GDI control, dynamic constraints are defined based on the roll and yaw attitude deviation functions and are inverted using Moore Penrose Generalized Inverse (MPGI) to realize the control law. In the particular part of GDI control, constraint differential equation is formulated for the yaw channel, where as the constraint dynamics for the roll axis is constructed by using the involved null control in the auxiliary control part of GDI. The two noninterference control actions is a key advantage of GDI control, and it provides extra degree of design freedom. Numerical simulations are conducted on the lateral dynamics of a transport aircraft to demonstrate the motion decoupled tracking performance of the proposed control strategy.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub01_05">15:20-15:40, Paper ThuB01.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0137.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('137'); return false" title="Click to show or hide the keywords and abstract">Distributed State Feedback Control for Aeroelastic Morphing Wing Flutter Supression</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82552" title="Click to go to the Author Index">Svoboda, Filip</a></td><td class="r">Czech Tech. Univ. in Prague</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#13726" title="Click to go to the Author Index">Hromcik, Martin</a></td><td class="r">Czech Tech. Univ. in Prague, FEE</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#52465" title="Click to go to the Author Index">Hengster-Movric, Kristian</a></td><td class="r">Katedra &#345; ídicí Tech. FEL &#268; VUT</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab137" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Aerospace_control" title="Click to go to the Keyword Index">Aerospace control</a>, <a href="MED18_KeywordIndexMedia.html#Modelling_and_simulation" title="Click to go to the Keyword Index">Modelling and simulation</a>, <a href="MED18_KeywordIndexMedia.html#Decentralised_control" title="Click to go to the Keyword Index">Decentralised control</a></span><br>
+                              <strong>Abstract:</strong> This paper offers a novel approach at flutter suppression problem on morphing wing and relates to current research of morphing aircraft. The active flutter suppression task is formulated as a state synchronization in a network of identical Linear Time-Invariant (LTI) systems. These systems consist of wing segments which can be actuated separately. Finite Element Method (FEM) approach and unsteady aerodynamics represented by Theodorsen function are used for flexible morphing wing modeling. An example of distributed Linear-Quadratic Regulator (LQR) state synchronization is shown in this paper. Comparison in time-domain, frequency-domain, and flutter speeds has been done for the system with distributed LQR and the original system.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="thub02"><b>ThuB02</b></a></td>
+               <td class="r">Meeting Room 1</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#thub02" title="Click to go to the Program at a Glance"><b>Marine Control</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#42209" title="Click to go to the Author Index">Arrichiello, Filippo</a></td><td class="r">Univ. Di Cassino E Del Lazio Meridionale</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#20960" title="Click to go to the Author Index">Miskovic, Nikola</a></td><td class="r">Faculty of Electrical Engineering and Computing, Univ. of Zagreb</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub02_01">14:00-14:20, Paper ThuB02.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0125.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('125'); return false" title="Click to show or hide the keywords and abstract">Human Interactions Framework for Remote Ship Operations</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85913" title="Click to go to the Author Index">Kari, Raheleh</a></td><td class="r">Norwegian Univ. of Science and Tech. (NTNU)</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85918" title="Click to go to the Author Index">Gaspar, Henrique</a></td><td class="r">NorwegianUniversityofScienceandTechnology</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85919" title="Click to go to the Author Index">Haugen Gausdal, Anne</a></td><td class="r">Univ. Coll. of Southeast Norway</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85917" title="Click to go to the Author Index">Morshedi, Maghsoud</a></td><td class="r">Univ. of Oslo</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab125" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Marine_control" title="Click to go to the Keyword Index">Marine control</a>, <a href="MED18_KeywordIndexMedia.html#Unmanned_systems" title="Click to go to the Keyword Index">Unmanned systems</a>, <a href="MED18_KeywordIndexMedia.html#Automotive_control" title="Click to go to the Keyword Index">Automotive control</a></span><br>
+                              <strong>Abstract:</strong> The concept of unmanned ships capable of being controlled remotely is now beyond the idea and will start a revolution in maritime industry. In this context, remote ship operations refer to processes of controlling the vessels from distance such that operators obtain information from sensors. Thus, assessment and improvement of human interactions can enhance the overall performance of remote ship operations. However, there are unknown i human-human and ii human-machine relationships in remote ship operations, which increase the complexity of ship operations and therefore affect the overall system performance. This paper introduces a human interaction framework in remote ship operations domain in order to maximize system performance by minimizing conflicting operations. Hence, the proposed framework identifies the human interactions in remote control centers as well as the main differences between remote and non-remote ship operations. The current paper employed human system integration (HSI) approach in order to consider human as a sub-system. In this respect, literature review and human factor engineering technique (HFE) named similar system analysis were utilized to collect data and accordingly coding process was performed to analyze collected data. The proposed framework updated the earlier models of human-automated interactions and tailored to fit in the context of remote control centers. Besides, differences between remote and non-remote operations provide insight into human interactions in remote ship operations and consequently facilitates performance improvement actions. As a result, the proposed framework provides a solid understanding of human as a critical sub-system in remote ship domain so that gained knowledge could be used by designers and engineers.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub02_02">14:20-14:40, Paper ThuB02.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0096.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('96'); return false" title="Click to show or hide the keywords and abstract">Adaptive Generalized Dynamic Inversion Based Trajectory Tracking Control of Autonomous Underwater Vehicle</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#35229" title="Click to go to the Author Index">Ansari, Uzair</a></td><td class="r">King Abdulaziz Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#11601" title="Click to go to the Author Index">Bajodah, Abdulrahman H.</a></td><td class="r">King Abdulaziz Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#35235" title="Click to go to the Author Index">Alam, Saqib</a></td><td class="r">NED Univ. of Engineering and Tech</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab96" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Nonlinear_control" title="Click to go to the Keyword Index">Nonlinear control</a>, <a href="MED18_KeywordIndexMedia.html#Modelling_and_simulation" title="Click to go to the Keyword Index">Modelling and simulation</a>, <a href="MED18_KeywordIndexMedia.html#Marine_control" title="Click to go to the Keyword Index">Marine control</a></span><br>
+                              <strong>Abstract:</strong> This paper presents the two-loops structured control system based on Adaptive Generalized Dynamic Inversion (AGDI) for the position and attitude control of Autonomous Underwater Vehicle (AUV). The outer-loop is responsible to provide the pitch and yaw tilting commands to the inner-loop, which in turns generates the tilting angles that are required to control its position in depth and east directions respectively. In AGDI control, the particular part is formulated by prescribing the constraint differential equations based on the deviation functions of the position coordinates and attitude angles. The control law is realized by inverting the constraint dynamics using Moore-Penrose Generalized Inverse (MPGI). The involved null control vector in the auxiliary part of AGDI is constructed to guarantee global closed loop stability of the linear and angular velocities. The singularity problem is addressed by incorporating a dynamic scaling factor in the expression of MPGI. The integration of an additional term based on Sliding Mode Control with adaptive modulation gain provides robustness against system nonlinearities, uncertainties and tracking performance deterioration due to dynamic scaling, such that semi-global practically stable position and attitude tracking is guaranteed. To demonstrate the tracking performance of the AGDI control, numerical simulations are conducted on six degrees of freedom simulator of the Monterey Bay Aquarium Research Institute (MBARI) AUV, under nominal and perturbed marine conditions.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub02_03">14:40-15:00, Paper ThuB02.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0076.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('76'); return false" title="Click to show or hide the keywords and abstract">Information Gain-Guided Online Coverage Path Planning for Side-Scan Sonar Survey Missions</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85735" title="Click to go to the Author Index">Kapetanovi&#263;, Nadir</a></td><td class="r">Univ. of Zagreb, Faculty of Electrical Engineering and Comp</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#20960" title="Click to go to the Author Index">Miskovic, Nikola</a></td><td class="r">Faculty of Electrical Engineering and Computing, Univ. of Z</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16779" title="Click to go to the Author Index">Tahirovic, Adnan</a></td><td class="r">Faculty of Electrical Engineering Sarajevo</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab76" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Marine_control" title="Click to go to the Keyword Index">Marine control</a>, <a href="MED18_KeywordIndexMedia.html#Unmanned_systems" title="Click to go to the Keyword Index">Unmanned systems</a>, <a href="MED18_KeywordIndexMedia.html#Discrete_event_systems" title="Click to go to the Keyword Index">Discrete event systems</a></span><br>
+                              <strong>Abstract:</strong> Mapping an unknown large-scale marine area by a side-scan sonar onboard a marine vehicle as quickly as possible is often of great importance. It is also important that a-priori unknown interesting parts of the area are scanned in more detail, i.e. with the removal of sonic shadows. In contrast to the standard overlap-all-sonar-ranges lawnmower pattern, which is an offline static coverage problem solution for side-scan sonar missions, here a novel online side-scan sonar data-driven coverage solution is proposed. The proposed coverage algorithm provides a coverage solution based on local information gain from side-scan sonar data. At the same time, the solution is generated in such a way that coverage path length is minimized while covering the same area as the standard lawnmower. Upper and lower bounds of the proposed algorithm's improvement compared to the overlap-all-sonar-ranges lawnmower method are estimated analytically and validated through extensive mission parameters variation simulations. Simulation results show that our approach can cut down coverage path length significantly compared to the standard lawnmower method in most application cases.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub02_04">15:00-15:20, Paper ThuB02.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0121.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('121'); return false" title="Click to show or hide the keywords and abstract">Localization of an Array of Hydrophones Towed by an Autonomous Underwater Vehicle</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#42209" title="Click to go to the Author Index">Arrichiello, Filippo</a></td><td class="r">Univ. Di Cassino E Del Lazio Meridionale</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#52731" title="Click to go to the Author Index">Sarkar, Soumic</a></td><td class="r">Indian Inst. of Tech. Delhi</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#12329" title="Click to go to the Author Index">Chiaverini, Stefano</a></td><td class="r">Univ. Di Cassino</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#11481" title="Click to go to the Author Index">Antonelli, Gianluca</a></td><td class="r">Univ. of Cassino and Southern Lazio</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab121" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Marine_control" title="Click to go to the Keyword Index">Marine control</a>, <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a></span><br>
+                              <strong>Abstract:</strong> The paper addresses the localization problem of an array of hydrophones mounted on a streamer towed by an Autonomous Underwater Vehicle (AUV). The considered system has been developed in the framework of the H2020 European project WiMUST and it is finally aimed at performing seismic surveys by acoustic means to explore the sea bottom subsurface. In particular, in the project's scenario, the acoustic seismic survey is performed having two autonomous surface vessels, carrying acoustic sources named sparkers, and a team of AUVs, towing a streamer each. The time of flight with which the waves generated from the sparkers reflect in the sea sub-bottom layers and return to the hydrophones provides valuable information about the properties of the ocean subsurface. However, for a proper processing of the acoustic data, there is the need to estimate hydrophones' positioning. Here, we present a localization strategy for the described system based on an Extended Kalman Filter (EKF) that uses the dynamic model of the AUV-streamer system and the range measurements from sparkers to hydrophones as extracted from the seismic acoustic signals. The proposed approach has been tested in numerical case studies built using data extracted from the experimental tests performed in the framework of the WiMUST project.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub02_05">15:20-15:40, Paper ThuB02.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0133.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('133'); return false" title="Click to show or hide the keywords and abstract">3D Autonomous Underwater Navigation Using Seabed Acoustic Sensing</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#15083" title="Click to go to the Author Index">Miller, Boris</a></td><td class="r">Inst. for Information Transmission Problems RAS and Monash U</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#48059" title="Click to go to the Author Index">Miller, Alexander</a></td><td class="r">Inst. for Information Transmission Problems, RAS</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab133" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a>, <a href="MED18_KeywordIndexMedia.html#Autonomous_systems" title="Click to go to the Keyword Index">Autonomous systems</a>, <a href="MED18_KeywordIndexMedia.html#Marine_control" title="Click to go to the Keyword Index">Marine control</a></span><br>
+                              <strong>Abstract:</strong> Autonomous Underwater Vehicle (AUV) being a powerful tool for exploring and investigating ocean resources can be used in a large variety of oceanographic, industry and defense applications. Underwater navigation for AUV is still a challenging task and is one of the fundamental elements in modern robotics because the ability of AUV to correctly understand its position and attitude within the underwater environment is determinant for the success in the different applications. AUV navigation usually is based only on information obtained from Doppler Velocity Loggers, Inertial Navigation Systems, etc. due to the absence of an external reference sources. But this type of navigation is subjected to a continuously growing error due to the absence of the absolute position measurement (for example, received from GPS or GLONASS) which is typical for the majority of UAV applications. These measurements might be provided by observation of so-called feature points like in Unmanned Aerial Vehicles (UAV) case, but the big difference between acoustical and optical images makes it a rather difficult problem which solution needs detailed preliminary mapping of the operational seabed area. The new generation of acoustic imaging gives rise to the new approaches to AUV navigation based on the absolute velocity measurements. By analogy with the optical flow approach coming from the area of UAV the evolution of the seabed map produces the information related to the absolute motion of the AUV. The principal advantage of the proposed algorithm is that the fusion of the acoustic mapping and the Inertial Navigation System (INS) gives the absolute velocity of the vehicle.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="thub03"><b>ThuB03</b></a></td>
+               <td class="r">Meeting Room 2</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#thub03" title="Click to go to the Program at a Glance"><b>Biomedical Engineering</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#22813" title="Click to go to the Author Index">Precup, Radu-Emil</a></td><td class="r">Pol. Univ. of Timisoara</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#25132" title="Click to go to the Author Index">Yen, Jia-Yush</a></td><td class="r">National Taiwan Univ</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub03_01">14:00-14:20, Paper ThuB03.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0213.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('213'); return false" title="Click to show or hide the keywords and abstract">A Novel Method to Identify Relevant Features for Automatic Detection of Atrial Fibrillation</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82685" title="Click to go to the Author Index">Trardi, Youssef</a></td><td class="r">Aix Marseille Univ. , CNRS, LIS UMR 7020</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#19129" title="Click to go to the Author Index">Ananou, Bouchra</a></td><td class="r">Univ. Paul Cézanne</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82938" title="Click to go to the Author Index">Haddi, Zouhair</a></td><td class="r">2016</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#15532" title="Click to go to the Author Index">Ouladsine, Mustapha</a></td><td class="r">Univ. D'aix Marseille III</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab213" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Biomedical_engineering" title="Click to go to the Keyword Index">Biomedical engineering</a>, <a href="MED18_KeywordIndexMedia.html#Prognostics_and_diagnostics" title="Click to go to the Keyword Index">Prognostics and diagnostics</a></span><br>
+                              <strong>Abstract:</strong> The selection of an appropriate subset of predictors from a large set of features is a major concern in clinical diagnosis research. The purpose of this study is to demonstrate that the Multiple Kernel Learning (MKL) approach could be successfully applied as a feature selection process for machine learning pipelines. Furthermore, we suggest a multi-dynamic analysis of heartbeat signal to characterize the most common sustained arrhythmia, Atrial Fibrillation (AF). Indeed, we have targeted six different dynamics of QRS time series, where each one will be associated with 12 linear and nonlinear functions to yield a set of 72 features. Afterward, a feature selection process is implemented using the MKL to evaluate the relevant features allowing AF diagnosis. Hence, a subset of only 13 features has been selected. To demonstrate the effectiveness of the proposed approach, Support Vector Classification (SVC) model has been conducted, first, on all features, and then on the features issued from the MKL selection feature process. The obtained results showed that the SVC model trained by 13 features outperformed the one trained by 72 features. This approach has reached 99.77% of success rate in the discrimination between Normal Sinus Rhythm (NSR) and AF. The proposed selection feature method holds several interesting properties in dimensionality reduction which makes it a suitable choice for several applications.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub03_02">14:20-14:40, Paper ThuB03.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0043.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('43'); return false" title="Click to show or hide the keywords and abstract">Input-Output Feedback Linearization Control (IOFLC) for Muscle Force Control by Functional Electrical Stimulation</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82168" title="Click to go to the Author Index">Ben Hmed, Abdennacer</a></td><td class="r">Lab. Le2i, Univ. De Bourgogne</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#11604" title="Click to go to the Author Index">Bakir, Toufik</a></td><td class="r">Univ. De Bourgogne</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#62216" title="Click to go to the Author Index">Sakly, Anis</a></td><td class="r">The National School of Engineers of Monastir</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82409" title="Click to go to the Author Index">Binczak, Stephane</a></td><td class="r">Lab. Le2i UMR 6306, CNRS, Arts Et Métiers, Univ. Bourgogne</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab43" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Nonlinear_control" title="Click to go to the Keyword Index">Nonlinear control</a>, <a href="MED18_KeywordIndexMedia.html#Nonlinear_systems" title="Click to go to the Keyword Index">Nonlinear systems</a>, <a href="MED18_KeywordIndexMedia.html#Biomedical_engineering" title="Click to go to the Keyword Index">Biomedical engineering</a></span><br>
+                              <strong>Abstract:</strong> Functional Electrical Stimulation (FES) is mainly used to help paralyzed individuals to restore functional movements. The efficiency of FES-systems is technically limited by the imprecise control of movements and also by the rapid appearing of the fatigue. Therefore, there is a need to include control strategies into FES-systems to modulate stimulation parameters (frequency, pulse amplitude and pulse duration). We aimed in this work to compute the required stimulation pulse duration using the Input-Output Feedback Linearization Control (IOFLC) in order to perform electrical stimulation by tracking a given desired force reference. The IOFLC approach is validated in this study through different simulation scenarios. The illustrated results showed promise in application of IOFLC into closed loop control in FES rehabilitation systems.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub03_03">14:40-15:00, Paper ThuB03.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0082.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('82'); return false" title="Click to show or hide the keywords and abstract">Structure and Evolving Fuzzy Models for Prosthetic Hand Myoelectric-Based Control Systems</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#22813" title="Click to go to the Author Index">Precup, Radu-Emil</a></td><td class="r">Pol. Univ. of Timisoara</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85867" title="Click to go to the Author Index">Teban, Teodor-Adrian</a></td><td class="r">Pol. Univ. of Timisoara</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#34879" title="Click to go to the Author Index">Petriu, Emil</a></td><td class="r">Univ. of Ottawa</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#79584" title="Click to go to the Author Index">Albu, Adriana</a></td><td class="r">Pol. Univ. Timisoara</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85868" title="Click to go to the Author Index">Mituletu, Ion-Cornel</a></td><td class="r">Pol. Univ. of Timisoara</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab82" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Fuzzy_logic_and_fuzzy_control" title="Click to go to the Keyword Index">Fuzzy logic and fuzzy control</a>, <a href="MED18_KeywordIndexMedia.html#Biomedical_engineering" title="Click to go to the Keyword Index">Biomedical engineering</a>, <a href="MED18_KeywordIndexMedia.html#Mechatronic_systems" title="Click to go to the Keyword Index">Mechatronic systems</a></span><br>
+                              <strong>Abstract:</strong> This paper suggests a structure for prosthetic hand myoelectric-based control systems and a set of evolving Takagi-Sugeno-Kang (TSK) fuzzy models to characterize mathematically the finger dynamics of the human hand for the myoelectric control of prosthetic hands. The fuzzy models represent the reference models in myoelectric-based control systems, the model outputs are the flexion percentages that correspond to the midcarpal joint angles, and the model inputs are the myoelectric signals obtained from eight myoelectric sensors. Different numbers of additional model inputs obtained from past inputs and/or outputs are considered. The structure and parameters of the fuzzy models are evolved by an incremental online identification algorithm (IOIA). The evolving TSK fuzzy models for one finger are tested against the experimental data, and a comparison with similar TSK fuzzy models evolved by another IOIA and a neural network model with similar number of parameters is included.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub03_04">15:00-15:20, Paper ThuB03.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0203.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('203'); return false" title="Click to show or hide the keywords and abstract">Comparison of the Control Designs of an Human Co-Working Endoscope Holder</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#86159" title="Click to go to the Author Index">Liao, You-Ting</a></td><td class="r">National Taiwan Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#86173" title="Click to go to the Author Index">Chen, Chin-Yuan</a></td><td class="r">National Taiwan Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#25132" title="Click to go to the Author Index">Yen, Jia-Yush</a></td><td class="r">National Taiwan Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#86170" title="Click to go to the Author Index">Ho, Ming-Chih</a></td><td class="r">National Taiwan Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#86172" title="Click to go to the Author Index">Chen, Yung-Yaw</a></td><td class="r">National Taiwan Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab203" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Biomedical_engineering" title="Click to go to the Keyword Index">Biomedical engineering</a>, <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a>, <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a></span><br>
+                              <strong>Abstract:</strong> The research addresses the design of an endoscope holding robot. The minimally invasive surgery (MIS) usually takes many doctors to work together; only one surgeon is actually performing the operation. One of the doctors is required to hold the endoscope and to point the camera at the surgical area. This research aims to design a robot to fulfill the function of this doctor to hold the endoscope in place. This paper demonstrates how to achieve the two main functions of the endoscope holders namely: to maintain the entry point into the body and to actively move away from blocking the doctor in their operation. This paper describes how to achieve these goals based on a regular six degree-of-freedom industrial robots. The control could be implemented at different levels of control. The experimental results show that the implementation at the different level of controls each has its advantages and disadvantages.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub03_05">15:20-15:40, Paper ThuB03.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0159.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('159'); return false" title="Click to show or hide the keywords and abstract">System for Compensating for Leg Length Discrepancy Based on the Estimation of the Centre of Mass of a Human Body</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#79383" title="Click to go to the Author Index">Vrhovski, Zoran</a></td><td class="r">Bjelovar Univ. of Applied Sciences</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85900" title="Click to go to the Author Index">Benkek, Goran</a></td><td class="r">Bjelovar Univ. of Applied Sciences</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#79410" title="Click to go to the Author Index">Mutka, Alan</a></td><td class="r">Bjelovar Univ. of Applied Sciences</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#79409" title="Click to go to the Author Index">Obrovac, Karlo</a></td><td class="r">Cognitus Ltd</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#11876" title="Click to go to the Author Index">Bogdan, Stjepan</a></td><td class="r">Univ. of Zagreb</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab159" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Computer_controlled_systems" title="Click to go to the Keyword Index">Computer controlled systems</a>, <a href="MED18_KeywordIndexMedia.html#Biomedical_engineering" title="Click to go to the Keyword Index">Biomedical engineering</a>, <a href="MED18_KeywordIndexMedia.html#Robotics" title="Click to go to the Keyword Index">Robotics</a></span><br>
+                              <strong>Abstract:</strong> This paper presents a system for compensating for leg length discrepancy (LLD) based on the estimation of the centre of mass of a human body. The system consists of two 3-RPS parallel manipulators with a moving force plate, control and measuring electronics and a graphical user interface (GUI). Force plates are equipped with force sensors that estimate the centre of mass (CoM) of a human body. Patients with LLD have a displaced CoM. By increasing the height of the force plate that measures a greater load, the CoM of a human body returns into the correct position. The height of the force plate is regulated by means of the 3-RPS parallel manipulator. LLD is compensated for by the difference in heights of the force plates. This paper presents the preliminary experimental results of the system for compensating for LLD.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="thub04"><b>ThuB04</b></a></td>
+               <td class="r">Meeting Room 3</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#thub04" title="Click to go to the Program at a Glance"><b>Robust Control 2</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#52054" title="Click to go to the Author Index">Hure, Nikola</a></td><td class="r">FER Zagreb</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#19255" title="Click to go to the Author Index">Dritsas, Leonidas</a></td><td class="r">ASPETE</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub04_01">14:00-14:20, Paper ThuB04.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0112.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('112'); return false" title="Click to show or hide the keywords and abstract">A Case Study on Determining Stability Boundaries of Parameter Uncertain Systems</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#61343" title="Click to go to the Author Index">Mutlu, Ilhan</a></td><td class="r">Istanbul Tech. Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#40279" title="Click to go to the Author Index">Schrödel, Frank</a></td><td class="r">IAV GmbH</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#80706" title="Click to go to the Author Index">Mihailescu-Stoica, Dinu</a></td><td class="r">TU Darmstadt</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82879" title="Click to go to the Author Index">Mustafa, Khaled Alaaeldin Abdelfattah</a></td><td class="r">Univ. of Twente</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#18829" title="Click to go to the Author Index">Söylemez, Mehmet Turan</a></td><td class="r">Istanbul Tech. Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab112" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a>, <a href="MED18_KeywordIndexMedia.html#Robust_control" title="Click to go to the Keyword Index">Robust control</a></span><br>
+                              <strong>Abstract:</strong> Guaranteeing the stability is one of the fundamental problems of control engineering. In most of the dynamical systems, parameter uncertainties can not be avoided. Thus, it is crucial from a practical point of view to propose generic methods for analyzing the stability of uncertain parameter systems. In this study, the extension of previously proposed Lyapunov Equation based stability mapping approach to the case of parameter uncertain systems is presented. Using the present method, it becomes possible to determine the explicit stability boundaries of the uncertain parameters along with the free controller parameters. Unlike most of the conventional approaches, the current method does not include any restrictions related with the number of the uncertain parameters and the way that the uncertain parameter(s) show themselves in the problem formulation. In order to demonstrate the efficiency of the proposed method, two benchmark case studies are discussed in detail. It is shown that the proposed approach is capable of increasing the accuracy of the previous results in specific cases while ensuring a flexible and easily applicable stability analysis environment for such systems.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub04_02">14:20-14:40, Paper ThuB04.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0024.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('24'); return false" title="Click to show or hide the keywords and abstract">On Robustly Stabilizing PID Controllers for Systems with a Certain Class of Multilinear Parameter Dependency</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#80706" title="Click to go to the Author Index">Mihailescu-Stoica, Dinu</a></td><td class="r">TU Darmstadt</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#40279" title="Click to go to the Author Index">Schrödel, Frank</a></td><td class="r">IAV GmbH</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#61220" title="Click to go to the Author Index">Vosswinkel, Rick</a></td><td class="r">Tech. Univ. Dresden</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#23365" title="Click to go to the Author Index">Adamy, Juergen</a></td><td class="r">Tech. Univ. Darmstadt</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab24" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robust_control" title="Click to go to the Keyword Index">Robust control</a>, <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a></span><br>
+                              <strong>Abstract:</strong> PID controllers are the most common controller type in industry. However, methods for optimal controller parameter tuning are still under development, especially in the case of robust control. One starting point for controller tuning is the usage of D-decomposition techniques, in order to identify the space of stabilizing controller parameters. In this paper, a novel approach for exact calculation of all stabilizing controller parameters which explicitly considers parameter uncertainties is introduced. Based on previous studies, the focus is expanded to multilinear parameter uncertainties. The usage of the proposed method is demonstrated in the prominent case study of robust control.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub04_03">14:40-15:00, Paper ThuB04.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0160.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('160'); return false" title="Click to show or hide the keywords and abstract">Discrete Robust Controller for Ball and Plate System</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82781" title="Click to go to the Author Index">Dobriborsci, Dmitrii</a></td><td class="r">ITMO Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#56620" title="Click to go to the Author Index">Margun, Alexey</a></td><td class="r">ITMO Univ</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#41044" title="Click to go to the Author Index">Kolyubin, Sergey</a></td><td class="r">NTNU</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab160" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Autonomous_systems" title="Click to go to the Keyword Index">Autonomous systems</a>, <a href="MED18_KeywordIndexMedia.html#Complex_Systems" title="Click to go to the Keyword Index">Complex Systems</a>, <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a></span><br>
+                              <strong>Abstract:</strong> In this paper we present recent results on designing the discrete output robust controller called ”‘consecutive compensator”’ suitable for multiple-input multiple- output discrete systems. It is an extension of the previous results where the continuous version was considered for uncertain Single- input single-output plants. The proposed algorithm provides convergence of the tracking error to the bounded area. Lyapunov function method for stability analysis was used. The experimental validation was performed using well-known Ball and Plate System.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub04_04">15:00-15:20, Paper ThuB04.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0038.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('38'); return false" title="Click to show or hide the keywords and abstract">On Optimal Anisotropy-Based Control Problem for Discrete-Time Descriptor Systems</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#50379" title="Click to go to the Author Index">Andrianova, Olga</a></td><td class="r">Ics Ras</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#50928" title="Click to go to the Author Index">Belov, Alexey</a></td><td class="r">ITMO Univ</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab38" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Robust_control" title="Click to go to the Keyword Index">Robust control</a>, <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a>, <a href="MED18_KeywordIndexMedia.html#Control" title="Click to go to the Keyword Index">Control</a></span><br>
+                              <strong>Abstract:</strong> This paper is dedicated to optimal state-feedback control problem for discrete-time descriptor systems in presence of &quot;colored&quot; noise with known mean anisotropy level. Here &quot;colored&quot; noise stands for a stationary Gaussian sequence, generated by a linear shaping filter from the Gaussian white noise sequence. The control goal is to find a state feedback control law which makes the closed-loop system admissible and minimizes its a-anisotropic norm (mean anisotropy level a is known).
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub04_05">15:20-15:40, Paper ThuB04.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0109.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('109'); return false" title="Click to show or hide the keywords and abstract">Aggressive Control Design for Electric Power Generation Plants</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#19255" title="Click to go to the Author Index">Dritsas, Leonidas</a></td><td class="r">ASPETE</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#51253" title="Click to go to the Author Index">Kontouras, Efstathios</a></td><td class="r">Univ. of Patras</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14198" title="Click to go to the Author Index">Kitsios, Ioannis</a></td><td class="r">Hellenic Air Force Electronics & Telecoms Depot</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#16997" title="Click to go to the Author Index">Tzes, Anthony</a></td><td class="r">New York Univ. Abu Dhabi</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab109" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Power_systems_and_Smart_Grid" title="Click to go to the Keyword Index">Power systems and Smart Grid</a>, <a href="MED18_KeywordIndexMedia.html#Robust_control" title="Click to go to the Keyword Index">Robust control</a>, <a href="MED18_KeywordIndexMedia.html#Disturbance_rejection" title="Click to go to the Keyword Index">Disturbance rejection</a></span><br>
+                              <strong>Abstract:</strong> This article addresses the design problem of an aggressive load/frequency feedback controller against load disturbances for an electric power generation plant. The controller is comprised of two components. The primary aggressive component, whose design is based on LMI techniques, places the closed loop poles in a predefined region while providing fast attenuation and disturbance rejection. The resulting control action provides control commands with large amplitudes that trigger the plant's input saturator especially in case of large load disturbances. To account for this, an anti-windup compensator is provided assuring stability of the closed--lop system in all cases. The overall controller provides a fast response for small load disturbances and a rather conservative response owing to the anti-windup action for large loads. Simulation studies are offered to illustrate the efficiency of the control design.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="thub05"><b>ThuB05</b></a></td>
+               <td class="r">Meeting Room 4</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#thub05" title="Click to go to the Program at a Glance"><b>Fault Diagnosis and Fault Tolerant Control 1</b></a></td>
+               <td class="r">Regular Session</td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#85983" title="Click to go to the Author Index">Ivanjko, Edouard</a></td><td class="r">Univ. of Zagreb, Faculty of Transport and Traffic Sciences</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#14859" title="Click to go to the Author Index">Maquin, Didier</a></td><td class="r">Univ. De Lorraine</td></tr>
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub05_01">14:00-14:20, Paper ThuB05.1</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0028.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('28'); return false" title="Click to show or hide the keywords and abstract">Development and Experimental Testing of a Health Monitoring System of Electro-Mechanical Actuators for Small Airplanes</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#15849" title="Click to go to the Author Index">Previdi, Fabio</a></td><td class="r">Univ. Degli Studi Di Bergamo</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82703" title="Click to go to the Author Index">Maccarana, Yamuna</a></td><td class="r">Univ. of Bergamo</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#67682" title="Click to go to the Author Index">Mazzoleni, Mirko</a></td><td class="r">Univ. Degli Studi Di Bergamo</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82497" title="Click to go to the Author Index">Scandella, Matteo</a></td><td class="r">Univ. of Bergamo</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82704" title="Click to go to the Author Index">Pispola, Giulio</a></td><td class="r">Umbra Cuscinetti</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#82706" title="Click to go to the Author Index">Porzi, Nicola</a></td><td class="r">Umbra Cuscinetti</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab28" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Fault_diagnosis" title="Click to go to the Keyword Index">Fault diagnosis</a>, <a href="MED18_KeywordIndexMedia.html#Prognostics_and_diagnostics" title="Click to go to the Keyword Index">Prognostics and diagnostics</a>, <a href="MED18_KeywordIndexMedia.html#Mechatronic_systems" title="Click to go to the Keyword Index">Mechatronic systems</a></span><br>
+                              <strong>Abstract:</strong> This paper reports the preliminary results of the REPRISE (Reliable Electromechanical actuator for PRImary SurfacE with health monitoring) project, which aims to design a novel Electro-Mechanical Actuator (EMA) to be used on primary flight surfaces of small aircrafts. An important element of the actuator control system is a Health Monitoring (HM) module. This component is an algorithm able to detect anomalies in the device even if there is no evident loss of ability in pursuing its main function (position tracking). In particular, the project aim is to identify any degradation in the mechanical transmission elements, the ballscrew and other components such as bearings. Moreover, it is strongly advisable that the HM algorithm is based on a feature whose value can be easily computed and monitored during the actuator life. In this work, a large experimental activity has been carried out with the purpose of bringing the actuator close to failure, by progressive fault injection in overload operating conditions. A feature named &#931;, that is, the mean of the RMS of the three phase currents (the input to the electric motor), is proposed as a parameter for HM. The effectiveness of this parameter in detecting the mechanical transmission degradation is experimentally proven. The degradation has been confirmed by visual inspection and screw thread profile measurements. In spite of this, the actuator is still able to perform position tracking in an effective way.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub05_02">14:20-14:40, Paper ThuB05.2</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0037.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('37'); return false" title="Click to show or hide the keywords and abstract">Robust Time-Varying Sensor Bias Estimation for Bounded-Error Systems: Application to the Wind Turbine Benchmark</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#17355" title="Click to go to the Author Index">Witczak, Marcin</a></td><td class="r">Univ. of Zielona Gora</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#71618" title="Click to go to the Author Index">Pazera, Marcin</a></td><td class="r">Univ. of Zielona Gora</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#15870" title="Click to go to the Author Index">Puig, Vicenç</a></td><td class="r">Univ. Pol. De Catalunya (UPC)</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#22854" title="Click to go to the Author Index">Mrugalski, Marcin</a></td><td class="r">Univ. of Zielona Gora</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab37" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Fault_diagnosis" title="Click to go to the Keyword Index">Fault diagnosis</a>, <a href="MED18_KeywordIndexMedia.html#Linear_systems" title="Click to go to the Keyword Index">Linear systems</a>, <a href="MED18_KeywordIndexMedia.html#Modelling_and_simulation" title="Click to go to the Keyword Index">Modelling and simulation</a></span><br>
+                              <strong>Abstract:</strong> The objective of this paper is to propose a novel approach for simultaneous state and time-varying sensor bias estimation of dynamic systems. The main advantage of the presented strategy is its simplicity along with robustness to exogenous bounded disturbances. The proposed approach belongs to the wide class of the so-called bounded-error approaches. It constitutes an attractive alternative to the stochastic Kalman-filer-based framework as no knowledge about disturbances/noise distribution is required. The only preliminary requirement is the knowledge about their upper and lower bounds. In this paper, it is assumed that their belong the the ellipsoidal set. Under such an assumption, a novel estimator is proposed along with a comprehensive convergence analysis. It is worth to note that, the convergence analysis is realised with the so-called quadratic boundedness approach. The final part of the paper concerns application of the proposed approach to the wind turbine benchmark.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub05_03">14:40-15:00, Paper ThuB05.3</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0151.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('151'); return false" title="Click to show or hide the keywords and abstract">Fault-Tolerant Disturbance Observer Based Control for Altitude and Attitude Tracking of a Quadrotor</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#78952" title="Click to go to the Author Index">Baldini, Alessandro</a></td><td class="r">Univ. Pol. Delle Marche</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#78951" title="Click to go to the Author Index">Felicetti, Riccardo</a></td><td class="r">Univ. Pol. Delle Marche</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#56750" title="Click to go to the Author Index">Freddi, Alessandro</a></td><td class="r">Univ. Pol. Delle Marche</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14688" title="Click to go to the Author Index">Longhi, Sauro</a></td><td class="r">Univ. Pol. Delle Marche</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#15160" title="Click to go to the Author Index">Monteriù, Andrea</a></td><td class="r">Univ. Pol. Delle Marche</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab151" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Fault_tolerant_control" title="Click to go to the Keyword Index">Fault tolerant control</a>, <a href="MED18_KeywordIndexMedia.html#Disturbance_rejection" title="Click to go to the Keyword Index">Disturbance rejection</a>, <a href="MED18_KeywordIndexMedia.html#Nonlinear_systems" title="Click to go to the Keyword Index">Nonlinear systems</a></span><br>
+                              <strong>Abstract:</strong> This paper presents an attitude and altitude fault-tolerant tracking control for a quadrotor using the Disturbance Observer Based Control (DOBC). A Newton-Euler model of the quadrotor is described and the fault-tolerant control problem is treated for small angles. An appropriate estimation gain is proposed for the considered system, which allows to impose desired closed loop performances. These closed loop performances are analysed, showing the boundedness properties, and highlighting the trade off between fault estimation and control effort. Numerical simulations are provided for testing the effectiveness of the proposed DOBC solution, which is compared with the classical backstepping controller in case of multiple actuation faults.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub05_04">15:00-15:20, Paper ThuB05.4</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0023.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('23'); return false" title="Click to show or hide the keywords and abstract">Sparse Reconstruction-Based Contribution for Multiple Fault Isolation by KPCA</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#15223" title="Click to go to the Author Index">Mourot, Gilles</a></td><td class="r">Univ. De Lorraine</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#61115" title="Click to go to the Author Index">Kallas, Maya</a></td><td class="r">Univ. De Lorraine / CRAN UMR 7039</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85213" title="Click to go to the Author Index">Anani, Kwami Dodzivi</a></td><td class="r">Univ. De Lorraine</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#14859" title="Click to go to the Author Index">Maquin, Didier</a></td><td class="r">Univ. De Lorraine</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab23" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Fault_diagnosis" title="Click to go to the Keyword Index">Fault diagnosis</a>, <a href="MED18_KeywordIndexMedia.html#Nonlinear_systems" title="Click to go to the Keyword Index">Nonlinear systems</a>, <a href="MED18_KeywordIndexMedia.html#Optimisation" title="Click to go to the Keyword Index">Optimisation</a></span><br>
+                              <strong>Abstract:</strong> This paper addresses the problem of multiple fault isolation based on kernel principal component analysis and proposes a sparse fault estimation method to evaluate the reconstruction-based contribution. The fault magnitude estimation is here formulated as an optimization problem under nonnegativity and sum-to-one constraints. A multiplicative iterative scheme and its initialization procedure are proposed to solve it. The effectiveness of the proposed method is demonstrated on the simulated continuous stirred tank reactor (CSTR) process.
+                           </div>
+                        </td>
+                     </tr>
+                  
+<tr style="line-height: 0.2em"><td colspan="2">&nbsp;</td></tr>
+<tr class="pHdr"><td valign="bottom"><a name="thub05_05">15:20-15:40, Paper ThuB05.5</a></td><td class="r">&nbsp;</td></tr>
+<tr><td colspan="2"><span class="pTtl"><a href="./files/0042.pdf" title="Click to open the pdf file"><img src="images/pdf.png" height="12" border="0" alt=""></></a><a href="" onclick="viewAbstract('42'); return false" title="Click to show or hide the keywords and abstract">Learning Observer-Based Robust H&#8734; Fault-Tolerant Control for T-S Fuzzy Descriptor Systems with Time-Delay</a></span></td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#85440" title="Click to go to the Author Index">Kharrat, Dhouha</a></td><td class="r">Univ. of Picardie Jules Verne</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#23447" title="Click to go to the Author Index">Gassara, Hamdi</a></td><td class="r">Univ. of Picardie Jules Verne</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#12861" title="Click to go to the Author Index">El Hajjaji, Ahmed</a></td><td class="r">Univ. De Picardie-Jules Verne</td></tr>
+<tr><td><a href="MED18_AuthorIndexMedia.html#19979" title="Click to go to the Author Index">Chaabane, Mohamed</a></td><td class="r">National Engineering School of Sfax, Tunisia</td></tr>
+
+                     <tr>
+                        <td colspan="2" style="padding: 0px">
+                           <div id="Ab42" style="padding-top: 10px; padding-left: 4px; padding-right: 4px; display: none">
+                              
+                              <span style="line-height: 2em"><strong>Keywords:</strong> <a href="MED18_KeywordIndexMedia.html#Fault_tolerant_control" title="Click to go to the Keyword Index">Fault tolerant control</a>, <a href="MED18_KeywordIndexMedia.html#Fuzzy_logic_and_fuzzy_control" title="Click to go to the Keyword Index">Fuzzy logic and fuzzy control</a>, <a href="MED18_KeywordIndexMedia.html#Optimisation" title="Click to go to the Keyword Index">Optimisation</a></span><br>
+                              <strong>Abstract:</strong> This brief is concerned with the problem of learning observer-based robust H&#8734; fault-tolerant Control (FTC) for Takagi-Sugeno (T-S) fuzzy descriptor systems with time-delay affected by both actuator faults and external disturbances. The learning observer allows simultaneous the estimation of system states and actuator faults. Based on the state estimation and the actuator fault reconstruction, a FTC is designed to maintain the performance of the faulty system. Using the H&#8734; optimization technique, the analysis and design conditions of the fuzzy learning observer-based FTC are provided and then formulated into a set of delay dependent linear matrix inequalities (LMIs) which can be solved in a single step. An example is finally presented to validate our findings.
+                           </div>
+                        </td>
+                     </tr>
+                  
+</table><table class="trk">
+
+             <tr><td colspan="2">&nbsp;</td></tr>
+              <tr class="sHdr">
+               <td><a name="thuroundtable01"><b>ThuRoundTable01</b></a></td>
+               <td class="r">Kolovare</td>
+              </tr>
+             
+             <tr class="sHdr">
+               <td nowrap><a href="MED18_ProgramAtAGlanceMedia.html#thuroundtable01" title="Click to go to the Program at a Glance"><b>Social Implications of Autonomy and Automation</b></a></td>
+               <td class="r"></td>
+             </tr>
+            
+<tr><td>Chair: <a href="MED18_AuthorIndexMedia.html#11486" title="Click to go to the Author Index">Antsaklis, Panos J.</a></td><td class="r">Univ. of Notre Dame</td></tr>
+<tr><td>Co-Chair: <a href="MED18_AuthorIndexMedia.html#24768" title="Click to go to the Author Index">Valavanis, Kimon</a></td><td class="r">Univ. of Denver</td></tr>
+</table>
+</div>
+
+<p>&nbsp;<br>&nbsp;</p><p>&nbsp;<br>&nbsp;</p>
+
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,1016 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="viewport" content="width=device-width">
+<script src="jquery-1.11.1.min.js"></script>
+<title>MED 2018</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<style type=text/css>
+#container {
+	position: absolute;
+	width: 85%;
+	height: 90%;
+	margin-top: 2px;
+	overflow: hidden;
+}
+</style>
+
+<script language="JavaScript">
+function modify(number){
+   var condition = 'document.myprogram.modify' + number + '.checked';
+   if (eval(condition)){
+      action = 'Add=';}
+   else{
+      action = 'Delete=';
+   }
+   url = 'https://ras.papercept.net/conferences/scripts/myprogram.pl?ConfID=119&' + action + number;
+   window.open(url,'myprogrampage');
+}
+var iIntervalId;  // Global variable
+function addsession(id){
+   clearInterval(iIntervalId);
+   url = 'https://ras.papercept.net/conferences/scripts/myprogram.pl?ConfID=119&AddSession=' + id;
+   window.open(url,'myprogrampage');
+   startreset();
+}
+function getCookie(sName){
+   var sRE ="(?:; )?" + sName +"=([^;]*);?";   
+   var oRE = new RegExp(sRE);
+   if (oRE.test(document.cookie)){
+      return decodeURIComponent(RegExp["$1"]);}
+   else{
+      return null;
+   }
+}
+function loadprogram(){
+   var list = getCookie("MED18");
+   if (list){
+      var List = list.split(",");
+      for (var i=0; List[i]; i++){
+         var id = 'modify' + List[i];
+         var statement = 'document.myprogram.' + id + '.checked=true';  
+         var ID = document.getElementById(id);
+         if (ID){eval(statement);}
+      }
+   }
+}
+function reset(){
+
+   // Uncheck all modify and addsession checkboxes
+
+   for (var i=0; document.myprogram.elements[i]    ; i++){
+      var name = document.myprogram.elements[i].name;
+      if (name.substring(0,10) == 'addsession' || name.substring(0,6) == 'modify'){
+         document.myprogram.elements[i].checked = false;
+      }
+   }
+   
+   // Reload the program
+   
+   loadprogram();
+}
+function startreset(){
+   iIntervalId = setInterval(reset,2000);
+}
+function viewAbstract(number){
+   var box = document.getElementById('Ab' + number);
+   if (box.style.display == 'block'){
+      box.style.display = 'none';
+   }
+   else if (box && box.style.display == 'none'){
+      box.style.display = 'block';
+   }
+}
+function openAllAbstracts(){
+   var d = document.getElementsByTagName('div');
+   var count = d.length;
+   if (count == 0){return;}
+   for (var i=0; i<d.length; i++){
+      if (d[i].id && d[i].id.substring(0,2) == 'Ab' && d[i].style.display == 'none'){
+         d[i].style.display = 'block';
+      }
+   }
+}
+function closeAllAbstracts(){
+   var d = document.getElementsByTagName('div');
+   for (var i=0; i<d.length; i++){
+      if (d[i].id && d[i].id.substring(0,2) == 'Ab'){
+         d[i].style.display = 'none';
+      }
+   }
+}
+
+
+var uhash;
+var pColor;
+$(function() { 
+
+   // Check for URL hash
+
+   uhash = location.hash.substring(1);
+   if (uhash.slice(-1) == '_'){
+      uhash = null;
+   }
+   if (uhash){
+   
+      // Mark the session
+   
+      pColor = $('#' + uhash).parent().css('backgroundColor');
+      $('#' + uhash).parent().css('backgroundColor','#FFdddd');
+
+      // Set the widths
+      
+      setwidth();
+      
+      // If claasical view is required then return
+
+      if (!ghit){return;} 
+      
+      // Reset left margin for FF
+
+      document.getElementById('container').scrollLeft = 0;;
+
+      // Discover the table and the block and determine the block Id
+   
+      var rt = $('#' + uhash);
+      var done = false;
+      while (!done){
+         rt = rt.parent();    
+         var etype = rt.get(0).tagName;  
+         if (rt.is("table")){      
+            done = true;
+         }
+      }
+      rt = rt.parent().parent().parent();
+      var iid = rt.attr('id')
+
+      // Show the block
+
+      initialize();
+      $('#' + iid).show();
+      $( '#A' + iid ).focus();
+      var ypos = $('#' + iid).offset().top;      
+      window.scrollTo(0,ypos);
+
+      // Cancel the scroll to uhash
+
+      var url = location.href;
+      url += '_';
+      location.href = url;
+      
+      // Scroll into view
+
+      var leftPosition = $('#' + uhash).parent().position().left;
+      var topOffset = $('#' + uhash).parent().offset().top;
+      var divOffset = $('#' + iid).find('div').offset().top;
+      var topPosition = topOffset-divOffset;
+      $('#' + iid).find('div').scrollLeft(leftPosition);
+      $('#' + iid).find('div').scrollTop(topPosition);
+   }
+   else{
+      setwidth();
+      initialize();
+   }
+});
+
+var ghit = false;
+function setwidth(){
+   var viewportwidth = $( window ).width();
+   var viewportheight = $( window ).height();
+   var sdiv = $(".sdiv" );
+   for (var i=0; i<sdiv.length; i++){
+      $(sdiv[i]).css({width: .98*viewportwidth + 'px'});
+      $(sdiv[i]).css("height", .9*viewportheight-50 + 'px');      
+   }
+
+   // Detect horizontal overflow on any of the divs
+   
+   var divs = document.getElementsByTagName('div');
+   for (var i=0; i<divs.length; i++){
+      if (divs[i].id && divs[i].id.substring(0,3) == 'div'){
+         if (divs[i].scrollWidth > divs[i].clientWidth || divs[i].scrollHeight > divs[i].clientHeight){
+            ghit = true;
+            break;
+         }
+      }
+   }
+   if (!ghit){
+      for (var i=0; i<divs.length; i++){
+         divs[i].style.height = 'auto';
+      }
+   }
+}
+
+function selfollowing(hsh){
+   $('#' + uhash).parent().css('backgroundColor',pColor);
+   setwidth();
+   initialize();
+   if (hsh == 'TheTop'){
+      var ypos = $('#container').offset().top;
+      window.scrollTo(0,ypos)
+   }
+   else{
+      $('#' + hsh).show();
+//      window.location.hash = hsh;
+      $( '#A' + hsh ).focus();
+      var ypos = $('#' + hsh).offset().top;
+      window.scrollTo(0,ypos)
+   }
+}
+
+function initialize(){
+
+   // Show all day blocks
+   
+   var blcks = $('.blck');
+   for (var i=0; i<blcks.length; i++){
+      blcks[i].style.display = 'block';
+   }
+
+   // Detect horizontal overflow on any of the divs
+   
+   var hit = false;
+   var divs = document.getElementsByTagName('div');
+   for (var i=0; i<divs.length; i++){
+      if (divs[i].id && divs[i].id.substring(0,3) == 'div'){
+         if (divs[i].scrollWidth > divs[i].clientWidth || divs[i].scrollHeight > divs[i].clientHeight){
+            hit = true;
+            break;
+         }
+      }
+   }
+   if (hit){
+   
+      // Set overflow hidden on body. This will prevent it scrolling
+      
+      $("body").css("overflow","auto");
+      document.getElementById('start').style.display = 'inline';
+      
+      // Hide all day blocks
+   
+      var blcks = $('.blck');
+      for (var i=0; i<blcks.length; i++){
+         blcks[i].style.display = 'none';
+      }
+   }
+   else{
+      $("body").css("overflow","auto");
+      document.getElementById('start').style.display = 'none';
+      var blcks = $('.sdiv');
+      for (var i=0; i<blcks.length; i++){
+        blcks[i].style.height = 'auto';
+      }
+   }
+   return;
+}
+
+
+</script>
+</head>
+
+<body  onresize="setwidth(); initialize()">
+
+
+<!-- <div id="container"> -->
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<div class="c" id="TheTop">
+</div>
+<table border="0" cellspacing="0" cellpadding="1" width="85%" nowrap style="margin: auto">
+<tr><td colspan=2>
+<br>
+<h2>Program at a Glance</h2>
+<hr>
+</td></tr>
+</table>
+
+<table align="left" border="0" cellspacing="0" cellpadding="0" width="85%" nowrap style="margin: auto">
+<tr><td>
+
+<div class="c">
+
+         <div id="Tuesday" class="blck">
+         <p><br><b>MED 2018 Technical Program Tuesday June 19, 2018</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Tuesday">Tuesday</a>&nbsp;&nbsp;<a href="#Wednesday">Wednesday</a>&nbsp;&nbsp;<a href="#Thursday">Thursday</a>&nbsp;&nbsp;<a href="#Friday">Friday</a>&nbsp;&nbsp;<a href="#Wednesday" title="Click to jump to the next day">Next</a>&nbsp;&nbsp;<a href="#TheTop">Top</a>&nbsp;&nbsp;<span class="scrlis" style="color: gray"><br>Click on the day's program and use the arrow keys for easy horizontal and vertical scrolling</span></p>
+      
+
+         <div id="div1" class="sdiv" style="overflow: auto">
+         <div id="ATuesday" tabindex="1">
+	  
+         <table class="dayB" style="width: 800px">
+
+<tr class="tHdr">
+<td width="50%" class="c">Track T1</td>
+<td width="50%" class="c">Track T2</td>
+</tr><tr>
+                  <td width="50%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tuea01">09:00-10:45</a><BR>
+                        Kolovare<BR>
+                        Industrial Challenge TueA01<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_1.html#tuea01" title="Click to go to the session program"><i>Industrial Challenges (Part 1)</i></a>
+                   </td>
+               
+                  <td width="50%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tuea02">09:00-10:45</a><BR>
+                        Meeting Room 1<BR>
+                        Workshop TueA02<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_1.html#tuea02" title="Click to go to the session program"><i>Assistive Technologies for People with ASD and Other Disabilities (Part 1)</i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="2" class="c">
+                        <a id="tueam_coffeebreak">10:45-11:00</a><BR>
+                        <BR>
+                         TueAM_CoffeeBreak<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_1.html#tueam_coffeebreak" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="50%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tueb01">11:00-12:45</a><BR>
+                        Kolovare<BR>
+                        Industrial Challenge TueB01<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_1.html#tueb01" title="Click to go to the session program"><i>Industrial Challenges (Part 2)</i></a>
+                   </td>
+               
+                  <td width="50%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tueb02">11:00-12:45</a><BR>
+                        Meeting Room 1<BR>
+                        Workshop TueB02<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_1.html#tueb02" title="Click to go to the session program"><i>Assistive Technologies for People with ASD and Other Disabilities (Part 2)</i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="2" class="c">
+                        <a id="tuelunchbreak">12:45-14:00</a><BR>
+                        <BR>
+                         TueLunchBreak<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_1.html#tuelunchbreak" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="50%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tuec01">14:00-15:45</a><BR>
+                        Kolovare<BR>
+                        Industrial Challenge TueC01<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_1.html#tuec01" title="Click to go to the session program"><i>Industrial Challenges (Part 3)</i></a>
+                   </td>
+               
+                  <td width="50%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tuec02">14:00-15:45</a><BR>
+                        Meeting Room 1<BR>
+                        Tutorial Session TueC02<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_1.html#tuec02" title="Click to go to the session program"><i>Graph Theoretic Methods in Networked Dynamic Systems (Part 1)</i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="2" class="c">
+                        <a id="tuepm_coffeebreak">15:45-16:00</a><BR>
+                        <BR>
+                         TuePM_CoffeeBreak<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_1.html#tuepm_coffeebreak" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="50%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tued01">16:00-17:45</a><BR>
+                        Kolovare<BR>
+                        Industrial Challenge TueD01<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_1.html#tued01" title="Click to go to the session program"><i>Industrial Challenges (Part 4)</i></a>
+                   </td>
+               
+                  <td width="50%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="tued02">16:00-17:45</a><BR>
+                        Meeting Room 1<BR>
+                        Tutorial Session TueD02<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_1.html#tued02" title="Click to go to the session program"><i>Graph Theoretic Methods in Networked Dynamic Systems (Part 2)</i></a>
+                   </td>
+               
+</tr>
+
+         </table>
+         </div>
+         </div>
+         </div>
+         <br><br>
+      
+         <div id="Wednesday" class="blck">
+         <p><br><b>MED 2018 Technical Program Wednesday June 20, 2018</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Tuesday" title="Click to jump to the previous day">Previous</a>&nbsp;&nbsp;<a href="#Tuesday">Tuesday</a>&nbsp;&nbsp;<a href="#Wednesday">Wednesday</a>&nbsp;&nbsp;<a href="#Thursday">Thursday</a>&nbsp;&nbsp;<a href="#Friday">Friday</a>&nbsp;&nbsp;<a href="#Thursday" title="Click to jump to the next day">Next</a>&nbsp;&nbsp;<a href="#TheTop">Top</a>&nbsp;&nbsp;<span class="scrlis" style="color: gray"><br>Click on the day's program and use the arrow keys for easy horizontal and vertical scrolling</span></p>
+      
+
+         <div id="div2" class="sdiv" style="overflow: auto">
+         <div id="AWednesday" tabindex="2">
+	  
+         <table class="dayB" style="width: 800px">
+
+<tr class="tHdr">
+<td width="16%" class="c">Track T1</td>
+<td width="16%" class="c">Track T2</td>
+<td width="16%" class="c">Track T3</td>
+<td width="16%" class="c">Track T4</td>
+<td width="16%" class="c">Track T5</td>
+<td width="16%" class="c">Track T6</td>
+</tr><tr>
+                  <td width="96%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="6" class="c">
+                        <a id="wedopeningo">08:30-09:00</a><BR>
+                        Kolovare<BR>
+                         WedOpeningO<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#wedopeningo" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="16%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="weda01">09:00-11:00</a><BR>
+                        Kolovare<BR>
+                        Regular Session WedA01<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#weda01" title="Click to go to the session program"><i>Robotics 1</i></a>
+                   </td>
+               
+                  <td width="16%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="weda02">09:00-11:00</a><BR>
+                        Meeting Room 1<BR>
+                        Regular Session WedA02<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#weda02" title="Click to go to the session program"><i>Control Systems</i></a>
+                   </td>
+               
+                  <td width="16%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="weda03">09:00-11:00</a><BR>
+                        Meeting Room 2<BR>
+                        Regular Session WedA03<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#weda03" title="Click to go to the session program"><i>Modelling and Simulation</i></a>
+                   </td>
+               
+                  <td width="16%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="weda04">09:00-11:00</a><BR>
+                        Meeting Room 3<BR>
+                        Regular Session WedA04<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#weda04" title="Click to go to the session program"><i>Linear Systems</i></a>
+                   </td>
+               
+                  <td width="16%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="weda05">09:00-11:00</a><BR>
+                        Meeting Room 4<BR>
+                        Regular Session WedA05<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#weda05" title="Click to go to the session program"><i>Autonomous and Unmanned Systems 1</i></a>
+                   </td>
+               
+                  <td width="16%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="weda06">09:00-11:00</a><BR>
+                        Meeting Room 5<BR>
+                        Regular Session WedA06<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#weda06" title="Click to go to the session program"><i>Optimisation</i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="96%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="6" class="c">
+                        <a id="wedam_coffeebreak">11:00-11:30</a><BR>
+                        <BR>
+                         WedAM_CoffeeBreak<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#wedam_coffeebreak" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="96%" rowspan="1" style="background-color: #99FF99"
+                     colspan="6" class="c">
+                        <a id="wedplenary01">11:30-12:30</a><BR>
+                        Kolovare<BR>
+                        Plenary Session WedPlenary01<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#wedplenary01" title="Click to go to the session program"><i>"Back to the Roots: Multivariate Polynomial Optimization by Numerical Linear Algebra" - Prof Bart De Moor</i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="96%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="6" class="c">
+                        <a id="wedlunchbreak">12:30-14:00</a><BR>
+                        <BR>
+                         WedLunchBreak<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#wedlunchbreak" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="16%" rowspan="5" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wedb01">14:00-15:40</a><BR>
+                        Kolovare<BR>
+                        Regular Session WedB01<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#wedb01" title="Click to go to the session program"><i>Aerospace Control 1</i></a>
+                   </td>
+               
+                  <td width="16%" rowspan="5" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wedb02">14:00-15:40</a><BR>
+                        Meeting Room 1<BR>
+                        Regular Session WedB02<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#wedb02" title="Click to go to the session program"><i>Intelligent Transportation Systems</i></a>
+                   </td>
+               
+                  <td width="16%" rowspan="5" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wedb03">14:00-15:40</a><BR>
+                        Meeting Room 2<BR>
+                        Regular Session WedB03<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#wedb03" title="Click to go to the session program"><i>Real-Time Control</i></a>
+                   </td>
+               
+                  <td width="16%" rowspan="5" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wedb04">14:00-15:40</a><BR>
+                        Meeting Room 3<BR>
+                        Regular Session WedB04<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#wedb04" title="Click to go to the session program"><i>Intelligent Control Systems</i></a>
+                   </td>
+               
+                  <td width="16%" rowspan="5" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="wedb05">14:00-15:40</a><BR>
+                        Meeting Room 4<BR>
+                        Regular Session WedB05<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#wedb05" title="Click to go to the session program"><i>Autonomous and Unmanned Systems 2</i></a>
+                   </td>
+               
+<td width="16%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+<td width="16%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+<td width="16%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+<td width="16%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+<td width="16%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+                  <td width="96%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="6" class="c">
+                        <a id="wedpm_coffeebreak">15:40-16:00</a><BR>
+                        <BR>
+                         WedPM_CoffeeBreak<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#wedpm_coffeebreak" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="96%" rowspan="1" style="background-color: #99FF99"
+                     colspan="6" class="c">
+                        <a id="wedroundtable01">16:00-17:30</a><BR>
+                        Kolovare<BR>
+                         WedRoundTable01<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#wedroundtable01" title="Click to go to the session program"><i>Control Systems and AI in the Quest for Autonomy</i></a>
+                   </td>
+               
+</tr>
+<tr>
+<td width="16%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="16%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="16%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="16%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="16%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="16%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+                  <td width="96%" rowspan="1" style="background-color: #99FF99"
+                     colspan="6" class="c">
+                        <a id="wedieee_ypbreak">21:00-23:00</a><BR>
+                        <BR>
+                         WedIEEE_YPBreak<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_2.html#wedieee_ypbreak" title="Click to go to the session program"><i>IEEE Young Professionals Networking Event @ the Garden Lounge (bar in Center of Zadar)
+</i></a>
+                   </td>
+               
+</tr>
+
+         </table>
+         </div>
+         </div>
+         </div>
+         <br><br>
+      
+         <div id="Thursday" class="blck">
+         <p><br><b>MED 2018 Technical Program Thursday June 21, 2018</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Wednesday" title="Click to jump to the previous day">Previous</a>&nbsp;&nbsp;<a href="#Tuesday">Tuesday</a>&nbsp;&nbsp;<a href="#Wednesday">Wednesday</a>&nbsp;&nbsp;<a href="#Thursday">Thursday</a>&nbsp;&nbsp;<a href="#Friday">Friday</a>&nbsp;&nbsp;<a href="#Friday" title="Click to jump to the next day">Next</a>&nbsp;&nbsp;<a href="#TheTop">Top</a>&nbsp;&nbsp;<span class="scrlis" style="color: gray"><br>Click on the day's program and use the arrow keys for easy horizontal and vertical scrolling</span></p>
+      
+
+         <div id="div3" class="sdiv" style="overflow: auto">
+         <div id="AThursday" tabindex="3">
+	  
+         <table class="dayB" style="width: 800px">
+
+<tr class="tHdr">
+<td width="20%" class="c">Track T1</td>
+<td width="20%" class="c">Track T2</td>
+<td width="20%" class="c">Track T3</td>
+<td width="20%" class="c">Track T4</td>
+<td width="20%" class="c">Track T5</td>
+</tr><tr>
+                  <td width="20%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thua01">09:00-11:00</a><BR>
+                        Kolovare<BR>
+                        Regular Session ThuA01<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_3.html#thua01" title="Click to go to the session program"><i>Robotics 2</i></a>
+                   </td>
+               
+                  <td width="20%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thua02">09:00-11:00</a><BR>
+                        Meeting Room 1<BR>
+                        Regular Session ThuA02<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_3.html#thua02" title="Click to go to the session program"><i>Industrial Automation and Process Control</i></a>
+                   </td>
+               
+                  <td width="20%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thua03">09:00-11:00</a><BR>
+                        Meeting Room 2<BR>
+                        Regular Session ThuA03<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_3.html#thua03" title="Click to go to the session program"><i>Cyber-Physical and Networked Systems</i></a>
+                   </td>
+               
+                  <td width="20%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thua04">09:00-11:00</a><BR>
+                        Meeting Room 3<BR>
+                        Regular Session ThuA04<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_3.html#thua04" title="Click to go to the session program"><i>Robust Control 1</i></a>
+                   </td>
+               
+                  <td width="20%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thua05">09:00-11:00</a><BR>
+                        Meeting Room 4<BR>
+                        Regular Session ThuA05<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_3.html#thua05" title="Click to go to the session program"><i>Adaptive Control</i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="5" class="c">
+                        <a id="thuam_coffeebreak">11:00-11:30</a><BR>
+                        <BR>
+                         ThuAM_CoffeeBreak<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_3.html#thuam_coffeebreak" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #99FF99"
+                     colspan="5" class="c">
+                        <a id="thuplenary01">11:30-12:30</a><BR>
+                        Kolovare<BR>
+                        Plenary Session ThuPlenary01<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_3.html#thuplenary01" title="Click to go to the session program"><i>"Robotics and Wireless Communications: Opportunities and Challenges" - Prof Yasamin Mostofi</i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="5" class="c">
+                        <a id="thulunchbreak">12:30-14:00</a><BR>
+                        <BR>
+                         ThuLunchBreak<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_3.html#thulunchbreak" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="20%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thub01">14:00-15:40</a><BR>
+                        Kolovare<BR>
+                        Regular Session ThuB01<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_3.html#thub01" title="Click to go to the session program"><i>Aerospace Control 2</i></a>
+                   </td>
+               
+                  <td width="20%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thub02">14:00-15:40</a><BR>
+                        Meeting Room 1<BR>
+                        Regular Session ThuB02<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_3.html#thub02" title="Click to go to the session program"><i>Marine Control</i></a>
+                   </td>
+               
+                  <td width="20%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thub03">14:00-15:40</a><BR>
+                        Meeting Room 2<BR>
+                        Regular Session ThuB03<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_3.html#thub03" title="Click to go to the session program"><i>Biomedical Engineering</i></a>
+                   </td>
+               
+                  <td width="20%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thub04">14:00-15:40</a><BR>
+                        Meeting Room 3<BR>
+                        Regular Session ThuB04<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_3.html#thub04" title="Click to go to the session program"><i>Robust Control 2</i></a>
+                   </td>
+               
+                  <td width="20%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="thub05">14:00-15:40</a><BR>
+                        Meeting Room 4<BR>
+                        Regular Session ThuB05<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_3.html#thub05" title="Click to go to the session program"><i>Fault Diagnosis and Fault Tolerant Control 1</i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="5" class="c">
+                        <a id="thupm_coffeebreak">15:40-16:00</a><BR>
+                        <BR>
+                         ThuPM_CoffeeBreak<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_3.html#thupm_coffeebreak" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #99FF99"
+                     colspan="5" class="c">
+                        <a id="thuroundtable01">16:00-17:30</a><BR>
+                        Kolovare<BR>
+                         ThuRoundTable01<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_3.html#thuroundtable01" title="Click to go to the session program"><i>Social Implications of Autonomy and Automation</i></a>
+                   </td>
+               
+</tr>
+<tr>
+<td width="20%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="20%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="20%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="20%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+<td width="20%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="5" class="c">
+                        <a id="thugaladinnerbreak">20:30-23:30</a><BR>
+                        <BR>
+                         ThuGalaDinnerBreak<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_3.html#thugaladinnerbreak" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+
+         </table>
+         </div>
+         </div>
+         </div>
+         <br><br>
+      
+         <div id="Friday" class="blck">
+         <p><br><b>MED 2018 Technical Program Friday June 22, 2018</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Thursday" title="Click to jump to the previous day">Previous</a>&nbsp;&nbsp;<a href="#Tuesday">Tuesday</a>&nbsp;&nbsp;<a href="#Wednesday">Wednesday</a>&nbsp;&nbsp;<a href="#Thursday">Thursday</a>&nbsp;&nbsp;<a href="#Friday">Friday</a>&nbsp;&nbsp;<a href="#TheTop">Top</a>&nbsp;&nbsp;<span class="scrlis" style="color: gray"><br>Click on the day's program and use the arrow keys for easy horizontal and vertical scrolling</span></p>
+      
+
+         <div id="div4" class="sdiv" style="overflow: auto">
+         <div id="AFriday" tabindex="4">
+	  
+         <table class="dayB" style="width: 800px">
+
+<tr class="tHdr">
+<td width="20%" class="c">Track T1</td>
+<td width="20%" class="c">Track T2</td>
+<td width="20%" class="c">Track T3</td>
+<td width="20%" class="c">Track T4</td>
+<td width="20%" class="c">Track T5</td>
+</tr><tr>
+                  <td width="20%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="fria01">09:00-10:40</a><BR>
+                        Kolovare<BR>
+                        Regular Session FriA01<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_4.html#fria01" title="Click to go to the session program"><i>Fault Diagnosis and Fault Tolerant Control 2</i></a>
+                   </td>
+               
+                  <td width="20%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="fria02">09:00-10:40</a><BR>
+                        Meeting Room 1<BR>
+                        Regular Session FriA02<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_4.html#fria02" title="Click to go to the session program"><i>Disturbance Rejection</i></a>
+                   </td>
+               
+                  <td width="20%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="fria03">09:00-10:40</a><BR>
+                        Meeting Room 2<BR>
+                        Regular Session FriA03<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_4.html#fria03" title="Click to go to the session program"><i>Nonlinear Systems and Control 1</i></a>
+                   </td>
+               
+                  <td width="20%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="fria04">09:00-10:40</a><BR>
+                        Meeting Room 3<BR>
+                        Regular Session FriA04<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_4.html#fria04" title="Click to go to the session program"><i>Signal and Image Processing</i></a>
+                   </td>
+               
+                  <td width="20%" rowspan="1" style="background-color: #FFFF99"
+                     colspan="1" class="c">
+                        <a id="fria05">09:00-10:40</a><BR>
+                        Meeting Room 4<BR>
+                        Invited Session FriA05<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_4.html#fria05" title="Click to go to the session program"><i>Control in Smart Cities</i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="5" class="c">
+                        <a id="friam_coffeebreak">10:40-11:10</a><BR>
+                        <BR>
+                         FriAM_CoffeeBreak<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_4.html#friam_coffeebreak" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #99FF99"
+                     colspan="5" class="c">
+                        <a id="friplenary01">11:10-12:10</a><BR>
+                        Kolovare<BR>
+                        Plenary Session FriPlenary01<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_4.html#friplenary01" title="Click to go to the session program"><i>"Multiagent Decision Making: Learning from Observations" - Prof Maryam Kamgarpour</i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="5" class="c">
+                        <a id="frilunchbreak">12:10-13:30</a><BR>
+                        <BR>
+                         FriLunchBreak<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_4.html#frilunchbreak" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+<tr>
+                  <td width="20%" rowspan="5" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frib01">13:30-15:10</a><BR>
+                        Kolovare<BR>
+                        Regular Session FriB01<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_4.html#frib01" title="Click to go to the session program"><i>Automotive Control</i></a>
+                   </td>
+               
+                  <td width="20%" rowspan="5" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frib02">13:30-15:10</a><BR>
+                        Meeting Room 1<BR>
+                        Regular Session FriB02<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_4.html#frib02" title="Click to go to the session program"><i>Identification</i></a>
+                   </td>
+               
+                  <td width="20%" rowspan="5" style="background-color: #FFFFFF"
+                     colspan="1" class="c">
+                        <a id="frib03">13:30-15:10</a><BR>
+                        Meeting Room 2<BR>
+                        Regular Session FriB03<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_4.html#frib03" title="Click to go to the session program"><i>Nonlinear Systems and Control 2</i></a>
+                   </td>
+               
+                  <td width="20%" rowspan="5" style="background-color: #FFFF99"
+                     colspan="1" class="c">
+                        <a id="frib04">13:30-15:10</a><BR>
+                        Meeting Room 3<BR>
+                        Invited Session FriB04<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_4.html#frib04" title="Click to go to the session program"><i>Integrating Wireless Sensor Networks in Distributed Control Systems (SENSYS’18)</i></a>
+                   </td>
+               
+<td width="20%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+<td width="20%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+<td width="20%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+<td width="20%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+<td width="20%" style="border: white; background-color: #FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+                  <td width="100%" rowspan="1" style="background-color: #FFFFFF"
+                     colspan="5" class="c">
+                        <a id="friclosingbreak">15:10-15:30</a><BR>
+                        <BR>
+                         FriClosingBreak<BR>
+                        <BR>
+                        <a href="MED18_ContentListMedia_4.html#friclosingbreak" title="Click to go to the session program"><i> </i></a>
+                   </td>
+               
+</tr>
+
+         </table>
+         </div>
+         </div>
+         </div>
+         <br><br>
+      
+</div>
+
+<p>&nbsp;<br>&nbsp;</p><p>&nbsp;<br>&nbsp;</p>
+
+
+
+</div>
+
+</body>
+
+</html>
